@@ -1,0 +1,21 @@
+/* RevueForm */
+
+.formContainer {
+  @apply flex w-full;
+}
+
+.form {
+  @apply flex w-full flex-col;
+}
+
+.inputContainer {
+  @apply mb-3 flex w-full flex-col px-3 md:flex-row;
+}
+
+.input {
+  @apply mb-2 md:mb-0;
+}
+
+.privacyContainer {
+  @apply flex w-full px-3;
+}

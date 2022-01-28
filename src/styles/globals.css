@@ -1,0 +1,13 @@
+/* custom css */
+html,
+body {
+  font-size: 17px;
+}
+
+.is-highlighted {
+  @apply text-secondary opacity-100;
+}
+
+.split-content-2 {
+  @apply columns-1 gap-8 md:columns-2;
+}

@@ -1,0 +1,19 @@
+/* FeaturedInLogosSection */
+
+.section {
+  @apply flex w-full flex-row flex-wrap items-center justify-center bg-primary py-8 px-4;
+}
+
+.title {
+  @apply mt-4 mb-4 w-full text-center font-sans text-xs font-bold tracking-wider text-white/80 md:text-sm lg:mr-12 xl:mt-0 xl:mb-0 xl:w-auto xl:text-left;
+}
+
+.logoContainer {
+  @apply mb-4 w-[49%] last:mb-0 sm:w-[24%] md:mr-2 md:w-44 xl:mb-0;
+
+  filter: brightness(0%) invert(95%);
+}
+
+.logo {
+  @apply rounded-xl;
+}

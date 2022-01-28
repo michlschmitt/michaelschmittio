@@ -1,0 +1,17 @@
+/* NewsletterSection */
+
+.section {
+  @apply flex w-full justify-center py-16 md:py-32;
+}
+
+.container {
+  @apply flex w-full max-w-screen-md flex-col content-center items-center justify-center;
+}
+
+.content {
+  @apply p-3.5;
+}
+
+.newsletter {
+  @apply flex w-full max-w-[480px] justify-center text-center;
+}

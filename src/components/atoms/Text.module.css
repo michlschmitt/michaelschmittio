@@ -1,0 +1,49 @@
+/* Text */
+
+.text {
+  @apply mb-4 text-grey-2/80;
+
+  a {
+    @apply bg-transparent text-secondary no-underline opacity-100 transition-all ease-linear hover:text-primary;
+  }
+
+  button {
+    @apply bg-transparent text-secondary no-underline opacity-100 transition-all ease-linear hover:text-primary;
+  }
+
+  ul {
+    @apply list-inside list-disc;
+  }
+
+  ol {
+    @apply list-inside list-decimal;
+  }
+}
+
+.textIsLeft {
+  @apply text-left;
+}
+
+.textIsCenter {
+  @apply text-center;
+}
+
+.textIsRight {
+  @apply text-right;
+}
+
+.textIsHelpText {
+  @apply !text-grey-3/50;
+}
+
+.textIsSmall {
+  @apply text-[0.65rem] md:text-xs;
+}
+
+.textIsMedium {
+  @apply text-sm md:text-base;
+}
+
+.textIsLarge {
+  @apply text-base md:text-xl;
+}

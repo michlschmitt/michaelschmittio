@@ -1,0 +1,8 @@
+/* import global styles */
+@import './tailwind.css';
+@import './globals.css';
+
+/* import package styles */
+/* @import './cookie-consent.css'; */
+/* @import './markdown.css'; */
+@import './nprogress.css';

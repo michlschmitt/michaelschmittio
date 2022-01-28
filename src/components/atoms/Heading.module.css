@@ -1,0 +1,45 @@
+/* Heading */
+
+.heading {
+  @apply font-bold leading-snug tracking-wide text-white;
+
+  strong {
+    @apply font-bold;
+  }
+}
+
+.headingLeft {
+  @apply text-left;
+}
+
+.headingCenter {
+  @apply text-center;
+}
+
+.headingRight {
+  @apply text-right;
+}
+
+.heading1 {
+  @apply mb-4 text-3xl lg:text-4xl;
+}
+
+.heading2 {
+  @apply mb-4 text-2xl lg:text-3xl;
+}
+
+.heading3 {
+  @apply mb-3 text-xl lg:text-2xl;
+}
+
+.heading4 {
+  @apply mb-3 text-xl lg:text-2xl;
+}
+
+.heading5 {
+  @apply mb-2 text-base lg:text-xl;
+}
+
+.heading6 {
+  @apply mb-2 text-sm lg:text-base;
+}

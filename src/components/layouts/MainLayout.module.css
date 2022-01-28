@@ -1,0 +1,17 @@
+/* MainLayout */
+
+.layout {
+  @apply flex h-full min-h-screen w-screen flex-col content-center items-center justify-start bg-black;
+}
+
+.header {
+  @apply w-full;
+}
+
+.main {
+  @apply flex h-full w-full flex-1 flex-col content-center items-center justify-center;
+}
+
+.footer {
+  @apply mt-auto flex w-full justify-center;
+}

@@ -1,0 +1,5 @@
+/* FullHeightContainer */
+
+.container {
+  @apply flex h-full w-full content-center items-center justify-center;
+}

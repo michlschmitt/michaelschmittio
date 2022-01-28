@@ -1,0 +1,29 @@
+/* FullScreenNav */
+
+.fullscreenNav {
+  @apply fixed left-0 top-0 z-[1000] flex h-screen w-screen flex-col content-center items-center justify-center bg-black;
+}
+
+.closeButtonContainer {
+  @apply absolute top-0 left-0 flex h-20 w-screen justify-end p-4;
+}
+
+.closeButton {
+  @apply animate-fade-in rounded-xl fill-current p-1.5 text-grey-3 transition-all ease-linear hover:text-primary;
+}
+
+.menu {
+  @apply mb-8 flex animate-fade-in-down flex-col content-center items-center justify-center last:mb-0;
+}
+
+.menuItem {
+  @apply p-2 text-center;
+}
+
+.logoLink {
+  @apply text-xl font-bold text-grey-3 transition-all ease-linear hover:text-primary;
+}
+
+.link {
+  @apply text-base text-grey-3 transition-all ease-linear hover:text-primary;
+}

@@ -1,0 +1,46 @@
+/* nprogress.module.css */
+
+/* Make clicks pass-through */
+#nprogress {
+  @apply pointer-events-none;
+}
+
+#nprogress .bar {
+  /* skeleton */
+  @apply fixed top-0 left-0 h-1 w-full;
+
+  /* color */
+  @apply bg-primary;
+
+  /* custom */
+  z-index: 1031;
+}
+
+.dark #nprogress .bar {
+  @apply bg-grey-2;
+}
+
+/* Fancy blur effect */
+#nprogress .peg {
+  /* skeleton */
+  @apply absolute right-0 block h-full w-24 opacity-100;
+
+  /* color */
+  @apply shadow-md;
+
+  /* custom */
+  transform: rotate(3deg) translate(0px, -4px);
+}
+
+.dark #nprogress .peg {
+  @apply shadow-md;
+}
+
+.nprogress-custom-parent {
+  @apply relative overflow-hidden;
+}
+
+.nprogress-custom-parent #nprogress .spinner,
+.nprogress-custom-parent #nprogress .bar {
+  @apply absolute;
+}

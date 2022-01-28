@@ -1,0 +1,25 @@
+/* Button */
+
+.button {
+  @apply border-none cursor-pointer focus:outline-none font-bold leading-none tracking-wide outline-none mr-2 last:mr-0 rounded-xl text-white transition-all ease-linear;
+}
+
+.buttonIsNaked {
+  @apply bg-transparent hover:ring-4 hover:ring-primary focus:ring-4 focus:ring-primary;
+}
+
+.buttonIsGradient {
+  @apply bg-gradient-to-r from-primary to-secondary hover:ring-4 hover:ring-primary focus:ring-4 focus:ring-primary;
+}
+
+.buttonIsSmall {
+  @apply h-8 py-2 px-3;
+}
+
+.buttonIsMedium {
+  @apply h-10 py-3 px-4;
+}
+
+.buttonIsLarge {
+  @apply h-12 py-4 px-5;
+}

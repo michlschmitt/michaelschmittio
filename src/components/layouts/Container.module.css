@@ -1,0 +1,17 @@
+/* Container */
+
+.container {
+  @apply flex h-full w-full justify-center;
+}
+
+.inner {
+  @apply flex w-full;
+}
+
+.containerIsTight {
+  @apply max-w-screen-md;
+}
+
+.containerIsWide {
+  @apply max-w-screen-xl;
+}

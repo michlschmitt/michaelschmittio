@@ -1,0 +1,73 @@
+/* PortfolioPreviewSection */
+
+.section {
+  @apply flex w-full justify-center overflow-hidden py-8 md:py-16;
+}
+
+.sectionIsBlack {
+  @apply bg-grey-1;
+}
+
+.sectionIsGradient {
+  @apply bg-gradient-to-tr from-transparent via-primary/25 to-transparent;
+}
+
+.previewGrid {
+  @apply grid w-full grid-cols-12 items-center justify-center;
+}
+
+.leftImageContainer {
+  @apply relative col-span-12 mt-8 flex w-full content-center justify-center px-3.5 md:col-span-5 md:mt-0 md:min-h-[640px] xl:col-span-7;
+}
+
+.leftImageCard {
+  @apply relative top-0 z-50 block w-full rounded-xl bg-white shadow-md shadow-primary/20 md:absolute md:right-8 md:min-w-[1024px];
+}
+
+.leftImage {
+  @apply rounded-xl;
+}
+
+.leftComponent {
+  @apply col-span-12 mt-8 px-4 md:col-span-7 md:mt-0 xl:col-span-5;
+}
+
+.rightImageContainer {
+  @apply relative order-1 col-span-12 mt-8 flex w-full content-center justify-center px-3.5 md:order-2 md:col-span-5 md:mt-0 md:min-h-[640px] xl:col-span-7;
+}
+
+.rightImageCard {
+  @apply relative top-0 z-50 block w-full rounded-xl bg-white shadow-md shadow-primary/20 md:absolute md:left-8 md:min-w-[1024px];
+}
+
+.rightImage {
+  @apply rounded-xl;
+}
+
+.rightComponent {
+  @apply order-2 col-span-12 mt-8 px-4 md:order-1 md:col-span-7 md:mt-0 xl:col-span-5;
+}
+
+.content {
+  @apply flex w-full flex-col;
+}
+
+.facts {
+  @apply mb-7 list-none;
+}
+
+.fact {
+  @apply flex content-center items-center justify-start text-grey-2/80 before:mr-2 before:content-['✓'];
+}
+
+.buttons {
+  @apply flex w-full flex-col lg:flex-row;
+}
+
+.button {
+  @apply w-full last:mt-2 lg:w-auto lg:last:mt-0;
+}
+
+.subline {
+  @apply mb-3 font-sans leading-none tracking-wide text-primary;
+}

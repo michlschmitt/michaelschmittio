@@ -21,7 +21,7 @@
 }
 
 .linksMenu {
-  @apply flex flex-wrap justify-center md:col-span-8;
+  @apply flex flex-wrap justify-center px-2 md:col-span-8;
 }
 
 .linksMenuItem {

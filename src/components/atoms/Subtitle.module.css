@@ -1,0 +1,5 @@
+/* Subtitle */
+
+.subtitle {
+  @apply mt-4 mb-4 w-full text-center font-sans text-xs font-bold tracking-wider text-white/80 md:text-sm lg:mr-12 xl:mt-0 xl:mb-0 xl:w-auto xl:text-left;
+}

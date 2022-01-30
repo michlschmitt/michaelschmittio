@@ -1,0 +1,485 @@
+/* Col */
+
+.colSpanXl12 {
+  @apply xl:max-w-full xl:basis-full;
+}
+
+.colSpanLg12 {
+  @apply lg:max-w-full lg:basis-full;
+}
+
+.colSpanMd12 {
+  @apply md:max-w-full md:basis-full;
+}
+
+.colSpanSm12 {
+  @apply sm:max-w-full sm:basis-full;
+}
+
+.colSpan12 {
+  @apply max-w-full basis-full;
+}
+
+.colSpanXl11 {
+  @apply xl:max-w-[calc(100%*11/12)] xl:basis-11/12;
+}
+
+.colSpanLg11 {
+  @apply lg:max-w-[calc(100%*11/12)] lg:basis-11/12;
+}
+
+.colSpanMd11 {
+  @apply md:max-w-[calc(100%*11/12)] md:basis-11/12;
+}
+
+.colSpanSm11 {
+  @apply sm:max-w-[calc(100%*11/12)] sm:basis-11/12;
+}
+
+.colSpan11 {
+  @apply max-w-[calc(100%*11/12)] basis-11/12;
+}
+
+.colSpanXl10 {
+  @apply xl:max-w-[calc(100%*10/12)] xl:basis-10/12;
+}
+
+.colSpanLg10 {
+  @apply lg:max-w-[calc(100%*10/12)] lg:basis-10/12;
+}
+
+.colSpanMd10 {
+  @apply md:max-w-[calc(100%*10/12)] md:basis-10/12;
+}
+
+.colSpanSm10 {
+  @apply sm:max-w-[calc(100%*10/12)] sm:basis-10/12;
+}
+
+.colSpan10 {
+  @apply max-w-[calc(100%*10/12)] basis-10/12;
+}
+
+.colSpanXl9 {
+  @apply xl:max-w-[calc(100%*9/12)] xl:basis-9/12;
+}
+
+.colSpanLg9 {
+  @apply lg:max-w-[calc(100%*9/12)] lg:basis-9/12;
+}
+
+.colSpanMd9 {
+  @apply md:max-w-[calc(100%*9/12)] md:basis-9/12;
+}
+
+.colSpanSm9 {
+  @apply sm:max-w-[calc(100%*9/12)] sm:basis-9/12;
+}
+
+.colSpan9 {
+  @apply max-w-[calc(100%*9/12)] basis-9/12;
+}
+
+.colSpanXl8 {
+  @apply xl:max-w-[calc(100%*8/12)] xl:basis-8/12;
+}
+
+.colSpanLg8 {
+  @apply lg:max-w-[calc(100%*8/12)] lg:basis-8/12;
+}
+
+.colSpanMd8 {
+  @apply md:max-w-[calc(100%*8/12)] md:basis-8/12;
+}
+
+.colSpanSm8 {
+  @apply sm:max-w-[calc(100%*8/12)] sm:basis-8/12;
+}
+
+.colSpan8 {
+  @apply max-w-[calc(100%*8/12)] basis-8/12;
+}
+
+.colSpanXl7 {
+  @apply xl:max-w-[calc(100%*7/12)] xl:basis-7/12;
+}
+
+.colSpanLg7 {
+  @apply lg:max-w-[calc(100%*7/12)] lg:basis-7/12;
+}
+
+.colSpanMd7 {
+  @apply md:max-w-[calc(100%*7/12)] md:basis-7/12;
+}
+
+.colSpanSm7 {
+  @apply sm:max-w-[calc(100%*7/12)] sm:basis-7/12;
+}
+
+.colSpan7 {
+  @apply max-w-[calc(100%*7/12)] basis-7/12;
+}
+
+.colSpanXl6 {
+  @apply xl:max-w-[calc(100%*6/12)] xl:basis-6/12;
+}
+
+.colSpanLg6 {
+  @apply lg:max-w-[calc(100%*6/12)] lg:basis-6/12;
+}
+
+.colSpanMd6 {
+  @apply md:max-w-[calc(100%*6/12)] md:basis-6/12;
+}
+
+.colSpanSm6 {
+  @apply sm:max-w-[calc(100%*6/12)] sm:basis-6/12;
+}
+
+.colSpan6 {
+  @apply max-w-[calc(100%*6/12)] basis-6/12;
+}
+
+.colSpanXl5 {
+  @apply xl:max-w-[calc(100%*5/12)] xl:basis-5/12;
+}
+
+.colSpanLg5 {
+  @apply lg:max-w-[calc(100%*5/12)] lg:basis-5/12;
+}
+
+.colSpanMd5 {
+  @apply md:max-w-[calc(100%*5/12)] md:basis-5/12;
+}
+
+.colSpanSm5 {
+  @apply sm:max-w-[calc(100%*5/12)] sm:basis-5/12;
+}
+
+.colSpan5 {
+  @apply max-w-[calc(100%*5/12)] basis-5/12;
+}
+
+.colSpanXl4 {
+  @apply xl:max-w-[calc(100%*4/12)] xl:basis-4/12;
+}
+
+.colSpanLg4 {
+  @apply lg:max-w-[calc(100%*4/12)] lg:basis-4/12;
+}
+
+.colSpanMd4 {
+  @apply md:max-w-[calc(100%*4/12)] md:basis-4/12;
+}
+
+.colSpanSm4 {
+  @apply sm:max-w-[calc(100%*4/12)] sm:basis-4/12;
+}
+
+.colSpan4 {
+  @apply max-w-[calc(100%*4/12)] basis-4/12;
+}
+
+.colSpanXl3 {
+  @apply xl:max-w-[calc(100%*3/12)] xl:basis-3/12;
+}
+
+.colSpanLg3 {
+  @apply lg:max-w-[calc(100%*3/12)] lg:basis-3/12;
+}
+
+.colSpanMd3 {
+  @apply md:max-w-[calc(100%*3/12)] md:basis-3/12;
+}
+
+.colSpanSm3 {
+  @apply sm:max-w-[calc(100%*3/12)] sm:basis-3/12;
+}
+
+.colSpan3 {
+  @apply max-w-[calc(100%*3/12)] basis-3/12;
+}
+
+.colSpanXl2 {
+  @apply xl:max-w-[calc(100%*2/12)] xl:basis-2/12;
+}
+
+.colSpanLg2 {
+  @apply lg:max-w-[calc(100%*2/12)] lg:basis-2/12;
+}
+
+.colSpanMd2 {
+  @apply md:max-w-[calc(100%*2/12)] md:basis-2/12;
+}
+
+.colSpanSm2 {
+  @apply sm:max-w-[calc(100%*2/12)] sm:basis-2/12;
+}
+
+.colSpan2 {
+  @apply max-w-[calc(100%*2/12)] basis-2/12;
+}
+
+.colSpanXl1 {
+  @apply xl:max-w-[calc(100%*1/12)] xl:basis-1/12;
+}
+
+.colSpanLg1 {
+  @apply lg:max-w-[calc(100%*1/12)] lg:basis-1/12;
+}
+
+.colSpanMd1 {
+  @apply md:max-w-[calc(100%*1/12)] md:basis-1/12;
+}
+
+.colSpanSm1 {
+  @apply sm:max-w-[calc(100%*1/12)] sm:basis-1/12;
+}
+
+.colSpan1 {
+  @apply max-w-[calc(100%*1/12)] basis-1/12;
+}
+
+.colOffsetXl11 {
+  @apply xl:ml-[calc(100%*11/12)];
+}
+
+.colOffsetLg11 {
+  @apply lg:ml-[calc(100%*11/12)];
+}
+
+.colOffsetMd11 {
+  @apply md:ml-[calc(100%*11/12)];
+}
+
+.colOffsetSm11 {
+  @apply sm:ml-[calc(100%*11/12)];
+}
+
+.colOffset11 {
+  @apply ml-[calc(100%*11/12)];
+}
+
+.colOffsetXl10 {
+  @apply xl:ml-[calc(100%*10/12)];
+}
+
+.colOffsetLg10 {
+  @apply lg:ml-[calc(100%*10/12)];
+}
+
+.colOffsetMd10 {
+  @apply md:ml-[calc(100%*10/12)];
+}
+
+.colOffsetSm10 {
+  @apply sm:ml-[calc(100%*10/12)];
+}
+
+.colOffset10 {
+  @apply ml-[calc(100%*10/12)];
+}
+
+.colOffsetXl9 {
+  @apply xl:ml-[calc(100%*9/12)];
+}
+
+.colOffsetLg9 {
+  @apply lg:ml-[calc(100%*9/12)];
+}
+
+.colOffsetMd9 {
+  @apply md:ml-[calc(100%*9/12)];
+}
+
+.colOffsetSm9 {
+  @apply sm:ml-[calc(100%*9/12)];
+}
+
+.colOffset9 {
+  @apply ml-[calc(100%*9/12)];
+}
+
+.colOffsetXl8 {
+  @apply xl:ml-[calc(100%*8/12)];
+}
+
+.colOffsetLg8 {
+  @apply lg:ml-[calc(100%*8/12)];
+}
+
+.colOffsetMd8 {
+  @apply md:ml-[calc(100%*8/12)];
+}
+
+.colOffsetSm8 {
+  @apply sm:ml-[calc(100%*8/12)];
+}
+
+.colOffset8 {
+  @apply ml-[calc(100%*8/12)];
+}
+
+.colOffsetXl7 {
+  @apply xl:ml-[calc(100%*7/12)];
+}
+
+.colOffsetLg7 {
+  @apply lg:ml-[calc(100%*7/12)];
+}
+
+.colOffsetMd7 {
+  @apply md:ml-[calc(100%*7/12)];
+}
+
+.colOffsetSm7 {
+  @apply sm:ml-[calc(100%*7/12)];
+}
+
+.colOffset7 {
+  @apply ml-[calc(100%*7/12)];
+}
+
+.colOffsetXl6 {
+  @apply xl:ml-[calc(100%*6/12)];
+}
+
+.colOffsetLg6 {
+  @apply lg:ml-[calc(100%*6/12)];
+}
+
+.colOffsetMd6 {
+  @apply md:ml-[calc(100%*6/12)];
+}
+
+.colOffsetSm6 {
+  @apply sm:ml-[calc(100%*6/12)];
+}
+
+.colOffset6 {
+  @apply ml-[calc(100%*6/12)];
+}
+
+.colOffsetXl5 {
+  @apply xl:ml-[calc(100%*5/12)];
+}
+
+.colOffsetLg5 {
+  @apply lg:ml-[calc(100%*5/12)];
+}
+
+.colOffsetMd5 {
+  @apply md:ml-[calc(100%*5/12)];
+}
+
+.colOffsetSm5 {
+  @apply sm:ml-[calc(100%*5/12)];
+}
+
+.colOffset5 {
+  @apply ml-[calc(100%*5/12)];
+}
+
+.colOffsetXl4 {
+  @apply xl:ml-[calc(100%*4/12)];
+}
+
+.colOffsetLg4 {
+  @apply lg:ml-[calc(100%*4/12)];
+}
+
+.colOffsetMd4 {
+  @apply md:ml-[calc(100%*4/12)];
+}
+
+.colOffsetSm4 {
+  @apply sm:ml-[calc(100%*4/12)];
+}
+
+.colOffset4 {
+  @apply ml-[calc(100%*4/12)];
+}
+
+.colOffsetXl3 {
+  @apply xl:ml-[calc(100%*3/12)];
+}
+
+.colOffsetLg3 {
+  @apply lg:ml-[calc(100%*3/12)];
+}
+
+.colOffsetMd3 {
+  @apply md:ml-[calc(100%*3/12)];
+}
+
+.colOffsetSm3 {
+  @apply sm:ml-[calc(100%*3/12)];
+}
+
+.colOffset3 {
+  @apply ml-[calc(100%*3/12)];
+}
+
+.colOffsetXl2 {
+  @apply xl:ml-[calc(100%*2/12)];
+}
+
+.colOffsetLg2 {
+  @apply lg:ml-[calc(100%*2/12)];
+}
+
+.colOffsetMd2 {
+  @apply md:ml-[calc(100%*2/12)];
+}
+
+.colOffsetSm2 {
+  @apply sm:ml-[calc(100%*2/12)];
+}
+
+.colOffset2 {
+  @apply ml-[calc(100%*2/12)];
+}
+
+.colOffsetXl1 {
+  @apply xl:ml-[calc(100%*1/12)];
+}
+
+.colOffsetLg1 {
+  @apply lg:ml-[calc(100%*1/12)];
+}
+
+.colOffsetMd1 {
+  @apply md:ml-[calc(100%*1/12)];
+}
+
+.colOffsetSm1 {
+  @apply sm:ml-[calc(100%*1/12)];
+}
+
+.colOffset1 {
+  @apply ml-[calc(100%*1/12)];
+}
+
+.colOffsetXl0 {
+  @apply xl:ml-0;
+}
+
+.colOffsetLg0 {
+  @apply lg:ml-0;
+}
+
+.colOffsetMd0 {
+  @apply md:ml-0;
+}
+
+.colOffsetSm0 {
+  @apply sm:ml-0;
+}
+
+.colOffset0 {
+  @apply ml-0;
+}
+
+.col {
+  @apply box-border flex-shrink-0 flex-grow-0  px-4;
+}

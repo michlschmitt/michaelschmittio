@@ -1,11 +1,15 @@
 /* Button */
 
 .button {
-  @apply border-none cursor-pointer focus:outline-none font-bold leading-none tracking-wide outline-none mr-2 last:mr-0 rounded-xl text-white transition-all ease-linear;
+  @apply mr-2 cursor-pointer rounded-xl border-none font-bold leading-none tracking-wide text-white outline-none transition-all ease-linear last:mr-0 focus:outline-none;
 }
 
 .buttonIsNaked {
   @apply bg-transparent hover:ring-4 hover:ring-primary focus:ring-4 focus:ring-primary;
+}
+
+.buttonIsBlack {
+  @apply bg-black hover:ring-4 hover:ring-primary focus:ring-4 focus:ring-primary;
 }
 
 .buttonIsGradient {

@@ -27,7 +27,7 @@ const LegalNoticePage: NextPageWithLayout = ({ pageContent }) => (
 
     {/* Content */}
     <Spacer height="50px" />
-    <Container isTight>
+    <Container md>
       <NotionRenderer blocks={pageContent.blocks} />
     </Container>
     <Spacer height="100px" />

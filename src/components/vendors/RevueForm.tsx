@@ -20,43 +20,56 @@ import styles from './RevueForm.module.css';
 const RevueForm: React.FunctionComponent<{ alignment?: TextAlignment; content: RevueFormType }> = ({
   alignment,
   content,
-}) => (
-  <div className={styles.formContainer}>
-    <form
-      action={content.action}
-      className={styles.form}
-      id="revue-form"
-      method="post"
-      name="revue-form"
-      target="_blank"
-    >
-      <div className={styles.inputContainer}>
-        <Input
-          customInputClasses={styles.input}
-          id="member_email"
-          name="member[email]"
-          placeholderText={content.email.placeholder}
-          type="email"
-        />
+}) => {
+  // init states
+  const [email, setEmail] = React.useState<string>('');
 
-        <Button
-          color="gradient"
-          id="member_submit"
-          name="member[subscribe]"
-          size="medium"
-          text={content.submit.label}
-          type="submit"
-        />
-      </div>
+  // init methods
+  const onChange = React.useCallback((event) => {
+    setEmail(event.target.value);
+  }, []);
 
-      <div className={styles.privacyContainer}>
-        <Text alignment={alignment} isHelpText size="small">
-          {content.privacy.html}
-        </Text>
-      </div>
-    </form>
-  </div>
-);
+  // render form
+  return (
+    <div className={styles.formContainer}>
+      <form
+        action={content.action}
+        className={styles.form}
+        id="revue-form"
+        method="post"
+        name="revue-form"
+        target="_blank"
+      >
+        <div className={styles.inputContainer}>
+          <Input
+            customInputClasses={styles.input}
+            id="member_email"
+            name="member[email]"
+            onChange={onChange}
+            placeholderText={content.email.placeholder}
+            type="email"
+            value={email}
+          />
+
+          <Button
+            color="gradient"
+            id="member_submit"
+            name="member[subscribe]"
+            size="medium"
+            text={content.submit.label}
+            type="submit"
+          />
+        </div>
+
+        <div className={styles.privacyContainer}>
+          <Text alignment={alignment} isHelpText size="small">
+            {content.privacy.html}
+          </Text>
+        </div>
+      </form>
+    </div>
+  );
+};
 
 RevueForm.defaultProps = {
   alignment: 'left',

@@ -1,0 +1,22 @@
+/* ButtonGroup */
+
+.group {
+  @apply flex w-full flex-col lg:flex-row;
+
+  a,
+  button {
+    @apply !w-full last:!mt-2 lg:!w-auto lg:last:!mt-0;
+  }
+}
+
+.groupIsLeft {
+  @apply justify-start;
+}
+
+.groupIsCenter {
+  @apply justify-center;
+}
+
+.groupIsRight {
+  @apply justify-end;
+}

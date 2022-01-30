@@ -131,8 +131,6 @@ const BlockRenderer: React.FunctionComponent<{ block: NotionBlockType }> = ({ bl
   const { type, id } = block;
   const value = block[type as string];
 
-  console.log(type);
-
   // render block based on type
   switch (type) {
     case 'paragraph':

@@ -1,84 +1,21 @@
 {
-  "hero": {
-    "intro": "The development of new technology solutions require not only customer understanding, but also trust, competence, and method. I see myself as a partner for product and marketing teams that dare to break new ground, do not shy away from automation and appreciate good design and great customer experiences. Here you find a selection of my projects, ventures and accomplishments.",
-    "title": "<span class=\"is-highlighted\">Emerging technologies, adapting to cultural change</span> – my bread and butter."
-  },
-  "activePortfolio": [
+	"title": "My work is featured in",
+  "logos": [
     {
-      "buttons": [
-        {
-          "color": "gradient",
-          "href": "https://storyliner.app",
-          "label": "Visit Storyliner"
-        }
-      ],
-      "image": "/img/portfolio/michael-schmitt-portfolio-storyliner-cover.jpg",
-      "intro": "Working on innovation projects, I realized the tools for creating product and marketing copy just didn’t cut it. In 2020, I started Storyliner, a creative platform designed specifically for creatives and content teams. The Software-as-a-Service platform empowers you to create compelling content. With the creative support of artificial intelligence, you can compose concepts faster and collaborate more effectively.",
-      "title": "Create compelling content",
-			"id": "storyliner.app"
+      "alt": "Junge Verlagsmenschen",
+      "src": "/img/logos/logo-junge-verlagsmenschen.png"
     },
     {
-      "buttons": [
-        {
-          "color": "gradient",
-          "href": "https://lifetime.page",
-          "label": "Visit Lifetime.page"
-        }
-      ],
-      "image": "/img/portfolio/michael-schmitt-portfolio-storyliner-cover.jpg",
-      "intro": "TBD",
-      "title": "Lifetime.page",
-			"id": "lifetime.page"
+      "alt": "Hamburg Startups",
+      "src": "/img/logos/logo-hamburg-startups.png"
+    },
+    {
+      "alt": "Werben & Verkaufen",
+      "src": "/img/logos/logo-wundv.png"
+    },
+    {
+      "alt": "Börsenblatt",
+      "src": "/img/logos/logo-boersenblatt.png"
     }
-  ],
-  "retiredProjects": {
-    "title": "Client Case Studies and retired projects.",
-    "intor": "innovation, important to talks ...",
-    "projects": [
-      {
-        "link": {
-          "href": "/portfolio/sigmund-taks/",
-          "label": "Read Case Study"
-        },
-        "image": "/img/portfolio/michael-schmitt-portfolio-storyliner-cover.jpg",
-        "intro": "TBD",
-        "title": "my.Felss App"
-      },
-      {
-        "link": {
-          "href": "/portfolio/sigmund-taks/",
-          "label": "Read Case Study"
-        },
-        "image": "/img/portfolio/michael-schmitt-portfolio-storyliner-cover.jpg",
-        "intro": "TBD",
-        "title": "SIGMUND TALKS"
-      },
-      {
-        "link": {
-          "href": "/portfolio/sigmund-taks/",
-          "label": "Read Case Study"
-        },
-        "image": "/img/portfolio/michael-schmitt-portfolio-storyliner-cover.jpg",
-        "intro": "TBD",
-        "title": "Foconn"
-      },
-      {
-        "link": {
-          "href": "/portfolio/sigmund-taks/",
-          "label": "Read Case Study"
-        },
-        "image": "/img/portfolio/michael-schmitt-portfolio-storyliner-cover.jpg",
-        "intro": "TBD",
-        "title": "Echogramm"
-      }
-    ]
-  },
-  "cta": {
-    "link": {
-      "href": "/contact/",
-      "label": "Get in touch"
-    },
-    "teaser": "I develop creative technology solutions for start-ups, companies, or agencies and accompany software and innovation projects from the idea to market launch and beyond. If you are seeking someone who can transform developmental needs into intuitive, practical, and user-friendly digital experiences, get in touch.",
-    "title": "<span class=\"is-highlighted\">Are you seeking a partner</span> for your creative technology challenges?"
-  }
+  ]
 }

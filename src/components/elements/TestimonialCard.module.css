@@ -1,0 +1,29 @@
+/* TestimonialCard */
+
+.card {
+  @apply flex h-full w-full flex-col rounded-xl bg-grey-2 p-6;
+}
+
+.quote {
+  @apply mb-4 font-sans text-lg italic tracking-wide text-black;
+}
+
+.testimonal {
+  @apply mt-auto flex content-center items-center justify-start;
+}
+
+.imageContainer {
+  @apply h-20 w-20 rounded-xl bg-black;
+}
+
+.nameContainer {
+  @apply ml-4 w-auto;
+}
+
+.name {
+  @apply text-base font-bold tracking-wider text-grey-1/90;
+}
+
+.title {
+  @apply text-sm text-grey-1/60;
+}

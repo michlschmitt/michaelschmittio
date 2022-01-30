@@ -1,0 +1,37 @@
+/* ContactForm */
+
+.section {
+  @apply mb-16 flex w-full justify-center;
+}
+
+.card {
+  @apply flex w-full max-w-prose rounded-xl bg-tertiary-4/80;
+}
+
+.form {
+  @apply relative flex w-full flex-col px-4 py-6;
+}
+
+.inputContainer {
+  @apply mb-4;
+}
+
+.buttonContainer {
+  @apply relative mb-6 flex content-center items-center justify-between;
+}
+
+.noteText {
+  @apply absolute -top-[35px] -right-[30px] mb-0 max-w-[200px] rotate-6 rounded-xl bg-primary py-2 px-2.5 font-sans text-xs leading-snug tracking-wide text-white;
+}
+
+.privacyContainer {
+  @apply flex;
+}
+
+.privacyText {
+  @apply mb-0 text-white/60;
+
+  a {
+    @apply text-white;
+  }
+}

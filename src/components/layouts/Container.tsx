@@ -7,32 +7,42 @@ import cn from 'classnames';
 import styles from './Container.module.css';
 
 // define component
-const Container: React.FunctionComponent<{ children: React.ReactNode; isTight?: boolean }> = ({
-  children,
-  isTight,
-}) => {
+const Container: React.FunctionComponent<{
+  children: React.ReactNode;
+  lg?: boolean;
+  md?: boolean;
+  xl?: boolean;
+}> = ({ children, md, lg, xl }) => {
   // init styles
   const containerStyles = React.useMemo(
     () =>
-      cn(styles.inner, { [styles.containerIsTight]: isTight, [styles.containerIsWide]: !isTight }),
-    [isTight],
+      cn(styles.container, {
+        [styles.containerIsMd]: md,
+        [styles.containerIsLg]: lg,
+        [styles.containerIsXl]: xl,
+      }),
+    [md, lg, xl],
   );
 
   // render
   return (
-    <div className={styles.container}>
+    <div className={styles.wrapper}>
       <div className={containerStyles}>{children}</div>
     </div>
   );
 };
 
 Container.defaultProps = {
-  isTight: false,
+  lg: false,
+  md: false,
+  xl: false,
 };
 
 Container.propTypes = {
   children: PropTypes.node.isRequired,
-  isTight: PropTypes.bool,
+  lg: PropTypes.bool,
+  md: PropTypes.bool,
+  xl: PropTypes.bool,
 };
 
 export default Container;

@@ -1,0 +1,25 @@
+/* Textarea */
+
+.textarea {
+  @apply mr-2.5 flex w-full resize-y rounded-xl border-none leading-none tracking-wide text-black placeholder-black/50 outline-none transition-all ease-linear focus:outline-none focus:ring-4 focus:ring-primary;
+}
+
+.textareaIsSmall {
+  @apply py-2 px-2.5;
+}
+
+.textareaIsMedium {
+  @apply py-3 px-3.5;
+}
+
+.textareaIsLarge {
+  @apply py-4 px-5;
+}
+
+.label {
+  @apply mr-2 flex w-full flex-col;
+}
+
+.labelText {
+  @apply ml-1.5 mb-1.5 text-sm font-bold leading-none tracking-wide text-grey-3;
+}

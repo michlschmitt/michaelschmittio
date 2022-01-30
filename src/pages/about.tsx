@@ -9,8 +9,21 @@ import { NextPageWithLayout } from '../types';
 import * as notion from '../modules/notion';
 
 // import components
+import ButtonGroup from '../components/atoms/ButtonGroup';
+import CheckeredPaperCard from '../components/elements/CheckeredPaperCard';
+import Col from '../components/layouts/Col';
+import Container from '../components/layouts/Container';
+import Heading from '../components/atoms/Heading';
+import Image from '../components/atoms/Image';
+import LinkButton from '../components/atoms/LinkButton';
 import MainLayout from '../components/layouts/MainLayout';
+import PortfolioPreviewSection from '../components/sections/PortfolioPreviewSection';
+import Row from '../components/layouts/Row';
 import SEO from '../components/meta/SEO';
+import Section from '../components/layouts/Section';
+import Spacer from '../components/layouts/Spacer';
+import Subtitle from '../components/atoms/Subtitle';
+import Text from '../components/atoms/Text';
 
 // define page
 const AboutPage: NextPageWithLayout = ({ pageContent }) => {
@@ -50,10 +63,32 @@ const AboutPage: NextPageWithLayout = ({ pageContent }) => {
       </div>
 
       {/* Teaser Blog */}
-      <div className="mb-4 w-full bg-white">3x Blog posts</div>
+      {/* TODO: implement blog - preview 3 posts */}
 
-      {/* CTA */}
-      <div className="mb-4 w-full bg-white">Get in touch - Contact form</div>
+      {/* Call-to-action */}
+      <Section padding="large">
+        <Container md>
+          <Row justify="center">
+            <Col span={12}>
+              <Heading alignment="center" tag="h2">
+                {pageContent.cta.title}
+              </Heading>
+              <Text alignment="center">{pageContent.cta.teaser}</Text>
+            </Col>
+            <Col span={12}>
+              <Spacer height="16px" />
+              <ButtonGroup alignment="center">
+                <LinkButton
+                  color="gradient"
+                  href={pageContent.cta.link.href}
+                  size="large"
+                  text={pageContent.cta.link.label}
+                />
+              </ButtonGroup>
+            </Col>
+          </Row>
+        </Container>
+      </Section>
     </>
   );
 };

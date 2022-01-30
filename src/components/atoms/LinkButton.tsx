@@ -26,6 +26,7 @@ const LinkButton: React.FunctionComponent<{
         {
           [styles.buttonIsGradient]: color === 'gradient',
           [styles.buttonIsNaked]: color === 'naked',
+          [styles.buttonIsBlack]: color === 'black',
           [styles.buttonIsLink]: color === 'link',
           [styles.buttonIsSmall]: size === 'small',
           [styles.buttonIsMedium]: size === 'medium',

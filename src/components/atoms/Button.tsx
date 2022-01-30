@@ -18,14 +18,15 @@ import styles from './Button.module.css';
 
 // define components
 const Button: React.FunctionComponent<{
-  customClasses?: string;
-  id?: string;
   color?: ButtonColor;
+  customClasses?: string;
+  form?: string;
+  id?: string;
   name?: string;
   size?: ButtonSize;
   text: string;
   type?: ButtonType;
-}> = ({ customClasses, id, color, name, size, text, type }) => {
+}> = ({ color, customClasses, form, id, name, size, text, type }) => {
   // init styles
   const buttonClasses = React.useMemo(
     () =>
@@ -34,6 +35,7 @@ const Button: React.FunctionComponent<{
         {
           [styles.buttonIsGradient]: color === 'gradient',
           [styles.buttonIsNaked]: color === 'naked',
+          [styles.buttonIsBlack]: color === 'black',
           [styles.buttonIsSmall]: size === 'small',
           [styles.buttonIsMedium]: size === 'medium',
           [styles.buttonIsLarge]: size === 'large',
@@ -45,7 +47,9 @@ const Button: React.FunctionComponent<{
 
   // has label
   if (type === 'submit') {
-    return <input className={buttonClasses} id={id} name={name} type="submit" value={text} />;
+    return (
+      <input className={buttonClasses} form={form} id={id} name={name} type="submit" value={text} />
+    );
   }
 
   return (
@@ -57,6 +61,7 @@ const Button: React.FunctionComponent<{
 
 Button.defaultProps = {
   color: 'gradient',
+  form: undefined,
   id: undefined,
   name: undefined,
   type: 'button',
@@ -64,6 +69,7 @@ Button.defaultProps = {
 
 Button.propTypes = {
   color: PropTypes.oneOf(Object.values(ButtonColorEnum)),
+  form: PropTypes.string,
   id: PropTypes.string,
   name: PropTypes.string,
   size: PropTypes.oneOf(Object.values(ButtonSizeEnum)),

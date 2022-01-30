@@ -1,0 +1,37 @@
+/* CheckeredPaperCard */
+
+.container {
+  @apply my-4 px-0 py-8 lg:py-0 lg:px-6;
+}
+
+.cardContainer {
+  @apply relative flex justify-center p-3.5 lg:my-0;
+}
+
+.card {
+  @apply relative z-50 block h-full w-full rounded-xl bg-secondary shadow-md shadow-primary/20;
+}
+
+.sheetLine1 {
+  @apply absolute top-[0%] -left-[50%] z-0 h-[2px] w-[calc(100%+50%+50%)] rounded-full bg-primary/75 md:-left-[32px] md:w-[calc(100%+64px)];
+}
+
+.sheetLine2 {
+  @apply absolute top-[50%] -left-[50%] z-0 h-[2px] w-[calc(100%+50%+50%)] rounded-full bg-primary/75 md:-left-[32px] md:w-[calc(100%+64px)];
+}
+
+.sheetLine3 {
+  @apply absolute top-[99%] -left-[50%] z-0 h-[2px] w-[calc(100%+50%+50%)] rounded-full bg-primary/75 md:-left-[32px] md:w-[calc(100%+64px)];
+}
+
+.sheetLine4 {
+  @apply absolute -top-[10%] left-[1%] z-0 h-[calc(100%+20%)] w-[2px] rounded-full bg-primary/75 md:-top-[5%] md:h-[calc(100%+50%+5%)] lg:-top-[10%] lg:h-[calc(100%+50%+50%)];
+}
+
+.sheetLine5 {
+  @apply absolute -top-[10%] left-[50%] z-0 h-[calc(100%+20%)] w-[2px] rounded-full bg-primary/75 md:-top-[5%] md:h-[calc(100%+50%+5%)] lg:-top-[10%] lg:h-[calc(100%+50%+50%)];
+}
+
+.sheetLine6 {
+  @apply absolute -top-[10%] left-[99%] z-0 h-[calc(100%+20%)] w-[2px] rounded-full bg-primary/75 md:-top-[5%] md:h-[calc(100%+50%+5%)] lg:-top-[10%] lg:h-[calc(100%+50%+50%)];
+}

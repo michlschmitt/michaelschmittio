@@ -1,0 +1,10 @@
+# Allow all pages
+    User-Agent: *
+    Allow: /
+
+    # Host
+    Host: https://www.michaelschmitt.io
+
+    # Sitemaps
+    Sitemap: https://www.michaelschmitt.io/sitemap.xml
+    

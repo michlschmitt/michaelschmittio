@@ -9,13 +9,18 @@ import { NextPageWithLayout } from '../../types';
 import * as notion from '../../modules/notion';
 
 // import components
-import CallToActionSection from '../../components/sections/CallToActionSection';
+import ButtonGroup from '../../components/atoms/ButtonGroup';
+import Col from '../../components/layouts/Col';
 import Container from '../../components/layouts/Container';
 import Heading from '../../components/atoms/Heading';
+import LinkButton from '../../components/atoms/LinkButton';
 import MainLayout from '../../components/layouts/MainLayout';
 import PortfolioPreviewSection from '../../components/sections/PortfolioPreviewSection';
+import Row from '../../components/layouts/Row';
 import SEO from '../../components/meta/SEO';
 import Section from '../../components/layouts/Section';
+import Spacer from '../../components/layouts/Spacer';
+import TestimonialCard from '../../components/elements/TestimonialCard';
 import Text from '../../components/atoms/Text';
 import TextWall from '../../components/elements/TextWall';
 
@@ -31,16 +36,20 @@ const PortfolioPage: NextPageWithLayout = ({ pageContent }) => {
       />
 
       {/* Hero */}
-      <div className="flex w-full justify-center py-4 md:py-16">
-        <div className="flex w-full max-w-screen-md">
-          <div>
-            <Heading alignment="center" tag="h1">
-              {pageContent.hero.title}
-            </Heading>
-            <Text alignment="center">{pageContent.hero.intro}</Text>
-          </div>
-        </div>
-      </div>
+      <Section>
+        <Container md>
+          <Row alignItems="center" justify="center">
+            <Col span={12}>
+              <Heading alignment="center" tag="h1">
+                {pageContent.hero.title}
+              </Heading>
+              <Text alignment="center" size="large">
+                {pageContent.hero.intro}
+              </Text>
+            </Col>
+          </Row>
+        </Container>
+      </Section>
 
       {/* Active portfolio */}
       {pageContent.activePortfolio.map(
@@ -62,6 +71,7 @@ const PortfolioPage: NextPageWithLayout = ({ pageContent }) => {
             key={project.id}
             subline={project.id}
             title={project.title}
+            backgroundColor="grey"
           />
         ),
       )}
@@ -71,61 +81,71 @@ const PortfolioPage: NextPageWithLayout = ({ pageContent }) => {
 
       {/* Clients */}
       <Section>
-        <TextWall title={pageContent.clients.title} text={pageContent.clients.names} />
+        <Container xl>
+          <TextWall title={pageContent.clients.title} text={pageContent.clients.names} />
+        </Container>
       </Section>
 
       {/* Testimonials */}
-      {/* TODO: implement testimonials */}
-
-      <div className="w-full bg-primary py-16">
-        <Container>
-          <div className="flex w-full flex-col content-center items-center justify-center">
-            <div className="mb-4">
-              <div>What other's say about working with me</div>
-            </div>
-
-            <div className="flex w-full justify-between px-4">
-              <div className="mr-4 flex flex-col content-center items-center justify-center rounded-xl bg-white p-4">
-                <div className="mb-4 text-center text-xl">
-                  „Michael and his team was our perfect partner, from the initial product idea,
-                  through the development of the right business model, the technical implementation
-                  to the conception of creative content. Competent, very committed and reliable,
-                  thank you very much for everything.“
-                </div>
-                <div className="text-center">
-                  <div>Martin Reich</div>
-                  <div>Chief Executive Officer, Foconn GmbH</div>
-                </div>
-              </div>
-
-              <div className="flex flex-col content-center items-center justify-center rounded-xl bg-white p-4">
-                <div className="mb-4 text-center text-xl">
-                  Michael and his team have successfully relaunched our website to an online portal
-                  for customers, employees, and partners. The all-round support and know-how were
-                  absolutely impressive - from data audit, workshops to the ideal information
-                  architecture, a great design and the implementation of various tools. Even with
-                  short-term projects, they always go the "extra mile" for us - they not only
-                  deliver, but also get involved to develop the optimal solution for us in the
-                  shortest possible time. A partner who stands for quality and with whom it is a
-                  pleasure to work!“
-                </div>
-                <div className="text-center">
-                  <div>Lilo Fee Koppe</div>
-                  <div>Director Marketing & Communications, Felss Group GmbH</div>
-                </div>
-              </div>
-            </div>
-          </div>
+      <Section color="gradient-horizontal" padding="medium">
+        <Container lg>
+          <Row justify="center">
+            <Col span={12}>
+              <Heading alignment="center" tag="h2">
+                What other&apos;s say about working with me
+              </Heading>
+            </Col>
+          </Row>
+          <Spacer height="24px" />
+          <Row justify="center" alignItems="stretch">
+            <Col span={12}>
+              <TestimonialCard
+                image={pageContent.seo.image}
+                name="Lilo Fee Koppe"
+                quote="Michael and his team have successfully relaunched our website to an online portal for customers, employees, and partners. The all-round support and know-how were absolutely impressive - from data audit, workshops to the ideal information architecture, a great design and the implementation of various tools. Even with short-term projects, they always go the „extra mile“ for us - they not only deliver, but also get involved to develop the optimal solution for us in the shortest possible time. A partner who stands for quality and with whom it is a pleasure to work!"
+                title="Director Marketing & Communications, Felss Group GmbH"
+              />
+            </Col>
+          </Row>
+          <Spacer height="24px" />
+          <Row justify="center" alignItems="stretch">
+            <Col span={12}>
+              <TestimonialCard
+                image={pageContent.seo.image}
+                name="Martin Reich"
+                // quote="Michael and his team was our perfect partner, from the initial product idea, through the development of the right business model, the technical implementation to the conception of creative content. Competent, very committed and reliable, thank you very much for everything."
+                quote="Competent, very committed and reliable, thank you very much for everything."
+                title="Chief Executive Officer, Foconn GmbH"
+              />
+            </Col>
+          </Row>
         </Container>
-      </div>
+      </Section>
 
       {/* Call-to-action */}
-      <CallToActionSection
-        ctaHref={pageContent.cta.link.href}
-        ctaLabel={pageContent.cta.link.label}
-        teaser={pageContent.cta.teaser}
-        title={pageContent.cta.title}
-      />
+      <Section padding="large">
+        <Container md>
+          <Row justify="center">
+            <Col span={12}>
+              <Heading alignment="center" tag="h2">
+                {pageContent.cta.title}
+              </Heading>
+              <Text alignment="center">{pageContent.cta.teaser}</Text>
+            </Col>
+            <Col span={12}>
+              <Spacer height="16px" />
+              <ButtonGroup alignment="center">
+                <LinkButton
+                  color="gradient"
+                  href={pageContent.cta.link.href}
+                  size="large"
+                  text={pageContent.cta.link.label}
+                />
+              </ButtonGroup>
+            </Col>
+          </Row>
+        </Container>
+      </Section>
     </>
   );
 };

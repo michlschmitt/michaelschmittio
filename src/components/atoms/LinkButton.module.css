@@ -8,6 +8,10 @@
   @apply bg-transparent ring-primary hover:ring-4 hover:ring-primary focus:ring-4 focus:ring-primary;
 }
 
+.buttonIsBlack {
+  @apply bg-black hover:ring-4 hover:ring-primary focus:ring-4 focus:ring-primary;
+}
+
 .buttonIsGradient {
   @apply bg-gradient-to-r from-primary to-secondary hover:ring-4 hover:ring-primary focus:ring-4 focus:ring-primary;
 }

@@ -1,5 +1,5 @@
 /* FullHeightContainer */
 
 .container {
-  @apply flex h-full w-full content-center items-center justify-center;
+  @apply flex h-full min-h-[calc(100vh-256px)] w-full content-center items-center justify-center;
 }

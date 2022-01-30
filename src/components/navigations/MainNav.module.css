@@ -21,7 +21,7 @@
 }
 
 .logoLink {
-  @apply text-xl font-bold text-grey-3 transition-all ease-linear hover:text-primary;
+  @apply text-base font-bold leading-none text-grey-3 transition-all ease-linear hover:text-primary md:text-xl md:leading-none;
 }
 
 .linksMenu {

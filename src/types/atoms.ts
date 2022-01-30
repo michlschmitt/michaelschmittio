@@ -15,12 +15,21 @@ export enum ButtonSizeEnum {
   large = 'large',
 }
 
-export type ButtonColor = 'naked' | 'gradient' | 'link';
+export type ButtonColor = 'naked' | 'gradient' | 'link' | 'black';
 
 export enum ButtonColorEnum {
+  black = 'black',
   gradient = 'gradient',
   link = 'link',
   naked = 'naked',
+}
+
+export type ButtonGroupAlignment = 'left' | 'center' | 'right';
+
+export enum ButtonGroupAlignmentEnum {
+  left = 'left',
+  center = 'center',
+  right = 'right',
 }
 
 export type HeadingTag = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';

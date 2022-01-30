@@ -1,0 +1,61 @@
+/* Row */
+
+.row {
+  @apply -ml-4 -mr-4 box-border flex w-full flex-shrink flex-grow-0 basis-auto;
+}
+
+.rowWrap {
+  @apply flex-wrap;
+}
+
+.rowWrapReverse {
+  @apply flex-wrap-reverse;
+}
+
+.rowNoWrap {
+  @apply flex-nowrap;
+}
+
+.rowJustifyFlexStart {
+  @apply justify-start;
+}
+
+.rowJustifyCenter {
+  @apply justify-center;
+}
+
+.rowJustifyFlexEnd {
+  @apply justify-end;
+}
+
+.rowJustifySpaceBetween {
+  @apply justify-between;
+}
+
+.rowJustifySpaceAround {
+  @apply justify-around;
+}
+
+.rowJustifySpaceEvenly {
+  @apply justify-evenly;
+}
+
+.rowAlignItemsFlexStart {
+  @apply items-start;
+}
+
+.rowAlignItemsCenter {
+  @apply items-center;
+}
+
+.rowAlignItemsFlexEnd {
+  @apply items-end;
+}
+
+.rowAlignItemsStretch {
+  @apply items-stretch;
+}
+
+.rowAlignItemsBaseline {
+  @apply items-baseline;
+}

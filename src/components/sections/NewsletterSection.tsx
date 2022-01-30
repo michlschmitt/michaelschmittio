@@ -13,25 +13,34 @@ import Text from '../atoms/Text';
 import { newsletterSectionPropTypes } from '../../modules/prop-types';
 
 // import styles
-import styles from './NewsletterSection.module.css';
+import Col from '../layouts/Col';
+import Container from '../layouts/Container';
+import Row from '../layouts/Row';
+import Section from '../layouts/Section';
+import Spacer from '../layouts/Spacer';
 
 // define component
 const NewsletterSection: React.FunctionComponent<{ content: NewsletterSectionType }> = ({
   content,
 }) => (
-  <div className={styles.section}>
-    <div className={styles.container}>
-      <div className={styles.content}>
-        <Heading alignment="center" tag="h2">
-          {content.title}
-        </Heading>
-        <Text alignment="center">{content.teaser}</Text>
-      </div>
-      <div className={styles.newsletter}>
-        <RevueForm alignment="center" content={content.RevueForm} />
-      </div>
-    </div>
-  </div>
+  <Section color="gradient-horizontal">
+    <Container md>
+      <Row justify="center">
+        <Col span={12}>
+          <Heading alignment="center" tag="h1">
+            {content.title}
+          </Heading>
+          <Text alignment="center">{content.teaser}</Text>
+        </Col>
+      </Row>
+      <Spacer height="16px" />
+      <Row justify="center">
+        <Col span={10}>
+          <RevueForm alignment="center" content={content.RevueForm} />
+        </Col>
+      </Row>
+    </Container>
+  </Section>
 );
 
 NewsletterSection.propTypes = {

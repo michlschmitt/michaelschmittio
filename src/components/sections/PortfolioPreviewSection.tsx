@@ -2,15 +2,14 @@
 import * as PropTypes from 'prop-types';
 import * as React from 'react';
 import NextImage from 'next/image';
-import cn from 'classnames';
 
 // import types
 import {
   ButtonColor,
-  PortfolioPreviewSectionColor,
-  PortfolioPreviewSectionColorEnum,
   PortfolioPreviewSectionImagePosition,
   PortfolioPreviewSectionImagePositionEnum,
+  SectionColorEnum,
+  SectionColorType,
 } from '../../types';
 
 // import styles
@@ -20,11 +19,12 @@ import styles from './PortfolioPreviewSection.module.css';
 import Container from '../layouts/Container';
 import Heading from '../atoms/Heading';
 import LinkButton from '../atoms/LinkButton';
+import Section from '../layouts/Section';
 import Text from '../atoms/Text';
 
 // define component
 const PortfolioPreviewSection: React.FunctionComponent<{
-  backgroundColor?: PortfolioPreviewSectionColor;
+  backgroundColor?: SectionColorType;
   buttons: { href: string; color: string; label: string }[];
   facts?: { text: string }[];
   image: string;
@@ -33,21 +33,11 @@ const PortfolioPreviewSection: React.FunctionComponent<{
   subline: string;
   title: string;
 }> = ({ backgroundColor, buttons, facts, image, imagePosition, introText, subline, title }) => {
-  // init styles
-  const sectionStyles = React.useMemo(
-    () =>
-      cn(styles.section, {
-        [styles.sectionIsBlack]: backgroundColor === 'black',
-        [styles.sectionIsGradient]: backgroundColor === 'gradient',
-      }),
-    [backgroundColor],
-  );
-
   // image left
   if (imagePosition === 'left') {
     return (
-      <div className={sectionStyles}>
-        <Container>
+      <Section color={backgroundColor}>
+        <Container xl>
           <div className={styles.previewGrid}>
             <div className={styles.leftImageContainer}>
               <div className={styles.leftImageCard}>
@@ -91,15 +81,15 @@ const PortfolioPreviewSection: React.FunctionComponent<{
             </div>
           </div>
         </Container>
-      </div>
+      </Section>
     );
   }
 
   // image right
   if (imagePosition === 'right') {
     return (
-      <div className={sectionStyles}>
-        <Container>
+      <Section color={backgroundColor}>
+        <Container xl>
           <div className={styles.previewGrid}>
             <div className={styles.rightComponent}>
               <div className={styles.content}>
@@ -143,7 +133,7 @@ const PortfolioPreviewSection: React.FunctionComponent<{
             </div>
           </div>
         </Container>
-      </div>
+      </Section>
     );
   }
 
@@ -158,7 +148,7 @@ PortfolioPreviewSection.defaultProps = {
 };
 
 PortfolioPreviewSection.propTypes = {
-  backgroundColor: PropTypes.oneOf(Object.values(PortfolioPreviewSectionColorEnum)),
+  backgroundColor: PropTypes.oneOf(Object.values(SectionColorEnum)),
   buttons: PropTypes.arrayOf(
     PropTypes.shape({
       color: PropTypes.string.isRequired,

@@ -1,0 +1,12 @@
+/* Image */
+
+.image {
+}
+
+.imageIsRound {
+  @apply rounded-xl;
+}
+
+.imageIsWhite {
+  filter: brightness(0%) invert(95%);
+}

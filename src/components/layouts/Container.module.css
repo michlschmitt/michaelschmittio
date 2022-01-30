@@ -1,17 +1,21 @@
 /* Container */
 
+.wrapper {
+  @apply flex w-full justify-center;
+}
+
 .container {
-  @apply flex h-full w-full justify-center;
+  @apply flex w-full flex-col content-center items-center justify-center;
 }
 
-.inner {
-  @apply flex w-full;
-}
-
-.containerIsTight {
+.containerIsMd {
   @apply max-w-screen-md;
 }
 
-.containerIsWide {
+.containerIsLg {
+  @apply max-w-screen-lg;
+}
+
+.containerIsXl {
   @apply max-w-screen-xl;
 }

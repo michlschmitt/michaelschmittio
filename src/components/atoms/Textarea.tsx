@@ -1,26 +1,26 @@
 // import node_modules
 import * as PropTypes from 'prop-types';
 import * as React from 'react';
+import TextareaAutosize from 'react-textarea-autosize';
 import cn from 'classnames';
 
 // import types
-import { InputType, InputTypeEnum, InputSizeEnum, InputSize } from '../../types';
+import { InputSizeEnum, InputSize } from '../../types';
 
 // import styles
-import styles from './Input.module.css';
+import styles from './Textarea.module.css';
 
 // define components
-const Input: React.FunctionComponent<{
+const Textarea: React.FunctionComponent<{
   customInputClasses?: string;
   customLabelClasses?: string;
   form?: string;
   id?: string;
   labelText?: string;
   name: string;
-  onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  onChange: (event: React.ChangeEvent<HTMLTextAreaElement>) => void;
   placeholderText: string;
   size?: InputSize;
-  type?: InputType;
   value: string;
 }> = ({
   customInputClasses,
@@ -32,18 +32,17 @@ const Input: React.FunctionComponent<{
   onChange,
   placeholderText,
   size,
-  type,
   value,
 }) => {
   // init styles
-  const inputStyles = React.useMemo(
+  const textareaStyles = React.useMemo(
     () =>
       cn(
-        styles.input,
+        styles.textarea,
         {
-          [styles.inputIsSmall]: size === 'small',
-          [styles.inputIsMedium]: size === 'medium',
-          [styles.inputIsLarge]: size === 'large',
+          [styles.textareaIsSmall]: size === 'small',
+          [styles.textareaIsMedium]: size === 'medium',
+          [styles.textareaIsLarge]: size === 'large',
         },
         customInputClasses,
       ),
@@ -59,14 +58,14 @@ const Input: React.FunctionComponent<{
     return (
       <label className={styles.label} htmlFor={id}>
         <span className={labelTextStyles}>{labelText}</span>
-        <input
-          className={inputStyles}
+        <TextareaAutosize
+          className={textareaStyles}
           form={form}
           id={id}
+          minRows={4}
           name={name}
           onChange={onChange}
           placeholder={placeholderText}
-          type={type}
           value={value}
         />
       </label>
@@ -75,37 +74,33 @@ const Input: React.FunctionComponent<{
 
   // render
   return (
-    <input
-      className={inputStyles}
+    <TextareaAutosize
+      className={textareaStyles}
       form={form}
       id={id}
+      minRows={4}
       name={name}
       onChange={onChange}
       placeholder={placeholderText}
-      type={type}
       value={value}
     />
   );
 };
 
-Input.defaultProps = {
-  form: undefined,
+Textarea.defaultProps = {
   id: undefined,
   labelText: undefined,
   size: 'medium',
-  type: 'text',
 };
 
-Input.propTypes = {
-  form: PropTypes.string,
+Textarea.propTypes = {
   id: PropTypes.string,
   labelText: PropTypes.string,
   name: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
   placeholderText: PropTypes.string.isRequired,
   size: PropTypes.oneOf(Object.values(InputSizeEnum)),
-  type: PropTypes.oneOf(Object.values(InputTypeEnum)),
   value: PropTypes.string.isRequired,
 };
 
-export default Input;
+export default Textarea;

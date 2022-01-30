@@ -1,19 +1,19 @@
 /* Input */
 
 .input {
-  @apply mr-2.5 flex w-full rounded-xl border-none leading-none tracking-wide text-black placeholder-black/50 outline-none transition-all ease-linear focus:outline-none focus:ring-4 focus:ring-primary;
+  @apply mr-2.5 flex w-full rounded-xl border-none font-sans leading-none tracking-wide text-black placeholder-black/50 outline-none transition-all ease-linear focus:outline-none focus:ring-4 focus:ring-primary;
 }
 
 .inputIsSmall {
-  @apply h-8 py-2 px-3;
+  @apply h-8 py-2 px-2.5  text-base leading-none;
 }
 
 .inputIsMedium {
-  @apply h-10 py-3 px-4;
+  @apply h-10 py-3 px-3.5 text-base leading-none;
 }
 
 .inputIsLarge {
-  @apply h-12 py-4 px-5;
+  @apply h-12 py-4 px-5  text-lg leading-none;
 }
 
 .label {
@@ -21,5 +21,5 @@
 }
 
 .labelText {
-  @apply ml-1.5 mb-1.5 text-sm font-bold leading-none tracking-wide text-grey-3;
+  @apply ml-1.5 mb-1.5 text-sm font-bold leading-none tracking-wider text-grey-3;
 }

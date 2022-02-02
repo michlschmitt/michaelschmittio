@@ -22,7 +22,7 @@ import Spacer from '../components/layouts/Spacer';
 import Text from '../components/atoms/Text';
 
 // define page
-const ContactPage: NextPageWithLayout = ({ pageContent }) => {
+const ContactPage: NextPageWithLayout = ({ componentsContent, pageContent }) => {
   return (
     <>
       {/* SEO */}
@@ -51,33 +51,13 @@ const ContactPage: NextPageWithLayout = ({ pageContent }) => {
       {/* Form */}
       <Section padding="none">
         <Container xl>
-          <Row alignItems="center" justify="space-between" wrap="wrap-reverse">
-            <Col span={12} spanLg={6}>
+          <Row alignItems="center" justify="center">
+            <Col span={12} spanMd={10} spanLg={8}>
+              <Spacer height="32px" />
               <CheckeredPaperCard>
-                <ContactForm />
+                <ContactForm content={componentsContent.ContactForm} />
               </CheckeredPaperCard>
-            </Col>
-            <Col span={12} spanLg={6}>
-              <>
-                <Spacer height="16px" />
-                <React.Fragment>
-                  <Heading alignment="left" customClasses="text-xl lg:text-2xl mb-6" tag="h2">
-                    {pageContent.contact.title}
-                  </Heading>
-                </React.Fragment>
-
-                {pageContent.contact.workOptions.map(
-                  ({ title, description }: { title: string; description: string }) => (
-                    <React.Fragment key={title}>
-                      <Heading customClasses="text-base lg:text-xl mb-2" tag="h3">
-                        {title}
-                      </Heading>
-                      <Text>{description}</Text>
-                    </React.Fragment>
-                  ),
-                )}
-                <Spacer height="16px" />
-              </>
+              <Spacer height="32px" />
             </Col>
           </Row>
         </Container>
@@ -86,7 +66,15 @@ const ContactPage: NextPageWithLayout = ({ pageContent }) => {
       {/* FAQ */}
       <Section color="gradient" padding="medium">
         <Container xl>
-          <Row alignItems="center" justify="space-between">
+          <Row alignItems="center" justify="center">
+            <Col span={12}>
+              <Heading alignment="center" tag="h2">
+                {pageContent.faq.title}
+              </Heading>
+            </Col>
+          </Row>
+          <Spacer height="16px" />
+          <Row alignItems="flex-start" justify="space-between">
             {pageContent.faq.items.map(
               ({ question, answer }: { question: string; answer: string }) => (
                 <Col span={12} spanSm={6} spanMd={4} key={question}>
@@ -113,7 +101,7 @@ ContactPage.getLayout = (page) => (
 export const getStaticProps: GetStaticProps = async () => {
   // get notion data
   const pageId = 'Contact';
-  const componentIds = ['MainNav', 'Footer'];
+  const componentIds = ['MainNav', 'Footer', 'ContactForm'];
 
   // get pageContent
   const pageContent = await notion.getPageContent(pageId);

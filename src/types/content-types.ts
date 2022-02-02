@@ -61,8 +61,44 @@ export interface RevueFormType {
   submit: { label: string };
 }
 
+export interface ContactFormType {
+  name: {
+    labelText: string;
+    placeholderText: string;
+  };
+  email: {
+    labelText: string;
+    placeholderText: string;
+  };
+  message: {
+    labelText: string;
+    placeholderText: string;
+  };
+  submit: {
+    labelText: string;
+    success: string;
+  };
+  availability: {
+    noteText: string;
+  };
+  error: {
+    submit: string;
+  };
+  privacy: {
+    text: string;
+  };
+}
+
 export interface NewsletterSectionType {
   title: string;
   teaser: string;
   RevueForm: RevueFormType;
+}
+
+export interface TestimonialType {
+  id: string;
+  designation: string;
+  image: string;
+  name: string;
+  quote: string;
 }

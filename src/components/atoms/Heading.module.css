@@ -8,6 +8,10 @@
   }
 }
 
+.headingIsBlack {
+  @apply text-black;
+}
+
 .headingLeft {
   @apply text-left;
 }

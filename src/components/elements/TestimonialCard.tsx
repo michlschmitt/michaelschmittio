@@ -11,8 +11,8 @@ const TestimonialCard: React.FunctionComponent<{
   image: string;
   name: string;
   quote: string;
-  title: string;
-}> = ({ image, name, quote, title }) => (
+  designation: string;
+}> = ({ image, name, quote, designation }) => (
   <div className={styles.card}>
     <blockquote className={styles.quote}>„{quote}“</blockquote>
     <div className={styles.testimonal}>
@@ -21,17 +21,17 @@ const TestimonialCard: React.FunctionComponent<{
       </div>
       <div className={styles.nameContainer}>
         <div className={styles.name}>{name}</div>
-        <div className={styles.title}>{title}</div>
+        <div className={styles.designation}>{designation}</div>
       </div>
     </div>
   </div>
 );
 
 TestimonialCard.propTypes = {
+  designation: PropTypes.string.isRequired,
   image: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   quote: PropTypes.string.isRequired,
-  title: PropTypes.string.isRequired,
 };
 
 export default TestimonialCard;

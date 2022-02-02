@@ -5,25 +5,25 @@
 }
 
 .quote {
-  @apply mb-4 font-sans text-lg italic tracking-wide text-black;
+  @apply mb-4 font-sans text-base italic tracking-wide text-black md:text-lg;
 }
 
 .testimonal {
-  @apply mt-auto flex content-center items-center justify-start;
+  @apply mt-auto flex w-full flex-col content-center items-start justify-start md:flex-row md:items-center;
 }
 
 .imageContainer {
-  @apply h-20 w-20 rounded-xl bg-black;
+  @apply mb-4 h-20 w-20 rounded-2xl bg-black md:mb-0;
 }
 
 .nameContainer {
-  @apply ml-4 w-auto;
+  @apply w-auto md:ml-4;
 }
 
 .name {
   @apply text-base font-bold tracking-wider text-grey-1/90;
 }
 
-.title {
+.designation {
   @apply text-sm text-grey-1/60;
 }

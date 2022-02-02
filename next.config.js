@@ -34,9 +34,13 @@ const nextConfig = {
       },
     ];
   },
-  images: {
-    domains: ['s3.us-west-2.amazonaws.com'],
-  },
+  images:
+    process.env.VERCEL === '1'
+      ? undefined
+      : {
+          domains: ['localhost'],
+          loader: 'custom',
+        },
   outputFileTracing: false,
   pageExtensions: ['md', 'mdx', 'tsx', 'ts', 'jsx', 'js'],
   poweredByHeader: false,

@@ -1,7 +1,7 @@
 /* ButtonGroup */
 
 .group {
-  @apply flex w-full flex-col lg:flex-row;
+  @apply mb-1 flex w-full flex-col last:mb-0 lg:flex-row;
 
   a,
   button {

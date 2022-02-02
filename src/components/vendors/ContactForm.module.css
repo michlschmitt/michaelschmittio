@@ -35,3 +35,11 @@
     @apply text-white;
   }
 }
+
+.errorContainer {
+  @apply text-tertiary-2;
+
+  div {
+    @apply text-tertiary-2;
+  }
+}

@@ -20,6 +20,10 @@
   }
 }
 
+.textIsBlack {
+  @apply text-grey-1;
+}
+
 .textIsLeft {
   @apply text-left;
 }

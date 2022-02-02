@@ -3,7 +3,7 @@ import * as React from 'react';
 import * as PropTypes from 'prop-types';
 
 // import modules
-import { iframeOptin } from '../modules/notion/privacy';
+import { iframeOptin } from '../modules/privacy';
 
 // YoutubePrivacyProvider component
 // https://support.cookiehub.com/article/75-youtube-embed-videos

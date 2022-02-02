@@ -12,10 +12,11 @@ import styles from './Heading.module.css';
 // define components
 const Heading: React.FunctionComponent<{
   alignment?: HeadingAlignment;
-  customClasses?: string;
   children: React.ReactNode;
+  customClasses?: string;
+  isBlack?: boolean;
   tag: HeadingTag;
-}> = ({ alignment, customClasses, children, tag }) => {
+}> = ({ alignment, customClasses, children, isBlack, tag }) => {
   // define className
   const headingStyles = React.useMemo(
     () =>
@@ -31,10 +32,11 @@ const Heading: React.FunctionComponent<{
           [styles.heading4]: tag === 'h4',
           [styles.heading5]: tag === 'h5',
           [styles.heading6]: tag === 'h6',
+          [styles.headingIsBlack]: isBlack,
         },
         customClasses,
       ),
-    [alignment, customClasses, tag],
+    [alignment, customClasses, isBlack, tag],
   );
 
   switch (tag) {
@@ -77,12 +79,14 @@ const Heading: React.FunctionComponent<{
 Heading.defaultProps = {
   alignment: 'left',
   customClasses: undefined,
+  isBlack: false,
 };
 
 Heading.propTypes = {
   alignment: PropTypes.oneOf<HeadingAlignment>(Object.values(HeadingAlignmentEnum)),
-  customClasses: PropTypes.string,
   children: PropTypes.node.isRequired,
+  customClasses: PropTypes.string,
+  isBlack: PropTypes.bool,
   tag: PropTypes.oneOf<HeadingTag>(Object.values(HeadingTagEnum)).isRequired,
 };
 

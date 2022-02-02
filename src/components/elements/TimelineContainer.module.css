@@ -1,0 +1,9 @@
+/* TimelineContainer */
+
+.container {
+  @apply relative ml-4 md:ml-8;
+}
+
+.timeline {
+  @apply relative before:absolute before:-left-4 before:h-[150%] before:w-0.5 before:rounded-xl before:bg-grey-2 before:content-[''] before:md:-left-8;
+}

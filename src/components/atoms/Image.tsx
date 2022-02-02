@@ -31,6 +31,9 @@ const Image: React.FunctionComponent<{
       className={imageStyles}
       height={height}
       layout={layout}
+      loader={
+        process.env.VERCEL === '1' || process.env.NODE_ENV === 'production' ? undefined : () => src
+      }
       priority={isPriority}
       src={src}
       width={width}

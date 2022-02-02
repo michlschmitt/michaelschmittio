@@ -45,6 +45,11 @@ const PortfolioPreviewSection: React.FunctionComponent<{
                   className={styles.leftImage}
                   height={800}
                   layout="responsive"
+                  loader={
+                    process.env.VERCEL === '1' || process.env.NODE_ENV === 'production'
+                      ? undefined
+                      : () => image
+                  }
                   src={image}
                   width={1280}
                 />
@@ -125,6 +130,11 @@ const PortfolioPreviewSection: React.FunctionComponent<{
                 <NextImage
                   className={styles.rightImage}
                   height={800}
+                  loader={
+                    process.env.VERCEL === '1' || process.env.NODE_ENV === 'production'
+                      ? undefined
+                      : () => image
+                  }
                   layout="responsive"
                   src={image}
                   width={1280}

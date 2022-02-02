@@ -20,16 +20,17 @@ const SEO: React.FunctionComponent<{
   // init vars
   const brandedTitle = title;
   const canonicalUrl = `${process.env.NEXT_PUBLIC_ROOT_DOMAIN}${asPath}`;
+  const imageUrl = `${process.env.NEXT_PUBLIC_ROOT_DOMAIN}${image}`;
 
   // META TAGS
   const metaTags = [
     // content
     { key: 'description', name: 'description', content: description },
-    { key: 'image', name: 'image', content: image },
+    { key: 'image', name: 'image', content: imageUrl },
 
     // facebook
     { key: 'og:description', property: 'og:description', content: description },
-    { key: 'og:image', property: 'og:image', content: image },
+    { key: 'og:image', property: 'og:image', content: imageUrl },
     { key: 'og:image:height', property: 'og:image:height', content: '900' },
     { key: 'og:image:width', property: 'og:image:width', content: '1440' },
     { key: 'og:title', property: 'og:title', content: title },
@@ -41,7 +42,7 @@ const SEO: React.FunctionComponent<{
     { key: 'twitter:site', name: 'twitter:site', content: '@michlschmitt' },
     { key: 'twitter:creator', name: 'twitter:creator', content: '@michlschmitt' },
     { key: 'twitter:description', name: 'twitter:description', content: description },
-    { key: 'twitter:image', name: 'twitter:image', content: image },
+    { key: 'twitter:image', name: 'twitter:image', content: imageUrl },
     { key: 'twitter:title', name: 'twitter:title', content: title },
     { key: 'twitter:url', name: 'twitter:url', content: canonicalUrl },
   ];

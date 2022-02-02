@@ -70,8 +70,46 @@ export const revueFormPropTypes = PropTypes.exact({
   submit: PropTypes.exact({ label: PropTypes.string.isRequired }).isRequired,
 }).isRequired;
 
+export const contactFormPropTypes = PropTypes.exact({
+  name: PropTypes.exact({
+    labelText: PropTypes.string.isRequired,
+    placeholderText: PropTypes.string.isRequired,
+  }).isRequired,
+  email: PropTypes.exact({
+    labelText: PropTypes.string.isRequired,
+    placeholderText: PropTypes.string.isRequired,
+  }).isRequired,
+  message: PropTypes.exact({
+    labelText: PropTypes.string.isRequired,
+    placeholderText: PropTypes.string.isRequired,
+  }).isRequired,
+  submit: PropTypes.exact({
+    labelText: PropTypes.string.isRequired,
+    success: PropTypes.string.isRequired,
+  }).isRequired,
+  availability: PropTypes.exact({
+    noteText: PropTypes.string.isRequired,
+  }).isRequired,
+  error: PropTypes.exact({
+    submit: PropTypes.string.isRequired,
+  }).isRequired,
+  privacy: PropTypes.exact({
+    text: PropTypes.string.isRequired,
+  }).isRequired,
+}).isRequired;
+
 export const newsletterSectionPropTypes = PropTypes.exact({
   RevueForm: revueFormPropTypes,
   teaser: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
 }).isRequired;
+
+export const testimonialsPropTypes = PropTypes.arrayOf(
+  PropTypes.exact({
+    designation: PropTypes.string.isRequired,
+    id: PropTypes.string.isRequired,
+    image: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
+    quote: PropTypes.string.isRequired,
+  }).isRequired,
+).isRequired;

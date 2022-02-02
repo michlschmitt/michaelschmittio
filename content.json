@@ -1,21 +1,26 @@
 {
-	"title": "My work is featured in",
-  "logos": [
-    {
-      "alt": "Junge Verlagsmenschen",
-      "src": "/img/logos/logo-junge-verlagsmenschen.png"
-    },
-    {
-      "alt": "Hamburg Startups",
-      "src": "/img/logos/logo-hamburg-startups.png"
-    },
-    {
-      "alt": "Werben & Verkaufen",
-      "src": "/img/logos/logo-wundv.png"
-    },
-    {
-      "alt": "Börsenblatt",
-      "src": "/img/logos/logo-boersenblatt.png"
-    }
-  ]
+	"name": {
+    "labelText": "Your name *",
+    "placeholderText": "Enter name …"
+  },
+  "email": {
+    "labelText": "Your email address *",
+    "placeholderText": "Enter email …"
+  },
+  "message": {
+    "labelText": "How can I help? *",
+    "placeholderText": "Enter message …"
+  },
+  "submit": {
+    "labelText": "Send message"
+  },
+  "availability": {
+    "noteText": "I'm available for new projects from March 2022."
+  },
+  "error": {
+    "submit": "The form could not be submitted. Please try again."
+  },
+  "privacy": {
+    "text": "By sending the form, you agree to the transfer and storage of your data within the scope of our <a href=\"https://www.michaelschmitt.io/privacy-policy/\">privacy policy</a>."
+  }
 }

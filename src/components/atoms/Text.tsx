@@ -14,9 +14,10 @@ const Text: React.FunctionComponent<{
   alignment?: TextAlignment;
   children: React.ReactNode;
   customClasses?: string;
+  isBlack?: boolean;
   isHelpText?: boolean;
   size?: TextSize;
-}> = ({ alignment, children, customClasses, isHelpText, size }) => {
+}> = ({ alignment, children, customClasses, isBlack, isHelpText, size }) => {
   // init styles
   const textStyles = React.useMemo(
     () =>
@@ -30,17 +31,20 @@ const Text: React.FunctionComponent<{
           [styles.textIsSmall]: size === 'small',
           [styles.textIsMedium]: size === 'medium',
           [styles.textIsLarge]: size === 'large',
+          [styles.textIsBlack]: isBlack,
         },
         customClasses,
       ),
-    [alignment, customClasses, isHelpText, size],
+    [alignment, customClasses, isHelpText, isBlack, size],
   );
+
   // render
   return <div className={textStyles} dangerouslySetInnerHTML={{ __html: children as string }} />;
 };
 
 Text.defaultProps = {
   alignment: 'left',
+  isBlack: false,
   isHelpText: false,
   size: 'medium',
 };
@@ -48,6 +52,7 @@ Text.defaultProps = {
 Text.propTypes = {
   alignment: PropTypes.oneOf<TextAlignment>(Object.values(TextAlignmentEnum)),
   children: PropTypes.node.isRequired,
+  isBlack: PropTypes.bool,
   isHelpText: PropTypes.bool,
   size: PropTypes.oneOf<TextSize>(Object.values(TextSizeEnum)),
 };

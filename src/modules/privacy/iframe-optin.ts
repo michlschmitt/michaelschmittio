@@ -5,7 +5,7 @@
 import striptags from 'striptags';
 
 // import types
-import { FixMeLater } from '../../../types';
+import { FixMeLater } from '../../types';
 
 // define type
 interface IframeType extends Element {

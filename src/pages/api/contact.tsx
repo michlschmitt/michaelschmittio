@@ -3,10 +3,23 @@
 // import types
 import type { NextApiRequest, NextApiResponse } from 'next';
 
+// import modules
+import * as notion from '../../modules/notion';
+
 // handle contact from
-const contactFormHandler = (req: NextApiRequest, res: NextApiResponse) => {
-  console.log(req.body);
-  res.status(200).json({ success: true });
+const contactFormHandler = async (req: NextApiRequest, res: NextApiResponse) => {
+  try {
+    // get form data
+    const { name, email, message } = req.body;
+
+    // add subscriber
+    await notion.addSubscriber({ name, email, message });
+
+    // send success response
+    res.status(200).json({ success: true });
+  } catch (error) {
+    res.status(500).json({ error: (error as { message: string })?.message || error });
+  }
 };
 
 export default contactFormHandler;

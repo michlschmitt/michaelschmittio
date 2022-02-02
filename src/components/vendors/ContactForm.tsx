@@ -1,9 +1,8 @@
 // import node_modules
 import * as React from 'react';
-// import * as PropTypes from 'prop-types';
 
 // import types
-// import { RevueFormType } from '../../types';
+import { ContactFormType } from '../../types';
 
 // import components
 import Button from '../atoms/Button';
@@ -12,43 +11,20 @@ import Text from '../atoms/Text';
 import Textarea from '../atoms/Textarea';
 
 // import modules
-// import { revueFormPropTypes } from '../../modules/prop-types';
+import { contactFormPropTypes } from '../../modules/prop-types';
 
 // import styles
 import styles from './ContactForm.module.css';
 
-const content = {
-  name: {
-    labelText: 'Your name *',
-    placeholderText: 'Enter name …',
-  },
-  email: {
-    labelText: 'Your email address *',
-    placeholderText: 'Enter email …',
-  },
-  message: {
-    labelText: 'How can I help? *',
-    placeholderText: 'Enter message …',
-  },
-  submit: {
-    labelText: 'Send message',
-  },
-  availability: {
-    noteText: "I'm available for new projects from March 2022.",
-  },
-  privacy: {
-    text: 'By sending the form, you agree to the transfer and storage of your data within the scope of our <a href="https://www.michaelschmitt.io/privacy-policy/">privacy policy</a>.',
-  },
-};
-
 // define components
 const ContactForm: React.FunctionComponent<{
-  // content: RevueFormType;
-}> = () => {
+  content: ContactFormType;
+}> = ({ content }) => {
   // init states
   const [name, setName] = React.useState<string>('');
   const [email, setEmail] = React.useState<string>('');
   const [message, setMessage] = React.useState<string>('');
+  const [errorMessage, setErrorMessage] = React.useState<string>('');
 
   // init methods
   const onChange = React.useCallback((event) => {
@@ -68,16 +44,31 @@ const ContactForm: React.FunctionComponent<{
       // prevent default
       event.preventDefault();
 
-      const res = await fetch('/api/contact', {
-        body: JSON.stringify({ name, email, message }),
-        headers: { 'Content-Type': 'application/json' },
-        method: 'POST',
-      });
+      try {
+        const res = await fetch('/api/contact', {
+          body: JSON.stringify({ name, email, message }),
+          headers: { 'Content-Type': 'application/json' },
+          method: 'POST',
+        });
 
-      const result = await res.json();
-      console.log(result);
+        const result = await res.json();
+
+        // set error message
+        if (!result?.success) {
+          throw new Error('Something went wrong');
+
+          // show success message
+        } else {
+          setName('');
+          setEmail('');
+          setMessage('');
+          setErrorMessage(content.submit.success);
+        }
+      } catch (error) {
+        setErrorMessage(content.error.submit);
+      }
     },
-    [name, email, message],
+    [content, name, email, message],
   );
 
   return (
@@ -134,6 +125,12 @@ const ContactForm: React.FunctionComponent<{
         {content.availability.noteText}
       </Text>
 
+      {errorMessage && (
+        <div className={styles.errorContainer}>
+          <Text>{errorMessage}</Text>
+        </div>
+      )}
+
       <div className={styles.privacyContainer}>
         <Text customClasses={styles.privacyText} size="small">
           {content.privacy.text}
@@ -144,7 +141,7 @@ const ContactForm: React.FunctionComponent<{
 };
 
 ContactForm.propTypes = {
-  // content: revueFormPropTypes,
+  content: contactFormPropTypes,
 };
 
 export default ContactForm;

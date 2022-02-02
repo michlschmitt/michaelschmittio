@@ -221,7 +221,16 @@ const BlockRenderer: React.FunctionComponent<{ block: NotionBlockType }> = ({ bl
       const caption = value.caption ? value.caption[0]?.plain_text : '';
       return (
         <figure>
-          <NextImage alt={caption} layout="fill" src={src} />
+          <NextImage
+            alt={caption}
+            layout="fill"
+            loader={
+              process.env.VERCEL === '1' || process.env.NODE_ENV === 'production'
+                ? undefined
+                : () => src
+            }
+            src={src}
+          />
           {caption && <figcaption>{caption}</figcaption>}
         </figure>
       );

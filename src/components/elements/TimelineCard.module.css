@@ -1,0 +1,9 @@
+/* TimelineCard */
+
+.card {
+  @apply mb-6 flex h-full w-full flex-col rounded-xl bg-grey-2 p-4 before:absolute before:-left-6 before:h-4 before:w-4 before:rounded-xl before:bg-secondary before:content-[''] before:md:-left-10;
+
+  a {
+    @apply text-primary hover:text-secondary;
+  }
+}

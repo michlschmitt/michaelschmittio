@@ -23,7 +23,7 @@ export const getPageContent = async (pageIdentifier: string) => {
   const metaData = {
     seo: {
       description: (pageData as any)?.properties?.seoDescription?.rich_text[0]?.text?.content,
-      image: (pageData as any)?.properties?.seoImage?.files[0]?.file?.url,
+      image: (pageData as any)?.properties?.seoImage?.rich_text[0]?.text?.content,
       title: (pageData as any)?.properties?.seoTitle?.rich_text[0]?.text?.content,
     },
   };

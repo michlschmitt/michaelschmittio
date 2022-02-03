@@ -1,7 +1,6 @@
 // import node_modules
 import * as PropTypes from 'prop-types';
 import * as React from 'react';
-import NextImage from 'next/image';
 
 // import types
 import {
@@ -21,6 +20,7 @@ import Heading from '../atoms/Heading';
 import LinkButton from '../atoms/LinkButton';
 import Section from '../layouts/Section';
 import Text from '../atoms/Text';
+import Image from '../atoms/Image';
 
 // define component
 const PortfolioPreviewSection: React.FunctionComponent<{
@@ -33,12 +33,6 @@ const PortfolioPreviewSection: React.FunctionComponent<{
   subline: string;
   title: string;
 }> = ({ backgroundColor, buttons, facts, image, imagePosition, introText, subline, title }) => {
-  // NOTE: this is since next export does not support automated image optimization
-  const loader =
-    process.env.VERCEL === '1' || process.env.NODE_ENV === 'development'
-      ? undefined
-      : { loader: () => image };
-
   // image left
   if (imagePosition === 'left') {
     return (
@@ -47,13 +41,13 @@ const PortfolioPreviewSection: React.FunctionComponent<{
           <div className={styles.previewGrid}>
             <div className={styles.leftImageContainer}>
               <div className={styles.leftImageCard}>
-                <NextImage
+                <Image
+                  alt={subline}
                   className={styles.leftImage}
                   height={800}
                   layout="responsive"
                   src={image}
                   width={1280}
-                  {...loader}
                 />
               </div>
             </div>
@@ -129,13 +123,13 @@ const PortfolioPreviewSection: React.FunctionComponent<{
             </div>
             <div className={styles.rightImageContainer}>
               <div className={styles.rightImageCard}>
-                <NextImage
+                <Image
+                  alt={subline}
                   className={styles.rightImage}
                   height={800}
                   layout="responsive"
                   src={image}
                   width={1280}
-                  {...loader}
                 />
               </div>
             </div>

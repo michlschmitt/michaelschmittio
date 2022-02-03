@@ -9,6 +9,15 @@ const path = require('path');
 // import config
 const { securityHeaders } = require('./security-headers');
 
+// init image config
+const imageConfig =
+  process.env.VERCEL === '1' || process.env.NODE_ENV === 'development'
+    ? undefined
+    : {
+        domains: ['localhost'],
+        loader: 'custom',
+      };
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   async headers() {
@@ -34,13 +43,10 @@ const nextConfig = {
       },
     ];
   },
-  images:
-    process.env.VERCEL === '1' || process.env.NODE_ENV === 'development'
-      ? undefined
-      : {
-          domains: ['localhost'],
-          loader: 'custom',
-        },
+  images: {
+    formats: ['image/webp'],
+    ...imageConfig,
+  },
   outputFileTracing: false,
   pageExtensions: ['tsx', 'ts', 'jsx', 'js'],
   poweredByHeader: false,

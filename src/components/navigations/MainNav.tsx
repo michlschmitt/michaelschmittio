@@ -90,7 +90,7 @@ const MainNav: React.FunctionComponent<{ content: MainNavType }> = ({ content })
               <li className={styles.ctaMenuItem}>
                 <a
                   className={styles.link}
-                  href={content.socialLinks.twitter.label}
+                  href={content.socialLinks.linkedIn.href}
                   rel="noopener noreferrer"
                   target="_blank"
                   title={content.socialLinks.linkedIn.label}

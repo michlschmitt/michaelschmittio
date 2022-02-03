@@ -1,3 +1,10 @@
+## [1.0.2](https://github.com/michlschmitt/portfolio-website/compare/1.0.1...1.0.2) (2022-02-03)
+
+
+### fix
+
+* updates incorrect content path on MainNav ([93b7272](https://github.com/michlschmitt/portfolio-website/commit/93b7272549b2e925678bfa8ec0902394e00af81b))
+
 ## [1.0.1](https://github.com/michlschmitt/portfolio-website/compare/1.0.0...1.0.1) (2022-02-03)
 
 

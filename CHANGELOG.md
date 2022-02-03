@@ -1,3 +1,11 @@
+## [1.0.1](https://github.com/michlschmitt/portfolio-website/compare/1.0.0...1.0.1) (2022-02-03)
+
+
+### fix
+
+* removes trailing comma in package.json ([25b3de5](https://github.com/michlschmitt/portfolio-website/commit/25b3de5c186d2831190fcd2c3e07708abb372da0))
+* updates next.js build settings to enable api routes on vercel ([1da1097](https://github.com/michlschmitt/portfolio-website/commit/1da1097e51c8326036c7f4174fc9238ad452df41))
+
 # 1.0.0 (2022-02-03)
 
 

@@ -5,20 +5,23 @@ import * as React from 'react';
 // import Providers
 import AnalyticsProvider from './AnalyticsProvider';
 import NProgressProvider from './NProgressProvider';
-import YoutubePrivacyProvider from './YoutubePrivacyProvider';
+import PasswordProtectionProvider from './PasswordProtectionProvider';
 import PlausibleProvider from './PlausibleProvider';
+import YoutubePrivacyProvider from './YoutubePrivacyProvider';
 
 // NOTE: order matters!
 
 // AppProviders component
 const AppProviders: React.FunctionComponent = ({ children }) => (
-  <AnalyticsProvider>
-    <PlausibleProvider>
-      <NProgressProvider>
-        <YoutubePrivacyProvider>{children}</YoutubePrivacyProvider>
-      </NProgressProvider>
-    </PlausibleProvider>
-  </AnalyticsProvider>
+  <PasswordProtectionProvider>
+    <AnalyticsProvider>
+      <PlausibleProvider>
+        <NProgressProvider>
+          <YoutubePrivacyProvider>{children}</YoutubePrivacyProvider>
+        </NProgressProvider>
+      </PlausibleProvider>
+    </AnalyticsProvider>
+  </PasswordProtectionProvider>
 );
 
 AppProviders.propTypes = {

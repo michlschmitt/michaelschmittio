@@ -123,7 +123,7 @@ const IndexPage: NextPageWithLayout = ({ pageContent }) => (
             <Subtitle>{pageContent.featuredIn.title}</Subtitle>
           </Col>
           {pageContent.featuredIn.logos.map((logo: { alt: string; src: string }) => (
-            <Col key={logo.src} span={3} spanXl={2}>
+            <Col key={logo.src} span={6} spanMd={3} spanXl={2}>
               <Image
                 alt={logo.alt}
                 height={360}

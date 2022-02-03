@@ -11,7 +11,8 @@ import AppProviders from '../providers/AppProviders';
 import GlobalHeadLinks from '../components/meta/GlobalHead';
 
 // import fonts
-import '@fontsource/inter';
+import '@fontsource/poppins/400.css';
+import '@fontsource/poppins/700.css';
 
 // import styles
 import '../styles/index.css';

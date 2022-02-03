@@ -9,9 +9,11 @@ import { NextPageWithLayout } from '../types';
 import * as notion from '../modules/notion';
 
 // import components
+import Col from '../components/layouts/Col';
 import Container from '../components/layouts/Container';
 import MainLayout from '../components/layouts/MainLayout';
 import NotionRenderer from '../components/atoms/NotionRenderer';
+import Row from '../components/layouts/Row';
 import SEO from '../components/meta/SEO';
 import Spacer from '../components/layouts/Spacer';
 
@@ -28,7 +30,11 @@ const LegalNoticePage: NextPageWithLayout = ({ pageContent }) => (
     {/* Content */}
     <Spacer height="50px" />
     <Container md>
-      <NotionRenderer blocks={pageContent.blocks} />
+      <Row>
+        <Col span={12}>
+          <NotionRenderer blocks={pageContent.blocks} />
+        </Col>
+      </Row>
     </Container>
     <Spacer height="100px" />
   </>

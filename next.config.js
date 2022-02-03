@@ -35,14 +35,14 @@ const nextConfig = {
     ];
   },
   images:
-    process.env.VERCEL === '1'
+    process.env.VERCEL === '1' || process.env.NODE_ENV === 'development'
       ? undefined
       : {
           domains: ['localhost'],
           loader: 'custom',
         },
   outputFileTracing: false,
-  pageExtensions: ['md', 'mdx', 'tsx', 'ts', 'jsx', 'js'],
+  pageExtensions: ['tsx', 'ts', 'jsx', 'js'],
   poweredByHeader: false,
   reactStrictMode: true,
   trailingSlash: true,
@@ -58,9 +58,9 @@ const nextConfig = {
     // https://github.com/webpack-contrib/css-loader/issues/1307#issuecomment-842164034
     const rules = config.module.rules
       .find((rule) => typeof rule?.oneOf === 'object')
-      .oneOf.filter((rule) => Array.isArray(rule?.use));
+      ?.oneOf.filter((rule) => Array.isArray(rule?.use));
 
-    rules.forEach((rule) => {
+    rules?.forEach((rule) => {
       rule.use.forEach((moduleLoader) => {
         if (
           moduleLoader?.loader?.includes('css-loader') &&

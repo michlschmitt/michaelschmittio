@@ -26,7 +26,7 @@ module.exports = {
       transparent: 'transparent',
       white: '#ffffff',
     },
-    fontFamily: { sans: ['Inter', 'Helvetica', 'Arial', 'sans-serif'] },
+    fontFamily: { sans: ['Poppins', 'Helvetica', 'Arial', 'sans-serif'] },
     extend: {
       keyframes: {
         'fade-in': {

@@ -219,18 +219,14 @@ const BlockRenderer: React.FunctionComponent<{ block: NotionBlockType }> = ({ bl
     case 'image':
       const src = value.type === 'external' ? value.external.url : value.file.url;
       const caption = value.caption ? value.caption[0]?.plain_text : '';
+      // NOTE: this is since next export does not support automated image optimization
+      const loader =
+        process.env.VERCEL === '1' || process.env.NODE_ENV === 'development'
+          ? undefined
+          : { loader: () => src };
       return (
         <figure>
-          <NextImage
-            alt={caption}
-            layout="fill"
-            loader={
-              process.env.VERCEL === '1' || process.env.NODE_ENV === 'production'
-                ? undefined
-                : () => src
-            }
-            src={src}
-          />
+          <NextImage alt={caption} layout="fill" src={src} {...loader} />
           {caption && <figcaption>{caption}</figcaption>}
         </figure>
       );

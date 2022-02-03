@@ -9,10 +9,17 @@ import { NextPageWithLayout } from '../types';
 import * as notion from '../modules/notion';
 
 // import components
+import Col from '../components/layouts/Col';
+import Container from '../components/layouts/Container';
 import FullHeightContainer from '../components/layouts/FullHeightContainer';
+import Heading from '../components/atoms/Heading';
 import MainLayout from '../components/layouts/MainLayout';
-import NewsletterSection from '../components/sections/NewsletterSection';
+import RevueForm from '../components/vendors/RevueForm';
+import Row from '../components/layouts/Row';
 import SEO from '../components/meta/SEO';
+import Section from '../components/layouts/Section';
+import Spacer from '../components/layouts/Spacer';
+import Text from '../components/atoms/Text';
 
 // define page
 const NewsletterPage: NextPageWithLayout = ({ componentsContent, pageContent }) => {
@@ -27,7 +34,24 @@ const NewsletterPage: NextPageWithLayout = ({ componentsContent, pageContent }) 
 
       {/* Content */}
       <FullHeightContainer>
-        <NewsletterSection content={componentsContent.NewsletterSection} />
+        <Section color="gradient-horizontal">
+          <Container md>
+            <Row justify="center">
+              <Col span={12}>
+                <Heading alignment="center" tag="h1">
+                  {pageContent.hero.title}
+                </Heading>
+                <Text alignment="center">{pageContent.hero.teaser}</Text>
+              </Col>
+            </Row>
+            <Spacer height="16px" />
+            <Row justify="center">
+              <Col span={10}>
+                <RevueForm alignment="center" content={componentsContent.RevueForm} />
+              </Col>
+            </Row>
+          </Container>
+        </Section>
       </FullHeightContainer>
     </>
   );
@@ -40,7 +64,7 @@ NewsletterPage.getLayout = (page) => (
 export const getStaticProps: GetStaticProps = async () => {
   // get notion data
   const pageId = 'Newsletter';
-  const componentIds = ['MainNav', 'Footer', 'NewsletterSection', 'RevueForm'];
+  const componentIds = ['MainNav', 'Footer', 'RevueForm'];
 
   // get pageContent
   const pageContent = await notion.getPageContent(pageId);
@@ -48,16 +72,7 @@ export const getStaticProps: GetStaticProps = async () => {
 
   // return props
   return {
-    props: {
-      componentsContent: {
-        ...componentsContent,
-        NewsletterSection: {
-          ...componentsContent.NewsletterSection,
-          RevueForm: componentsContent.RevueForm,
-        },
-      },
-      pageContent,
-    },
+    props: { componentsContent, pageContent },
     revalidate: false,
   };
 };

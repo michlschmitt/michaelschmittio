@@ -1,7 +1,7 @@
 /* custom css */
 html,
 body {
-  font-size: 17px;
+  @apply font-sans text-[16px];
 }
 
 ::selection {

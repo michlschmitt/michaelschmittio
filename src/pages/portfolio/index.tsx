@@ -38,7 +38,7 @@ const PortfolioPage: NextPageWithLayout = ({ pageContent }) => {
       <Section>
         <Container xl>
           <Row alignItems="center" justify="center">
-            <Col span={12} spanLg={9}>
+            <Col span={12} spanLg={8}>
               <Heading alignment="center" tag="h1">
                 {pageContent.hero.title}
               </Heading>

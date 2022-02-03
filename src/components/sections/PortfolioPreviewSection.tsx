@@ -33,6 +33,12 @@ const PortfolioPreviewSection: React.FunctionComponent<{
   subline: string;
   title: string;
 }> = ({ backgroundColor, buttons, facts, image, imagePosition, introText, subline, title }) => {
+  // NOTE: this is since next export does not support automated image optimization
+  const loader =
+    process.env.VERCEL === '1' || process.env.NODE_ENV === 'development'
+      ? undefined
+      : { loader: () => image };
+
   // image left
   if (imagePosition === 'left') {
     return (
@@ -45,13 +51,9 @@ const PortfolioPreviewSection: React.FunctionComponent<{
                   className={styles.leftImage}
                   height={800}
                   layout="responsive"
-                  loader={
-                    process.env.VERCEL === '1' || process.env.NODE_ENV === 'production'
-                      ? undefined
-                      : () => image
-                  }
                   src={image}
                   width={1280}
+                  {...loader}
                 />
               </div>
             </div>
@@ -130,14 +132,10 @@ const PortfolioPreviewSection: React.FunctionComponent<{
                 <NextImage
                   className={styles.rightImage}
                   height={800}
-                  loader={
-                    process.env.VERCEL === '1' || process.env.NODE_ENV === 'production'
-                      ? undefined
-                      : () => image
-                  }
                   layout="responsive"
                   src={image}
                   width={1280}
+                  {...loader}
                 />
               </div>
             </div>

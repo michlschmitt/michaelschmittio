@@ -98,12 +98,6 @@ export const contactFormPropTypes = PropTypes.exact({
   }).isRequired,
 }).isRequired;
 
-export const newsletterSectionPropTypes = PropTypes.exact({
-  RevueForm: revueFormPropTypes,
-  teaser: PropTypes.string.isRequired,
-  title: PropTypes.string.isRequired,
-}).isRequired;
-
 export const testimonialsPropTypes = PropTypes.arrayOf(
   PropTypes.exact({
     designation: PropTypes.string.isRequired,

@@ -9,7 +9,7 @@
   ],
   "homepage": "https://www.michaelschmitt.io",
   "bugs": {
-    "url": "https://github.com/michlschmitt/nextjs-website/issues"
+    "url": "https://github.com/michlschmitt/portfolio-website/issues"
   },
   "license": "UNLICENSED",
   "author": "Michael Schmitt",
@@ -19,20 +19,17 @@
   "main": "src/pages/index.tsx",
   "repository": {
     "type": "git",
-    "url": "https://github.com/michlschmitt/nextjs-website"
+    "url": "https://github.com/michlschmitt/portfolio-website"
   },
   "scripts": {
     "analyze": "ANALYZE=true yarn build",
-    "build": "yarn generate-static-files && next build && next export",
+    "build": "yarn generate-static-files && next build",
     "dev": "NODE_ENV=development next dev -p 3000",
-    "export": "next export",
     "generate-static-files": "node src/modules/generators/generate-static-files.js",
     "lint": "next lint && eslint src",
-    "preexport": "npm run build",
     "prepare": "husky install",
-    "prestart": "npm run export",
     "release": "dotenv release-it",
-    "start": "serve out -p 3000"
+    "start": "next start -p 3000",
   },
   "dependencies": {
     "@fontsource/poppins": "^4.5.1",

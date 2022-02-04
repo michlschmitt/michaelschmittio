@@ -1,3 +1,10 @@
+## [1.0.5](https://github.com/michlschmitt/portfolio-website/compare/1.0.4...1.0.5) (2022-02-04)
+
+
+### fix
+
+* adds cookie settings func to Footer ([a96a708](https://github.com/michlschmitt/portfolio-website/commit/a96a7084103159db49215a2c81a047e2444efd72))
+
 ## [1.0.4](https://github.com/michlschmitt/portfolio-website/compare/1.0.3...1.0.4) (2022-02-04)
 
 

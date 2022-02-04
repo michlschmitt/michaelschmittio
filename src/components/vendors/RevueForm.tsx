@@ -29,6 +29,14 @@ const RevueForm: React.FunctionComponent<{ alignment?: TextAlignment; content: R
     setEmail(event.target.value);
   }, []);
 
+  const onTrackSubmission = React.useCallback(async () => {
+    await fetch('/api/newsletter', {
+      body: JSON.stringify({}),
+      headers: { 'Content-Type': 'application/json' },
+      method: 'POST',
+    });
+  }, []);
+
   // render form
   return (
     <div className={styles.formContainer}>
@@ -55,6 +63,7 @@ const RevueForm: React.FunctionComponent<{ alignment?: TextAlignment; content: R
             color="gradient"
             id="member_submit"
             name="member[subscribe]"
+            onClick={onTrackSubmission}
             size="medium"
             text={content.submit.label}
             type="submit"

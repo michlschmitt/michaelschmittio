@@ -5,9 +5,17 @@ import type { NextApiRequest, NextApiResponse } from 'next';
 
 // import modules
 import * as notion from '../../modules/notion';
+import * as plausible from '../../modules/plausible';
 
 // handle contact from
 const contactFormHandler = async (req: NextApiRequest, res: NextApiResponse) => {
+  // track subscription
+  try {
+    await plausible.trackContactFormRequest();
+  } catch (error) {
+    // do nothing
+  }
+
   try {
     // get form data
     const { name, email, message } = req.body;

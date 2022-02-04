@@ -16,7 +16,7 @@ const AnalyticsProvider: React.FunctionComponent = ({ children }) => {
     // init google tag manager
     if (process.env.NODE_ENV === 'production') {
       if (typeof window !== 'undefined') {
-        const gtmId = process.env.NEXT_PUBLIC_GOOGLE_TAG_MANAGER_ID;
+        const gtmId = process.env.NEXT_PUBLIC_GTM_ID;
         if (typeof gtmId === 'string') {
           TagManager.initialize({ gtmId });
         }

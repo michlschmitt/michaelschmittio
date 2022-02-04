@@ -23,10 +23,11 @@ const Button: React.FunctionComponent<{
   form?: string;
   id?: string;
   name?: string;
+  onClick?: () => void;
   size?: ButtonSize;
   text: string;
   type?: ButtonType;
-}> = ({ color, customClasses, form, id, name, size, text, type }) => {
+}> = ({ color, customClasses, form, id, name, onClick, size, text, type }) => {
   // init styles
   const buttonClasses = React.useMemo(
     () =>
@@ -48,12 +49,20 @@ const Button: React.FunctionComponent<{
   // has label
   if (type === 'submit') {
     return (
-      <input className={buttonClasses} form={form} id={id} name={name} type="submit" value={text} />
+      <input
+        className={buttonClasses}
+        form={form}
+        id={id}
+        name={name}
+        onClick={onClick}
+        type="submit"
+        value={text}
+      />
     );
   }
 
   return (
-    <button className={buttonClasses} id={id} type={type}>
+    <button className={buttonClasses} onClick={onClick} id={id} type={type}>
       {text}
     </button>
   );
@@ -64,6 +73,7 @@ Button.defaultProps = {
   form: undefined,
   id: undefined,
   name: undefined,
+  onClick: undefined,
   type: 'button',
 };
 
@@ -72,6 +82,7 @@ Button.propTypes = {
   form: PropTypes.string,
   id: PropTypes.string,
   name: PropTypes.string,
+  onClick: PropTypes.func,
   size: PropTypes.oneOf(Object.values(ButtonSizeEnum)),
   text: PropTypes.string.isRequired,
   type: PropTypes.oneOf(Object.values(ButtonTypeEnum)),

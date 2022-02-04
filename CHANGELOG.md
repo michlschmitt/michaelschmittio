@@ -1,3 +1,16 @@
+## [1.0.6](https://github.com/michlschmitt/portfolio-website/compare/1.0.5...1.0.6) (2022-02-04)
+
+
+### feat
+
+* adds csrf token protection to forms ([cf36db4](https://github.com/michlschmitt/portfolio-website/commit/cf36db4edf699bf2e5d1b537afed025f45242bf9))
+* adds github icon ([7cd4491](https://github.com/michlschmitt/portfolio-website/commit/7cd4491a486ee3710615e9f80972b7b54693a7dd))
+
+### fix
+
+* describes used services in readme ([9187eb4](https://github.com/michlschmitt/portfolio-website/commit/9187eb44486c757d64a08b8477b676dc72005adc))
+* updates README ([d019d1e](https://github.com/michlschmitt/portfolio-website/commit/d019d1eafd96fcaa1399a1bf83505d424e32c5e7))
+
 ## [1.0.5](https://github.com/michlschmitt/portfolio-website/compare/1.0.4...1.0.5) (2022-02-04)
 
 

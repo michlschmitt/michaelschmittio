@@ -14,6 +14,10 @@ export interface MainNavType {
     label: string;
   }[];
   socialLinks: {
+    github: {
+      href: string;
+      label: string;
+    };
     linkedIn: {
       href: string;
       label: string;
@@ -38,6 +42,10 @@ export interface FooterType {
     label: string;
   }[];
   socialLinks: {
+    github: {
+      href: string;
+      label: string;
+    };
     linkedIn: {
       href: string;
       label: string;

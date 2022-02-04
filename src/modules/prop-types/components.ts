@@ -18,6 +18,10 @@ export const mainNavPropTypes = PropTypes.exact({
     }).isRequired,
   ).isRequired,
   socialLinks: PropTypes.exact({
+    github: PropTypes.exact({
+      href: PropTypes.string.isRequired,
+      label: PropTypes.string.isRequired,
+    }).isRequired,
     linkedIn: PropTypes.exact({
       href: PropTypes.string.isRequired,
       label: PropTypes.string.isRequired,
@@ -44,6 +48,10 @@ export const footerPropTypes = PropTypes.exact({
     }).isRequired,
   ).isRequired,
   socialLinks: PropTypes.exact({
+    github: PropTypes.exact({
+      href: PropTypes.string.isRequired,
+      label: PropTypes.string.isRequired,
+    }).isRequired,
     linkedIn: PropTypes.exact({
       href: PropTypes.string.isRequired,
       label: PropTypes.string.isRequired,

@@ -9,6 +9,7 @@ import { FooterType } from '../../types';
 import { footerPropTypes } from '../../modules/prop-types';
 
 // import components
+import GithubIcon from '../svgs/GithubIcon';
 import LinkedInIcon from '../svgs/LinkedInIcon';
 import TwitterIcon from '../svgs/TwitterIcon';
 
@@ -51,6 +52,18 @@ const Footer: React.FunctionComponent<{ content: FooterType }> = ({ content }) =
       </ul>
 
       <ul className={styles.socialMenu}>
+        <li className={styles.socialMenuItem}>
+          <a
+            className={styles.link}
+            href={content.socialLinks.github.href}
+            rel="noopener noreferrer"
+            target="_blank"
+            title={content.socialLinks.github.label}
+          >
+            <GithubIcon />
+          </a>
+        </li>
+
         <li className={styles.socialMenuItem}>
           <a
             className={styles.link}

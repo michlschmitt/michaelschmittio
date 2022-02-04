@@ -9,6 +9,7 @@ import { MainNavType } from '../../types';
 
 // import component
 import Container from '../layouts/Container';
+import GithubIcon from '../svgs/GithubIcon';
 import LinkButton from '../atoms/LinkButton';
 import LinkedInIcon from '../svgs/LinkedInIcon';
 import MobileMenuIcon from '../svgs/MobileMenuIcon';
@@ -86,6 +87,17 @@ const MainNav: React.FunctionComponent<{ content: MainNavType }> = ({ content })
                   size="small"
                   text={content.callToAction.label}
                 />
+              </li>
+              <li className={styles.ctaMenuItem}>
+                <a
+                  className={styles.link}
+                  href={content.socialLinks.github.href}
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  title={content.socialLinks.github.label}
+                >
+                  <GithubIcon />
+                </a>
               </li>
               <li className={styles.ctaMenuItem}>
                 <a

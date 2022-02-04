@@ -1,3 +1,16 @@
+## [1.0.3](https://github.com/michlschmitt/portfolio-website/compare/1.0.2...1.0.3) (2022-02-04)
+
+
+### feat
+
+* adds password protection for staging env ([26294c1](https://github.com/michlschmitt/portfolio-website/commit/26294c1e187564b76a2427ce79ed4d43f88a6e45))
+* adds plausible custom events and opt out functionality ([30a7c72](https://github.com/michlschmitt/portfolio-website/commit/30a7c729d53695882a032fba4daad12be9738688))
+
+### fix
+
+* adds env.sample ([1013210](https://github.com/michlschmitt/portfolio-website/commit/10132106941bb8b1b54b6048efbd47bba6fcbd20))
+* adds lang attribute to html and optimzes image sizes ([967f297](https://github.com/michlschmitt/portfolio-website/commit/967f29781c547f0c033630652b8ad442962dc3ce))
+
 ## [1.0.2](https://github.com/michlschmitt/portfolio-website/compare/1.0.1...1.0.2) (2022-02-03)
 
 

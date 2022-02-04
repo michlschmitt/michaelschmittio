@@ -24,9 +24,9 @@ yarn lint
 
 ### Deployment
 
-Automatic deployments via [Vercel for Github](https://vercel.com/docs/git/vercel-for-github).
+- Automatic deployments via [Vercel for Github](https://vercel.com/docs/git/vercel-for-github).
 
-This repo uses [Release-it](https://github.com/release-it/release-it) for versioning. As a summary, release-it will do these tasks: Bumps the version in package.json; Updates CHANGELOG.md; Commits both files; Tags and creates a new release on GitHub. To trigger an version update run:
+- This repo uses [Release-it](https://github.com/release-it/release-it) for versioning. As a summary, release-it will do these tasks: Bumps the version in package.json; Updates CHANGELOG.md; Commits both files; Tags and creates a new release on GitHub. To trigger an version update run:
 
 ```
 yarn release
@@ -45,6 +45,24 @@ Forms are protected against CSRF attacks by using csurf
 ### Security headers
 
 Security headers are set to prevent cross-site scripting (XSS) attacks, content sniffing, clickjacking, insecure connection and other security risks in next.config.js.
+
+## Analytics, Cookies and Privacy
+
+### Google Tag Manager
+
+This site uses Google Tag Manager to manage scripts. GTM is implemented with [react-gtm-module](https://github.com/alinemorelli/react-gtm).
+
+### Cookies and Consent management
+
+This site uses CookieHub to manage cookies and consent.
+
+### Plausible Analytics
+
+This sites uses Plausible Analytics and proxies Plausible through Vercel with Next.js.
+
+### Iframe Embedding
+
+External videos e.g. from Youtube are loaded after a user consents and agrees to the privacy policy.
 
 ## Todos
 

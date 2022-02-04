@@ -37,7 +37,16 @@ const Footer: React.FunctionComponent<{ content: FooterType }> = ({ content }) =
         ))}
 
         <li className={styles.linksMenuItem}>
-          <button className={styles.link}>{content.cookiePolicy.label}</button>
+          <button
+            className={styles.link}
+            onClick={() =>
+              (
+                window as unknown as { cookiehub: { openSettings: () => void } }
+              ).cookiehub.openSettings()
+            }
+          >
+            {content.cookiePolicy.label}
+          </button>
         </li>
       </ul>
 

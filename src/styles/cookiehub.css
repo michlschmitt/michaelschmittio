@@ -1,0 +1,281 @@
+/* cookie consent */
+.ch2-container {
+  font-family: Poppins, sans-serif !important;
+}
+
+.ch2-dialog {
+  border-radius: 12px !important;
+}
+
+.ch2-dialog-actions {
+  display: flex !important;
+  flex-direction: row !important;
+  justify-items: flex-start !important;
+  width: 100% !important;
+}
+
+.ch2-dialog-actions button {
+  height: auto !important;
+}
+
+.ch2-dialog-actions .ch2-btn-text {
+  order: 2 !important;
+}
+
+.ch2-dialog-actions .ch2-btn-primary {
+  order: 1 !important;
+}
+
+.ch2-theme-default .ch2-dialog {
+  background-color: #e3e5f7 !important;
+}
+
+.ch2-theme-default .ch2-dialog p:last-child {
+  margin-top: 6px !important;
+  margin-bottom: 16px !important;
+}
+
+.ch2-theme-default .ch2-dialog-content a {
+  border-bottom: none;
+  color: #5e6ad2 !important;
+  font-size: 15px !important;
+}
+
+.ch2-theme-default .ch2-dialog-content a:hover {
+  border-bottom: none;
+  color: #7bb5b7 !important;
+}
+
+.ch2-style-light .ch2-settings-content a {
+  border-bottom: none;
+  color: #5e6ad2 !important;
+  font-size: 15px !important;
+}
+
+.ch2-style-light .ch2-settings-content a:hover {
+  border-bottom: none;
+  color: #7bb5b7 !important;
+}
+
+.ch2-theme-default .ch2-dialog-content p {
+  color: #03040c !important;
+}
+
+.ch2-theme-default .ch2-dialog-content p strong {
+  color: #03040c !important;
+}
+
+.ch2-theme-default .ch2-dialog-actions button {
+  width: auto !important;
+}
+
+.ch2-theme-default .ch2-dialog-actions button:first-child {
+  margin-bottom: 0 !important;
+}
+
+.ch2-btn {
+  align-items: center !important;
+  border-radius: 12px !important;
+  border-style: solid !important;
+  border-width: 0 !important;
+  box-shadow: none !important;
+  cursor: pointer !important;
+  display: inline-flex !important;
+  font-family: Poppins, sans-serif !important;
+  font-size: 16px !important;
+  font-weight: 700 !important;
+  justify-content: center !important;
+  letter-spacing: 1px !important;
+  margin: 0 1rem 0 0 !important;
+  outline: 0 !important;
+  padding: 0.6rem 1rem 0.7rem !important;
+  text-decoration: none !important;
+  text-transform: inherit !important;
+  transition: all 200ms ease !important;
+}
+
+.ch2-settings-content .ch2-btn {
+  margin-bottom: 0.5rem !important;
+}
+
+.ch2-style-light .ch2-btn-primary,
+.ch2-theme-default .ch2-btn-primary,
+.ch2-allow-all-btn.ch2-btn-primary {
+  background-color: #0b0e26 !important;
+  border-color: #0b0e26 !important;
+  color: #ffffff !important;
+}
+.ch2-style-light .ch2-btn-primary:hover,
+.ch2-theme-default .ch2-btn-primary:hover,
+.ch2-allow-all-btn.ch2-btn-primary:hover {
+  background-color: #03040c !important;
+  border-color: #03040c !important;
+  box-shadow: none !important;
+  color: #ffffff !important;
+}
+
+.ch2-open-settings-btn.ch2-btn-text {
+  background-color: transparent !important;
+  border: none !important;
+  border-color: transparent !important;
+  border-left: none !important;
+  border-radius: 0 !important;
+  border-right: none !important;
+  border-top: none !important;
+  box-shadow: none !important;
+  color: rgba(3, 4, 12, 0.5) !important;
+  padding: 0.2rem !important;
+}
+
+.ch2-open-settings-btn.ch2-btn-text:hover {
+  background-color: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  color: #7bb5b7 !important;
+}
+
+.ch2-btn-text {
+  background-color: #0b0e26 !important;
+  border-color: #0b0e26 !important;
+  color: #ffffff !important;
+}
+.ch2-btn-text:hover {
+  background-color: #03040c !important;
+  border-color: #03040c !important;
+  box-shadow: none !important;
+  color: #ffffff !important;
+}
+
+.ch2-theme-default .ch2-settings {
+  background-color: #e3e5f7 !important;
+  border-radius: 12px !important;
+}
+
+.ch2-theme-default .ch2-settings-actions {
+  background-color: #e3e5f7 !important;
+  border-bottom-left-radius: 12px !important;
+  border-bottom-right-radius: 12px !important;
+}
+
+.ch2-settings-actions {
+  border-top: 1px solid #fdfdff !important;
+}
+
+.ch2-style-light .ch2-switch input:checked + label,
+.ch2-theme-default .ch2-switch input:checked + label {
+  background-color: #0b0e26 !important;
+}
+
+.ch2-settings-tab-container > p {
+  margin-bottom: 12px !important;
+}
+.ch2-settings-tab-container > p:last-of-type {
+  margin-bottom: 18px !important;
+}
+
+.ch2-theme-default .ch2-settings-scan .ch2-settings-tabs ul {
+  border-bottom: none !important;
+}
+
+.ch2-settings-tabs {
+  border-bottom: 1px solid #fdfdff !important;
+  box-shadow: none !important;
+  padding: 0 0 0.5rem 0 !important;
+}
+
+.ch2-theme-default .ch2-settings-header {
+  box-shadow: none !important;
+}
+
+.ch2-theme-default .ch2-settings-scan .ch2-settings-tabs ul li.active a {
+  align-items: center !important;
+  background-color: #0b0e26 !important;
+  border-bottom-color: #0b0e26 !important;
+  border-radius: 12px !important;
+  border-style: solid !important;
+  border-width: 3px !important;
+  border: none !important;
+  box-shadow: none !important;
+  color: #ffffff !important;
+  cursor: pointer !important;
+  display: inline-flex !important;
+  font-family: Poppins, sans-serif !important;
+  font-size: 16px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.7px !important;
+  margin-bottom: 0.5rem !important;
+  margin: 0 1rem 0 0 !important;
+  outline: 0 !important;
+  padding: 0.6rem 1rem 0.7rem !important;
+  text-decoration: none !important;
+  text-transform: inherit !important;
+  transition: all 200ms ease !important;
+}
+
+.ch2-theme-default .ch2-settings-scan .ch2-settings-tabs ul li a {
+  align-items: center !important;
+  background-color: transparent !important;
+  border-bottom-color: transparent !important;
+  border-radius: 12px !important;
+  border-style: solid !important;
+  border-width: 3px !important;
+  border: none !important;
+  box-shadow: none !important;
+  color: #03040c !important;
+  cursor: pointer !important;
+  display: inline-flex !important;
+  font-family: Poppins, sans-serif !important;
+  font-size: 16px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.7px !important;
+  margin-bottom: 0.5rem !important;
+  margin: 0 1rem 0 0 !important;
+  outline: 0 !important;
+  padding: 0.6rem 1rem 0.7rem !important;
+  text-decoration: none !important;
+  text-transform: inherit !important;
+  transition: all 200ms ease !important;
+}
+
+.ch2-settings-tab-container .ch2-btn {
+  font-size: 15px !important;
+  padding: 0.5rem 0.8rem 0.6rem !important;
+}
+
+@media screen and (max-width: 450px) {
+  .ch2-btn {
+    margin-right: 0 !important;
+  }
+
+  .ch2-btn-text {
+    margin-top: 16px !important;
+  }
+
+  .ch2-dialog-actions {
+    flex-direction: column !important;
+  }
+
+  .ch2-dialog {
+    padding: 32px !important;
+  }
+
+  .ch2-open-settings-btn.ch2-btn-text {
+    padding: 0.6rem 1rem 0.7rem !important;
+  }
+
+  .ch2-theme-default .ch2-settings-scan .ch2-settings-tabs ul {
+    padding: 0 35px !important;
+  }
+
+  .ch2-theme-default .ch2-settings-scan .ch2-settings-tabs ul li.active a {
+    font-size: 13px !important;
+    padding: 0.4rem 0.6rem !important;
+    margin: 0 0.5rem 0 0 !important;
+  }
+
+  .ch2-theme-default .ch2-settings-scan .ch2-settings-tabs ul li a {
+    font-size: 13px !important;
+    padding: 0.4rem 0.6rem !important;
+    margin: 0 0.5rem 0 0 !important;
+  }
+}

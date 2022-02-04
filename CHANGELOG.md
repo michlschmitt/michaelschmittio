@@ -1,3 +1,10 @@
+## [1.0.4](https://github.com/michlschmitt/portfolio-website/compare/1.0.3...1.0.4) (2022-02-04)
+
+
+### fix
+
+* updates security headers to enable cookiehub ([3510ba2](https://github.com/michlschmitt/portfolio-website/commit/3510ba2b90ee3a43192875f0a59947448a3330f7))
+
 ## [1.0.3](https://github.com/michlschmitt/portfolio-website/compare/1.0.2...1.0.3) (2022-02-04)
 
 

@@ -6,9 +6,14 @@ import type { NextApiRequest, NextApiResponse } from 'next';
 // import modules
 import * as notion from '../../modules/notion';
 import * as plausible from '../../modules/plausible';
+import * as csrf from '../../modules/csrf';
 
 // handle contact from
 const contactFormHandler = async (req: NextApiRequest, res: NextApiResponse) => {
+  // secure route
+  await csrf.cookieParserMiddleware(req, res);
+  await csrf.csrfMiddleware(req, res);
+
   // track subscription
   try {
     await plausible.trackContactFormRequest();

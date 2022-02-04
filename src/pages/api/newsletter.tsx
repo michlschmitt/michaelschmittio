@@ -1,4 +1,4 @@
-// pages/api/contact.tsx
+// pages/api/newsletter.tsx
 
 // import types
 import type { NextApiRequest, NextApiResponse } from 'next';

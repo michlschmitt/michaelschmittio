@@ -45,16 +45,20 @@ const ContactForm: React.FunctionComponent<{
       event.preventDefault();
 
       try {
-        const res = await fetch('/api/contact', {
+        // get csrf token
+        const csrfResponse = await fetch('/api/csrf');
+        const csrfResult = await csrfResponse.json();
+
+        // send contact form request
+        const formResponse = await fetch('/api/contact', {
           body: JSON.stringify({ name, email, message }),
-          headers: { 'Content-Type': 'application/json' },
+          headers: { 'Content-Type': 'application/json', 'XSRF-TOKEN': csrfResult.CSRFToken },
           method: 'POST',
         });
+        const formResult = await formResponse.json();
 
-        const result = await res.json();
-
-        // set error message
-        if (!result?.success) {
+        // check and set error message
+        if (!formResult?.success) {
           throw new Error('Something went wrong');
 
           // show success message

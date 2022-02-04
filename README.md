@@ -32,6 +32,20 @@ This repo uses [Release-it](https://github.com/release-it/release-it) for versio
 yarn release
 ```
 
+## Content Management
+
+Content is retrieved from the Notion API.
+
+## Security
+
+### CSRF protection
+
+Forms are protected against CSRF attacks by using csurf
+
+### Security headers
+
+Security headers are set to prevent cross-site scripting (XSS) attacks, content sniffing, clickjacking, insecure connection and other security risks in next.config.js.
+
 ## Todos
 
 - [ ] Add case studies to portfolio page

@@ -29,7 +29,7 @@
     "lint": "next lint && eslint src",
     "prepare": "husky install",
     "release": "dotenv release-it",
-    "start": "next start -p 3000"
+    "start": "NODE_ENV=production next start -p 3000"
   },
   "dependencies": {
     "@fontsource/poppins": "^4.5.1",

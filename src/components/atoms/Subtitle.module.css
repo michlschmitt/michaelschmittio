@@ -2,14 +2,26 @@
 
 .subtitle {
   @apply w-full font-sans text-xs uppercase tracking-wider text-primary md:text-sm xl:w-auto xl:text-left;
+
+  a {
+    @apply text-primary transition-all ease-linear hover:text-white;
+  }
 }
 
 .subtitleIsWhite {
   @apply text-grey-5;
+
+  a {
+    @apply text-grey-5 transition-all ease-linear hover:text-secondary;
+  }
 }
 
 .subtitleIsBlack {
   @apply text-grey-1/50;
+
+  a {
+    @apply text-grey-1/50 transition-all ease-linear hover:text-primary;
+  }
 }
 
 .subtitleLeft {

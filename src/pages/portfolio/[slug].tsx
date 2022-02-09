@@ -24,6 +24,7 @@ import Section from '../../components/layouts/Section';
 import Spacer from '../../components/layouts/Spacer';
 import Subtitle from '../../components/atoms/Subtitle';
 import Text from '../../components/atoms/Text';
+import Link from 'next/link';
 
 // define page
 const PortfolioItemPage: NextPageWithLayout = ({
@@ -46,7 +47,14 @@ const PortfolioItemPage: NextPageWithLayout = ({
       <Container md>
         <Row>
           <Col span={12}>
-            <Subtitle>{pageContent.name}</Subtitle>
+            <Subtitle>
+              <>
+                <Link href={pageContent.detail.subtitleButton.href}>
+                  <a>{pageContent.detail.subtitleButton.label}</a>
+                </Link>
+                &nbsp;&gt;&nbsp;{pageContent.name}
+              </>
+            </Subtitle>
             <Spacer height="12px" />
             <Heading tag="h1">{pageContent.title}</Heading>
           </Col>
@@ -96,7 +104,7 @@ const PortfolioItemPage: NextPageWithLayout = ({
         <Row>
           <Col span={12}>
             <Heading alignment="center" tag="h2">
-              {pageContent.pastProjects.title}
+              {pageContent.detail.otherTitle}
             </Heading>
           </Col>
         </Row>
@@ -120,8 +128,8 @@ const PortfolioItemPage: NextPageWithLayout = ({
             <ButtonGroup alignment="center">
               <LinkButton
                 color="link"
-                href={pageContent.pastProjects.exploreButton.href}
-                text={pageContent.pastProjects.exploreButton.label}
+                href={pageContent.detail.exploreButton.href}
+                text={pageContent.detail.exploreButton.label}
               />
             </ButtonGroup>
           </Col>

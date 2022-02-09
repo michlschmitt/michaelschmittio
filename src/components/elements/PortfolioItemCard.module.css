@@ -17,7 +17,7 @@
 }
 
 .imageContainer {
-  @apply relative block h-[240px] w-full;
+  @apply relative block h-[360px] w-full;
 }
 
 .image {

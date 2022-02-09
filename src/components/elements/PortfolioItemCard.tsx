@@ -28,10 +28,10 @@ const PortfolioItemCard: React.FunctionComponent<{
         <Image
           alt={name}
           className={styles.image}
-          height={1024}
+          height={1280}
           layout="fill"
           src={image}
-          width={1024}
+          width={720}
         />
       </div>
       <div className={styles.contentContainer}>

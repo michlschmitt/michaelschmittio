@@ -17,5 +17,9 @@ body {
 }
 
 .ms-info-box {
-  @apply rounded-xl bg-grey-2 p-5;
+  @apply rounded-xl bg-primary/70 p-5;
+
+  a {
+    @apply !text-white hover:!text-secondary;
+  }
 }

@@ -66,7 +66,8 @@ export const getPortfolioItems = async (params?: { exclude?: string; limit?: num
   // filter items
   let portfolioItems = database
     .filter((item) => (item as any)?.properties?.status?.select?.name === 'PUBLISHED')
-    .map((item) => (item as any)?.properties);
+    .map((item) => (item as any)?.properties)
+    .sort((a, b) => Date.parse(b.releaseDate.date.start) - Date.parse(a.releaseDate.date.start));
 
   // exclude items
   if (params?.exclude) {

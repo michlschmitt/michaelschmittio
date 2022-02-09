@@ -1,7 +1,7 @@
 {
   "name": "@michlschmitt/portfolio-website",
   "description": "Next.js and Notion API based static portfolio website and blog.",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "keywords": [
     "notion-api",
     "react",

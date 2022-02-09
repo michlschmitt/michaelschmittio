@@ -1,3 +1,19 @@
+## [1.0.7](https://github.com/michlschmitt/portfolio-website/compare/1.0.6...1.0.7) (2022-02-09)
+
+
+### feat
+
+* adds case images for sigmund talks ([1ef3dcf](https://github.com/michlschmitt/portfolio-website/commit/1ef3dcf957da22e66f39f1f9418e73903d82260c))
+* implements portfolio detail page ([f58ffcb](https://github.com/michlschmitt/portfolio-website/commit/f58ffcb58aaa8e8c59dca15f6ad699bdd593557c))
+
+### fix
+
+* adds breadcrumb to portfolio detail page ([fd678a0](https://github.com/michlschmitt/portfolio-website/commit/fd678a095799385c4c5c6e108d9ecaae73a930a7))
+* adds foconn case images and updates case study ui ([6c485cf](https://github.com/michlschmitt/portfolio-website/commit/6c485cf99af84de9ba4aaf1f9ea5e88294a01cdc))
+* adds infobox ([d1f75da](https://github.com/michlschmitt/portfolio-website/commit/d1f75da2004300fea804f17015cabf08f79860d2))
+* optimizes cases ui ([d7b7052](https://github.com/michlschmitt/portfolio-website/commit/d7b7052a261d437ea8645538f90f4b8c3ca04798))
+* optimizes responsive design issue on portfolio item cards ([895e43e](https://github.com/michlschmitt/portfolio-website/commit/895e43e998c8e9c6af39e2afe2808705b04d4400))
+
 ## [1.0.6](https://github.com/michlschmitt/portfolio-website/compare/1.0.5...1.0.6) (2022-02-04)
 
 

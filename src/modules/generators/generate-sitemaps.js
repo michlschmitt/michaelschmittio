@@ -3,11 +3,32 @@
 // import node_modules
 // const fs = require('fs');
 // const path = require('path');
+const { Client } = require('@notionhq/client');
 const { SitemapStream } = require('sitemap');
 const { createWriteStream } = require('fs');
 
-// define methods
-const generateSitemap = () => {
+// define notion methods
+const notionClient = new Client({ auth: process.env.NOTION_API_KEY });
+
+const getNotionDatabase = async (databaseId) => {
+  const response = await notionClient.databases.query({ database_id: databaseId });
+  return response.results;
+};
+
+const getPortfolioItems = async () => {
+  // get database of pages
+  const database = await getNotionDatabase(process.env.NOTION_PORTFOLIO_DATABASE_ID);
+
+  // filter items
+  let portfolioItems = database
+    .filter((item) => item?.properties?.status?.select?.name === 'PUBLISHED')
+    .map((item) => item?.properties);
+
+  return portfolioItems;
+};
+
+// define sitemap methods
+const generateSitemap = async () => {
   // create pages sitemap
   const pages = [
     {
@@ -58,13 +79,13 @@ const generateSitemap = () => {
   const portfolio = [];
 
   // get posts
-  const portfolioItems = await notion.getPortfolioItems();
+  const portfolioItems = await getPortfolioItems();
   portfolioItems.forEach((item) => {
     portfolio.push({
-      url: `https://www.michaelschmitt.io/portfolio/${item.lastModifiedAt.rich_text[0].plain_text}/`,
+      url: `https://www.michaelschmitt.io/portfolio/${item.slug.rich_text[0].plain_text}/`,
       changefreq: 'yearly',
       priority: 0.7,
-      lastmod: item.slug.rich_text[0].plain_text,
+      lastmod: item.lastModifiedAt.last_edited_time,
     });
   });
 

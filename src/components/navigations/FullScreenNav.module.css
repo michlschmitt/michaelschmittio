@@ -9,7 +9,7 @@
 }
 
 .closeButton {
-  @apply animate-fade-in rounded-xl fill-current p-1.5 text-grey-3 transition-all ease-linear hover:text-primary;
+  @apply animate-fade-in rounded-xl fill-current p-1.5 text-grey-5 transition-all ease-linear hover:text-primary;
 }
 
 .menu {
@@ -21,9 +21,9 @@
 }
 
 .logoLink {
-  @apply text-xl font-bold text-grey-3 transition-all ease-linear hover:text-primary;
+  @apply text-xl font-bold text-grey-5 transition-all ease-linear hover:text-primary;
 }
 
 .link {
-  @apply text-base text-grey-3 transition-all ease-linear hover:text-primary;
+  @apply text-base text-grey-5 transition-all ease-linear hover:text-primary;
 }

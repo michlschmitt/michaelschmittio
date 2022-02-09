@@ -1,7 +1,7 @@
 /* TestimonialCard */
 
 .card {
-  @apply flex h-full w-full flex-col rounded-xl bg-grey-2 p-6;
+  @apply flex h-full w-full flex-col rounded-xl bg-grey-4 p-6;
 }
 
 .quote {

@@ -17,10 +17,12 @@ import styles from './PortfolioPreviewSection.module.css';
 // import components
 import Container from '../layouts/Container';
 import Heading from '../atoms/Heading';
+import Image from '../atoms/Image';
 import LinkButton from '../atoms/LinkButton';
 import Section from '../layouts/Section';
+import Spacer from '../layouts/Spacer';
+import Subtitle from '../atoms/Subtitle';
 import Text from '../atoms/Text';
-import Image from '../atoms/Image';
 
 // define component
 const PortfolioPreviewSection: React.FunctionComponent<{
@@ -53,7 +55,8 @@ const PortfolioPreviewSection: React.FunctionComponent<{
             </div>
             <div className={styles.leftComponent}>
               <div className={styles.content}>
-                <div className={styles.subline}>{subline}</div>
+                <Subtitle>{subline}</Subtitle>
+                <Spacer height="6px" />
                 <Heading tag="h2">{title}</Heading>
                 <Text>{introText}</Text>
               </div>
@@ -94,7 +97,8 @@ const PortfolioPreviewSection: React.FunctionComponent<{
           <div className={styles.previewGrid}>
             <div className={styles.rightComponent}>
               <div className={styles.content}>
-                <div className={styles.subline}>{subline}</div>
+                <Subtitle>{subline}</Subtitle>
+                <Spacer height="6px" />
                 <Heading tag="h2">{title}</Heading>
                 <Text>{introText}</Text>
               </div>

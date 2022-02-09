@@ -9,7 +9,7 @@
 }
 
 .link {
-  @apply fill-current text-base text-grey-3 transition-all ease-linear hover:text-primary;
+  @apply fill-current text-base text-grey-5 transition-all ease-linear hover:text-primary;
 }
 
 .logoMenu {
@@ -21,7 +21,7 @@
 }
 
 .logoLink {
-  @apply text-base font-bold leading-none text-grey-3 transition-all ease-linear hover:text-primary md:text-xl md:leading-none;
+  @apply text-base font-bold leading-none text-grey-5 transition-all ease-linear hover:text-primary md:text-xl md:leading-none;
 }
 
 .linksMenu {
@@ -49,5 +49,5 @@
 }
 
 .mobileButtonMenuLink {
-  @apply rounded-xl fill-current p-1.5 text-grey-3 transition-all ease-linear hover:text-primary;
+  @apply rounded-xl fill-current p-1.5 text-grey-5 transition-all ease-linear hover:text-primary;
 }

@@ -63,12 +63,21 @@
     @apply mb-2 text-sm lg:text-base;
   }
 
-  div {
-    @apply mb-4 text-sm text-grey-2/80 md:text-base;
+  div,
+  p {
+    @apply mb-4 text-[15px] text-grey-4 md:text-[17px];
   }
 
-  p {
-    @apply mb-4 text-sm text-grey-2/80 md:text-base;
+  li {
+    @apply text-[15px] text-grey-4/90 md:text-[17px];
+  }
+
+  ul {
+    @apply mb-4 list-inside list-disc;
+  }
+
+  ol {
+    @apply mb-4 list-inside list-decimal;
   }
 
   a {
@@ -79,17 +88,17 @@
     @apply bg-transparent text-secondary no-underline opacity-100 transition-all ease-linear hover:text-primary;
   }
 
-  ul {
-    @apply list-inside list-disc;
-  }
-
-  ol {
-    @apply list-inside list-decimal;
+  strong {
+    @apply font-bold text-grey-4;
   }
 
   blockquote {
   }
 
   pre {
+  }
+
+  figure {
+    @apply relative block h-auto w-full;
   }
 }

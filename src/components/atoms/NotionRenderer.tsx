@@ -2,21 +2,49 @@
 import * as PropTypes from 'prop-types';
 import * as React from 'react';
 import Link from 'next/link';
-import NextImage from 'next/image';
 
 // import types
 import { FixMeLater, NotionBlockType, NotionBlockTextType } from '../../types';
+
+// import components
+import Image from './Image';
 
 // import styles
 import styles from './NotionRenderer.module.css';
 
 // define components
 const CodeRenderer: React.FunctionComponent<{
-  value: { caption: FixMeLater; text: NotionBlockTextType[] };
+  value: { caption: FixMeLater; language: string; text: NotionBlockTextType[] };
 }> = ({ value }) => {
   // render html
   if (value?.caption[0]?.plain_text?.toUpperCase() === 'RENDER-HTML') {
     return <div dangerouslySetInnerHTML={{ __html: value.text[0].plain_text }} />;
+  }
+
+  // render html
+  if (
+    value?.caption[0]?.plain_text?.toUpperCase() === 'LOCAL-IMAGE' &&
+    value?.language === 'json'
+  ) {
+    // get image data
+    const image = JSON.parse(value.text[0].plain_text);
+
+    // render image
+    return (
+      <figure>
+        {image?.src && (
+          <Image
+            alt={image.alt}
+            height={image.height}
+            isRound
+            layout="responsive"
+            src={image.src}
+            width={image.width}
+          />
+        )}
+        {image?.alt && <figcaption>{image.alt}</figcaption>}
+      </figure>
+    );
   }
 
   // render code
@@ -182,7 +210,30 @@ const BlockRenderer: React.FunctionComponent<{ block: NotionBlockType }> = ({ bl
         </h6>
       );
 
+    case 'bulleted_list':
+      return (
+        <ul>
+          {value.items.map((item: NotionBlockType) => (
+            <BlockRenderer block={item} key={item.id} />
+          ))}
+        </ul>
+      );
+
     case 'bulleted_list_item':
+      return (
+        <li>
+          <TextRenderer text={value.text} />
+        </li>
+      );
+
+    case 'numbered_list':
+      return (
+        <ol>
+          {value.items.map((item: NotionBlockType) => (
+            <BlockRenderer block={item} key={item.id} />
+          ))}
+        </ol>
+      );
 
     case 'numbered_list_item':
       return (
@@ -215,21 +266,6 @@ const BlockRenderer: React.FunctionComponent<{ block: NotionBlockType }> = ({ bl
 
     case 'child_page':
       return <p>{value.title}</p>;
-
-    case 'image':
-      const src = value.type === 'external' ? value.external.url : value.file.url;
-      const caption = value.caption ? value.caption[0]?.plain_text : '';
-      // NOTE: this is since next export does not support automated image optimization
-      const loader =
-        process.env.VERCEL === '1' || process.env.NODE_ENV === 'development'
-          ? undefined
-          : { loader: () => src };
-      return (
-        <figure>
-          <NextImage alt={caption} layout="fill" src={src} {...loader} />
-          {caption && <figcaption>{caption}</figcaption>}
-        </figure>
-      );
 
     case 'divider':
       return <hr key={id} />;

@@ -16,8 +16,12 @@
   @apply bg-black;
 }
 
-.sectionIsGrey {
+.sectionIsGrey1 {
   @apply bg-grey-1;
+}
+
+.sectionIsGrey2 {
+  @apply bg-grey-2/30;
 }
 
 .sectionIsGreen {

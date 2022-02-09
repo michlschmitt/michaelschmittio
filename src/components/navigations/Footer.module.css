@@ -9,7 +9,7 @@
 }
 
 .link {
-  @apply fill-current text-sm text-grey-3 transition-all ease-linear hover:text-primary;
+  @apply fill-current text-sm text-grey-5 transition-all ease-linear hover:text-primary;
 }
 
 .copyrightMenu {

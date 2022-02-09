@@ -1,7 +1,7 @@
 /* Text */
 
 .text {
-  @apply mb-4 text-grey-2/80;
+  @apply mb-4 text-grey-4/90;
 
   a {
     @apply bg-transparent text-secondary no-underline opacity-100 transition-all ease-linear hover:text-primary;
@@ -37,17 +37,17 @@
 }
 
 .textIsHelpText {
-  @apply !text-grey-3/50;
+  @apply !text-grey-5/50;
 }
 
 .textIsSmall {
-  @apply text-[0.65rem] md:text-xs;
+  @apply text-[13px] md:text-[15px];
 }
 
 .textIsMedium {
-  @apply text-sm md:text-base;
+  @apply text-[15px] md:text-[17px];
 }
 
 .textIsLarge {
-  @apply text-base md:text-xl;
+  @apply text-[17px] md:text-[19px];
 }

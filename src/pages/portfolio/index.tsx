@@ -3,7 +3,7 @@ import * as React from 'react';
 
 // import types
 import type { GetStaticProps } from 'next';
-import { NextPageWithLayout } from '../../types';
+import { FixMeLater, NextPageWithLayout } from '../../types';
 
 // import modules
 import * as notion from '../../modules/notion';
@@ -15,6 +15,7 @@ import Container from '../../components/layouts/Container';
 import Heading from '../../components/atoms/Heading';
 import LinkButton from '../../components/atoms/LinkButton';
 import MainLayout from '../../components/layouts/MainLayout';
+import PortfolioItemCard from '../../components/elements/PortfolioItemCard';
 import PortfolioPreviewSection from '../../components/sections/PortfolioPreviewSection';
 import Row from '../../components/layouts/Row';
 import SEO from '../../components/meta/SEO';
@@ -24,7 +25,7 @@ import Text from '../../components/atoms/Text';
 import TextWall from '../../components/elements/TextWall';
 
 // define page
-const PortfolioPage: NextPageWithLayout = ({ pageContent }) => {
+const PortfolioPage: NextPageWithLayout = ({ componentsContent, portfolioItems, pageContent }) => {
   return (
     <>
       {/* SEO */}
@@ -63,6 +64,7 @@ const PortfolioPage: NextPageWithLayout = ({ pageContent }) => {
           index: number,
         ) => (
           <PortfolioPreviewSection
+            backgroundColor="grey1"
             buttons={project.buttons}
             image={project.image}
             imagePosition={index % 2 ? 'left' : 'right'}
@@ -70,18 +72,46 @@ const PortfolioPage: NextPageWithLayout = ({ pageContent }) => {
             key={project.id}
             subline={project.id}
             title={project.title}
-            backgroundColor="grey"
           />
         ),
       )}
 
       {/* Case studies */}
-      {/* TODO: implement past projects and client case studies */}
-
-      {/* Clients */}
-      <Section padding="medium">
+      <Section color="grey2" padding="medium">
         <Container xl>
-          <TextWall title={pageContent.clients.title} text={pageContent.clients.names} />
+          <Row>
+            <Col span={12}>
+              <Heading alignment="center" tag="h2">
+                {pageContent.pastProjects.title}
+              </Heading>
+            </Col>
+          </Row>
+          <Spacer height="12px" />
+          <Row>
+            {portfolioItems.map((item: FixMeLater) => (
+              <Col span={12} spanMd={6} key={item.name.title[0].plain_text}>
+                <PortfolioItemCard
+                  image={item.image.rich_text[0].plain_text}
+                  linkLabel={componentsContent.PortfolioItemCard.link.label}
+                  name={item.name.title[0].plain_text}
+                  slug={item.slug.rich_text[0].plain_text}
+                  text={item.excerpt.rich_text[0].plain_text}
+                  title={item.title.rich_text[0].plain_text}
+                />
+              </Col>
+            ))}
+          </Row>
+
+          <Spacer height="50px" />
+
+          {/* Clients */}
+          <Row>
+            <Col span={12}>
+              <TextWall title={pageContent.clients.title} text={pageContent.clients.names} />
+            </Col>
+          </Row>
+
+          <Spacer height="25px" />
         </Container>
       </Section>
 
@@ -121,14 +151,15 @@ PortfolioPage.getLayout = (page) => (
 export const getStaticProps: GetStaticProps = async () => {
   // get notion data
   const pageId = 'Portfolio';
-  const componentIds = ['MainNav', 'Footer'];
+  const componentIds = ['MainNav', 'Footer', 'PortfolioItemCard'];
 
   // get pageContent
   const pageContent = await notion.getPageContent(pageId);
   const componentsContent = await notion.getComponentsContent(componentIds);
+  const portfolioItems = await notion.getPortfolioItems();
 
   // return props
-  return { props: { componentsContent, pageContent }, revalidate: false };
+  return { props: { componentsContent, portfolioItems, pageContent }, revalidate: false };
 };
 
 export default PortfolioPage;

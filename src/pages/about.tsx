@@ -24,9 +24,9 @@ import Spacer from '../components/layouts/Spacer';
 import Subtitle from '../components/atoms/Subtitle';
 import TestimonialsSection from '../components/sections/TestimonialsSection';
 import Text from '../components/atoms/Text';
-import TimelineContainer from '../components/elements/TimelineContainer';
-import TimelineCard from '../components/elements/TimelineCard';
 import TextWall from '../components/elements/TextWall';
+import TimelineCard from '../components/elements/TimelineCard';
+import TimelineContainer from '../components/elements/TimelineContainer';
 
 // define page
 const AboutPage: NextPageWithLayout = ({ componentsContent, pageContent }) => {
@@ -120,10 +120,12 @@ const AboutPage: NextPageWithLayout = ({ componentsContent, pageContent }) => {
           </Row>
           <Spacer height="24px" />
           <Row>
-            <TextWall
-              title={pageContent.skills.other.title}
-              text={pageContent.skills.other.tools}
-            />
+            <Col span={12}>
+              <TextWall
+                title={pageContent.skills.other.title}
+                text={pageContent.skills.other.tools}
+              />
+            </Col>
           </Row>
         </Container>
       </Section>
@@ -163,7 +165,7 @@ const AboutPage: NextPageWithLayout = ({ componentsContent, pageContent }) => {
                   <TimelineCard key={item.title} title={item.title} text={item.text} />
                 ))}
                 <Spacer height="48px" />
-                <Subtitle>{pageContent.background.publications.title}</Subtitle>
+                <Subtitle isWhite>{pageContent.background.publications.title}</Subtitle>
                 <Spacer height="12px" />
                 {pageContent.background.publications.items.map(
                   (item: { href: string; label: string }) => (

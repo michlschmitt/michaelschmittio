@@ -5,7 +5,8 @@ export type SectionColorType =
   | 'black'
   | 'green'
   | 'gradient'
-  | 'grey'
+  | 'grey1'
+  | 'grey2'
   | 'primary'
   | 'secondary'
   | 'white';
@@ -15,7 +16,8 @@ export enum SectionColorEnum {
   gradient = 'gradient',
   gradientHorizontal = 'gradient-horizontal',
   green = 'green',
-  grey = 'grey',
+  grey1 = 'grey1',
+  grey2 = 'grey2',
   primary = 'primary',
   secondary = 'secondary',
 }

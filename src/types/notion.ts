@@ -1,5 +1,8 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
+// import types
+import { FixMeLater } from './universal';
+
 // Notion API related types
 
 export type NotionBlockTextType = {
@@ -28,5 +31,5 @@ export type NotionBlockType = {
   has_children: boolean;
   type: string;
   archived: false;
-  [type: string]: any; // TODO: implement
+  [type: string]: FixMeLater; // TODO: implement
 };

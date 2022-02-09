@@ -1,7 +1,7 @@
 /* Heading */
 
 .heading {
-  @apply font-bold leading-snug tracking-wide text-white;
+  @apply font-bold leading-snug tracking-wide text-grey-5;
 
   strong {
     @apply font-bold;

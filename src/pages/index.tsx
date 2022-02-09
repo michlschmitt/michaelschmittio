@@ -120,7 +120,11 @@ const IndexPage: NextPageWithLayout = ({ pageContent }) => (
       <Container xl>
         <Row alignItems="center" justify="center">
           <Col span={12} spanXl={3}>
-            <Subtitle>{pageContent.featuredIn.title}</Subtitle>
+            <Spacer height="12px" />
+            <Subtitle alignment="center" isWhite>
+              {pageContent.featuredIn.title}
+            </Subtitle>
+            <Spacer height="12px" />
           </Col>
           {pageContent.featuredIn.logos.map((logo: { alt: string; src: string }) => (
             <Col key={logo.src} span={6} spanMd={3} spanXl={2}>

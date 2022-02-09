@@ -5,5 +5,5 @@
 }
 
 .timeline {
-  @apply relative before:absolute before:-left-4 before:h-[150%] before:w-0.5 before:rounded-xl before:bg-grey-2 before:content-[''] before:md:-left-8;
+  @apply relative before:absolute before:-left-4 before:h-[150%] before:w-0.5 before:rounded-xl before:bg-grey-5 before:content-[''] before:md:-left-8;
 }

@@ -1,0 +1,31 @@
+/* PortfolioItemCard */
+
+.card {
+  @apply my-4 flex w-full flex-col rounded-xl bg-black;
+}
+
+.imageContainer {
+  @apply relative block h-[240px] w-full;
+}
+
+.image {
+  @apply rounded-tl-xl rounded-tr-xl;
+}
+
+.contentContainer {
+  @apply w-full flex-col content-start items-start justify-start p-5;
+}
+
+.heading {
+  @apply mb-0.5;
+}
+
+.text {
+  @apply mb-0.5;
+}
+
+.button {
+  @apply mb-0.5 flex min-h-0 justify-start pb-0;
+
+  @apply text-secondary hover:text-white;
+}

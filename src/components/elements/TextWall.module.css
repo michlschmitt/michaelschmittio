@@ -1,13 +1,13 @@
 /* TextWall */
 
 .wall {
-  @apply flex flex-col px-4;
+  @apply flex flex-col;
 }
 
 .title {
-  @apply mb-4 font-sans text-sm font-bold leading-snug tracking-wide text-white/80;
+  @apply w-full font-sans text-xs uppercase tracking-wider text-grey-5 md:text-sm xl:w-auto;
 }
 
 .text {
-  @apply w-full text-left font-sans text-2xl font-bold leading-tight text-grey-2 md:text-3xl lg:text-4xl;
+  @apply w-full text-left font-sans text-2xl font-bold leading-tight text-grey-4 md:text-3xl lg:text-4xl;
 }

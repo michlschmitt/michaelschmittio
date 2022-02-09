@@ -6,16 +6,17 @@ import csrf from 'csurf';
 
 // impot types
 import { NextApiResponse, NextApiRequest } from 'next';
+import { FixMeLater } from '../../types';
 
 // init csrf
 const csrfProtection = csrf({ cookie: true });
 
 // Helper method to wait for a middleware to execute before continuing
 // And to throw an error when an error happens in a middleware
-export const initMiddleware = (middleware: any) => {
+export const initMiddleware = (middleware: FixMeLater) => {
   return (req: NextApiRequest, res: NextApiResponse) =>
     new Promise((resolve, reject) => {
-      middleware(req, res, (result: any) => {
+      middleware(req, res, (result: FixMeLater) => {
         if (result instanceof Error) {
           return reject(result);
         }

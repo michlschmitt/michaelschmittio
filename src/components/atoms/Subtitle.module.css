@@ -1,5 +1,25 @@
 /* Subtitle */
 
 .subtitle {
-  @apply mt-4 mb-4 w-full text-center font-sans text-xs font-bold tracking-wider text-white/80 md:text-sm lg:mr-12 xl:mt-0 xl:mb-0 xl:w-auto xl:text-left;
+  @apply w-full font-sans text-xs uppercase tracking-wider text-primary md:text-sm xl:w-auto xl:text-left;
+}
+
+.subtitleIsWhite {
+  @apply text-grey-5;
+}
+
+.subtitleIsBlack {
+  @apply text-grey-1/50;
+}
+
+.subtitleLeft {
+  @apply text-left;
+}
+
+.subtitleCenter {
+  @apply text-center;
+}
+
+.subtitleRight {
+  @apply text-right;
 }

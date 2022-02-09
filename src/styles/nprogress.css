@@ -16,10 +16,6 @@
   z-index: 1031;
 }
 
-.dark #nprogress .bar {
-  @apply bg-grey-2;
-}
-
 /* Fancy blur effect */
 #nprogress .peg {
   /* skeleton */
@@ -30,10 +26,6 @@
 
   /* custom */
   transform: rotate(3deg) translate(0px, -4px);
-}
-
-.dark #nprogress .peg {
-  @apply shadow-md;
 }
 
 .nprogress-custom-parent {

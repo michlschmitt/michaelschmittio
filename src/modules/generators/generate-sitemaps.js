@@ -54,24 +54,19 @@ const generateSitemap = () => {
     },
   ];
 
-  // // create blog posts sitemap
-  // const blogPosts = [];
+  // create portfolio items sitemap
+  const portfolio = [];
 
-  // // get posts
-  // const postFiles = fs.readdirSync(path.join('src/content/posts/en'));
-  // postFiles.forEach((postFile) => {
-  //   // get post meta
-  //   const post = fs.readFileSync(path.join('src/content/posts/en', postFile), 'utf-8');
-  //   const { data } = matter(post);
-
-  //   blogPosts.push({
-  //     url: `https://storyliner.app/blog/${data.slugEN}/`,
-  //     changefreq: 'yearly',
-  //     priority: 0.7,
-  //     lastmod: data.lastModifiedAt,
-  //     links: [{ lang: 'de', url: `https://storyliner.app/de/blog/${data.slugDE}/` }],
-  //   });
-  // });
+  // get posts
+  const portfolioItems = await notion.getPortfolioItems();
+  portfolioItems.forEach((item) => {
+    portfolio.push({
+      url: `https://www.michaelschmitt.io/portfolio/${item.lastModifiedAt.rich_text[0].plain_text}/`,
+      changefreq: 'yearly',
+      priority: 0.7,
+      lastmod: item.slug.rich_text[0].plain_text,
+    });
+  });
 
   // // create blog tags sitemap
   // const blogTags = [];
@@ -94,7 +89,7 @@ const generateSitemap = () => {
 
   // combine entries
   // const entries = [...pages, ...blogPosts, ...blogTags];
-  const entries = [...pages];
+  const entries = [...pages, ...portfolio];
 
   // create sitemap
   const sitemap = new SitemapStream({

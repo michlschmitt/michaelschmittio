@@ -67,7 +67,7 @@ const PortfolioPage: NextPageWithLayout = ({ componentsContent, portfolioItems, 
             backgroundColor="black"
             buttons={project.buttons}
             image={project.image}
-            imagePosition={index % 2 ? 'left' : 'right'}
+            imagePosition={index % 2 ? 'right' : 'left'}
             introText={project.intro}
             key={project.id}
             subline={project.id}
@@ -79,6 +79,7 @@ const PortfolioPage: NextPageWithLayout = ({ componentsContent, portfolioItems, 
       {/* Case studies */}
       <Section color="gradient" padding="medium">
         <Container xl>
+          <Spacer height="25px" />
           <Row>
             <Col span={12}>
               <Heading alignment="center" tag="h2">
@@ -87,7 +88,7 @@ const PortfolioPage: NextPageWithLayout = ({ componentsContent, portfolioItems, 
             </Col>
           </Row>
           <Spacer height="12px" />
-          <Row>
+          <Row alignItems="stretch">
             {portfolioItems.map((item: FixMeLater) => (
               <Col span={12} spanMd={6} key={item.name.title[0].plain_text}>
                 <PortfolioItemCard

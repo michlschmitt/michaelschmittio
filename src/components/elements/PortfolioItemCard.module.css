@@ -6,8 +6,12 @@
   @apply text-secondary hover:text-white;
 }
 
+.buttonContainer {
+  @apply mt-auto px-5 pb-5;
+}
+
 .card {
-  @apply my-4 flex w-full flex-col rounded-xl bg-grey-2 bg-opacity-25 transition-all ease-linear hover:bg-opacity-40;
+  @apply flex h-full w-full flex-col rounded-xl bg-grey-2 bg-opacity-25 transition-all ease-linear hover:bg-opacity-40;
 
   &:hover {
     .button {
@@ -16,8 +20,12 @@
   }
 }
 
+.cardContainer {
+  @apply h-full w-full py-4;
+}
+
 .imageContainer {
-  @apply relative block h-[360px] w-full;
+  @apply relative block h-[260px] w-full md:h-[280px] lg:h-[360px];
 }
 
 .image {
@@ -25,7 +33,7 @@
 }
 
 .contentContainer {
-  @apply w-full flex-col content-start items-start justify-start p-5;
+  @apply w-full flex-col content-start items-start justify-start px-5 pt-5;
 }
 
 .heading {

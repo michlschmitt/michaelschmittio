@@ -64,7 +64,7 @@ const PortfolioPage: NextPageWithLayout = ({ componentsContent, portfolioItems, 
           index: number,
         ) => (
           <PortfolioPreviewSection
-            backgroundColor="grey1"
+            backgroundColor="black"
             buttons={project.buttons}
             image={project.image}
             imagePosition={index % 2 ? 'left' : 'right'}
@@ -77,7 +77,7 @@ const PortfolioPage: NextPageWithLayout = ({ componentsContent, portfolioItems, 
       )}
 
       {/* Case studies */}
-      <Section color="grey2" padding="medium">
+      <Section color="gradient" padding="medium">
         <Container xl>
           <Row>
             <Col span={12}>

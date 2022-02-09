@@ -35,9 +35,9 @@ const NewsletterPage: NextPageWithLayout = ({ componentsContent, pageContent }) 
       {/* Content */}
       <FullHeightContainer>
         <Section color="gradient-horizontal">
-          <Container md>
+          <Container xl>
             <Row justify="center">
-              <Col span={12}>
+              <Col span={12} spanMd={10} spanLg={8}>
                 <Heading alignment="center" tag="h1">
                   {pageContent.hero.title}
                 </Heading>
@@ -46,7 +46,7 @@ const NewsletterPage: NextPageWithLayout = ({ componentsContent, pageContent }) 
             </Row>
             <Spacer height="16px" />
             <Row justify="center">
-              <Col span={10}>
+              <Col span={12} spanMd={10} spanLg={7}>
                 <RevueForm alignment="center" content={componentsContent.RevueForm} />
               </Col>
             </Row>

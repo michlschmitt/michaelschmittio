@@ -1,7 +1,19 @@
 /* PortfolioItemCard */
 
+.button {
+  @apply mb-0.5 flex min-h-0 justify-start pb-0 transition-all ease-linear;
+
+  @apply text-secondary hover:text-white;
+}
+
 .card {
-  @apply my-4 flex w-full flex-col rounded-xl bg-black;
+  @apply my-4 flex w-full flex-col rounded-xl bg-grey-2 bg-opacity-25 transition-all ease-linear hover:bg-opacity-40;
+
+  &:hover {
+    .button {
+      @apply text-white;
+    }
+  }
 }
 
 .imageContainer {
@@ -22,10 +34,4 @@
 
 .text {
   @apply mb-0.5;
-}
-
-.button {
-  @apply mb-0.5 flex min-h-0 justify-start pb-0;
-
-  @apply text-secondary hover:text-white;
 }

@@ -116,7 +116,7 @@ const IndexPage: NextPageWithLayout = ({ pageContent }) => (
     />
 
     {/* FeaturedIn Logos */}
-    <Section color="grey">
+    <Section color="grey1">
       <Container xl>
         <Row alignItems="center" justify="center">
           <Col span={12} spanXl={3}>

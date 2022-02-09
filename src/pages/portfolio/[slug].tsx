@@ -91,7 +91,7 @@ const PortfolioItemPage: NextPageWithLayout = ({
     <Spacer height="50px" />
 
     {/* Case studies */}
-    <Section color="grey2" padding="medium">
+    <Section color="gradient" padding="medium">
       <Container xl>
         <Row>
           <Col span={12}>

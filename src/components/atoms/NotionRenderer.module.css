@@ -93,6 +93,11 @@
   }
 
   blockquote {
+    @apply relative pl-4 before:absolute before:left-0 before:h-full before:w-[3px] before:rounded-xl before:bg-primary before:content-[''];
+
+    p {
+      @apply text-xl font-bold italic tracking-wide;
+    }
   }
 
   pre {

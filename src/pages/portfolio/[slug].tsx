@@ -137,10 +137,8 @@ const PortfolioItemPage: NextPageWithLayout = ({
       </Container>
     </Section>
 
-    <Spacer height="50px" />
-
     {/* Call-to-action */}
-    <Section padding="medium">
+    <Section padding="large">
       <Container md>
         <Row justify="center">
           <Col span={12}>

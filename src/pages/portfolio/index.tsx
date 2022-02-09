@@ -35,8 +35,10 @@ const PortfolioPage: NextPageWithLayout = ({ componentsContent, portfolioItems, 
         title={pageContent.seo.title}
       />
 
+      <Spacer height="75px" />
+
       {/* Hero */}
-      <Section>
+      <Section padding="none">
         <Container xl>
           <Row alignItems="center" justify="center">
             <Col span={12} spanLg={8}>

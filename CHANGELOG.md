@@ -1,3 +1,5 @@
+# [1.1.0](https://github.com/michlschmitt/portfolio-website/compare/1.0.7...1.1.0) (2022-02-09)
+
 ## [1.0.7](https://github.com/michlschmitt/portfolio-website/compare/1.0.6...1.0.7) (2022-02-09)
 
 

@@ -15,3 +15,7 @@ body {
 .ms-split-content-2 {
   @apply columns-1 gap-8 md:columns-2;
 }
+
+.ms-info-box {
+  @apply rounded-xl bg-grey-2 p-5;
+}

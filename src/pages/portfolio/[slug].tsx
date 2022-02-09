@@ -96,7 +96,7 @@ const PortfolioItemPage: NextPageWithLayout = ({
       </Container>
     </Section>
 
-    <Spacer height="50px" />
+    <Spacer height="100px" />
 
     {/* Case studies */}
     <Section color="gradient" padding="medium">

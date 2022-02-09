@@ -65,7 +65,7 @@
 
   div,
   p {
-    @apply mb-4 text-[15px] text-grey-4 md:text-[17px];
+    @apply mb-4 text-[15px] text-grey-4 last:mb-0  md:text-[17px];
   }
 
   li {
@@ -73,11 +73,11 @@
   }
 
   ul {
-    @apply mb-4 list-inside list-disc;
+    @apply mb-4 list-inside list-disc  last:mb-0;
   }
 
   ol {
-    @apply mb-4 list-inside list-decimal;
+    @apply mb-4 list-inside list-decimal last:mb-0;
   }
 
   a {
@@ -89,7 +89,7 @@
   }
 
   strong {
-    @apply font-bold text-grey-4;
+    @apply font-bold tracking-wide text-grey-4;
   }
 
   blockquote {

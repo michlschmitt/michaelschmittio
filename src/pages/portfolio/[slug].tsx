@@ -108,7 +108,7 @@ const PortfolioItemPage: NextPageWithLayout = ({
             </Heading>
           </Col>
         </Row>
-        <Row>
+        <Row alignItems="stretch">
           {portfolioItems.map((item: FixMeLater) => (
             <Col span={12} spanMd={6} key={item.name.title[0].plain_text}>
               <PortfolioItemCard

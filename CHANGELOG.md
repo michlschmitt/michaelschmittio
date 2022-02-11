@@ -1,3 +1,16 @@
+## [1.1.1](https://github.com/michlschmitt/portfolio-website/compare/1.1.0...1.1.1) (2022-02-11)
+
+
+### feat
+
+* adds new case images ([9c57a34](https://github.com/michlschmitt/portfolio-website/commit/9c57a34d00e29bc1c774bbfddc5c9a6be377830d))
+
+### fix
+
+* add portfolio items to sitemap ([f1714d1](https://github.com/michlschmitt/portfolio-website/commit/f1714d1daeda8caf04ca047e8c17edd38f306a00))
+* adds sorting to portfolio items retrieval ([4d08e2a](https://github.com/michlschmitt/portfolio-website/commit/4d08e2a973f0e991bcde70af612a504059bf61ff))
+* updates sitemap generation with notion modules ([c9d5753](https://github.com/michlschmitt/portfolio-website/commit/c9d575394068f0199187816a66e0cddeb0110bf8))
+
 # [1.1.0](https://github.com/michlschmitt/portfolio-website/compare/1.0.7...1.1.0) (2022-02-09)
 
 ## [1.0.7](https://github.com/michlschmitt/portfolio-website/compare/1.0.6...1.0.7) (2022-02-09)

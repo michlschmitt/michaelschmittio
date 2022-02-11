@@ -42,7 +42,6 @@ const CodeRenderer: React.FunctionComponent<{
             width={image.width}
           />
         )}
-        {image?.alt && <figcaption>{image.alt}</figcaption>}
       </figure>
     );
   }

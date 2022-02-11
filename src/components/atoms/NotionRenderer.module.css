@@ -104,6 +104,6 @@
   }
 
   figure {
-    @apply relative block h-auto w-full;
+    @apply relative mb-4 block h-auto w-full;
   }
 }

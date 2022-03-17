@@ -1,3 +1,14 @@
+## [1.1.2](https://github.com/michlschmitt/portfolio-website/compare/1.1.1...1.1.2) (2022-03-17)
+
+
+### feat
+
+* adds collabsible func to timeline card ([2e7bb4d](https://github.com/michlschmitt/portfolio-website/commit/2e7bb4d3ea856f7fe0a0e8618b629202b20dccec))
+
+### fix
+
+* removes figcaption from NotionRenderer image ([eefcdca](https://github.com/michlschmitt/portfolio-website/commit/eefcdcab20f015cd8a8089b5391781a433439428))
+
 ## [1.1.1](https://github.com/michlschmitt/portfolio-website/compare/1.1.0...1.1.1) (2022-02-11)
 
 

@@ -58,6 +58,7 @@ const PortfolioPage: NextPageWithLayout = ({ componentsContent, portfolioItems, 
         (
           project: {
             buttons: { href: string; label: string; color: string }[];
+            facts: { text: string }[];
             id: string;
             image: string;
             intro: string;
@@ -68,6 +69,7 @@ const PortfolioPage: NextPageWithLayout = ({ componentsContent, portfolioItems, 
           <PortfolioPreviewSection
             backgroundColor="black"
             buttons={project.buttons}
+            facts={project.facts}
             image={project.image}
             imagePosition={index % 2 ? 'right' : 'left'}
             introText={project.intro}

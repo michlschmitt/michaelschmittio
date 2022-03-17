@@ -161,9 +161,16 @@ const AboutPage: NextPageWithLayout = ({ componentsContent, pageContent }) => {
           <Row justify="center">
             <Col span={12} spanLg={12}>
               <TimelineContainer>
-                {pageContent.background.cv.map((item: { title: string; text: string }) => (
-                  <TimelineCard key={item.title} title={item.title} text={item.text} />
-                ))}
+                {pageContent.background.cv.map(
+                  (item: { company: string; title: string; text: string }) => (
+                    <TimelineCard
+                      key={item.title}
+                      company={item.company}
+                      title={item.title}
+                      text={item.text}
+                    />
+                  ),
+                )}
                 <Spacer height="48px" />
                 <Subtitle isWhite>{pageContent.background.publications.title}</Subtitle>
                 <Spacer height="12px" />

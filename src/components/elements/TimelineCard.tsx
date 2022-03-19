@@ -33,7 +33,7 @@ const TimelineCard: React.FunctionComponent<{ company: string; title: string; te
         <div className="absolute right-0 top-[50%] mt-[-22px]">
           <Button
             color="naked"
-            customClasses="leading-none tracking-none !text-black pt-[10px]"
+            customClasses="!leading-none !tracking-none !text-black pt-[10px]"
             onClick={() => setIsExpanded(!isExpanded)}
             size="medium"
             text={isExpanded ? '↑' : '↓'}

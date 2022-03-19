@@ -1,3 +1,10 @@
+## [1.1.3](https://github.com/michlschmitt/portfolio-website/compare/1.1.2...1.1.3) (2022-03-19)
+
+
+### fix
+
+* updates timeline card button styles ([417ee30](https://github.com/michlschmitt/portfolio-website/commit/417ee303be92569b1689ec99b04983387c2b3369))
+
 ## [1.1.2](https://github.com/michlschmitt/portfolio-website/compare/1.1.1...1.1.2) (2022-03-17)
 
 

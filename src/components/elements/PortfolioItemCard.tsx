@@ -27,12 +27,12 @@ const PortfolioItemCard: React.FunctionComponent<{
       <a className={styles.card}>
         <div className={styles.imageContainer}>
           <Image
+            // height={1280}
+            // width={720}
             alt={name}
             className={styles.image}
-            height={1280}
             layout="fill"
             src={image}
-            width={720}
           />
         </div>
         <div className={styles.contentContainer}>

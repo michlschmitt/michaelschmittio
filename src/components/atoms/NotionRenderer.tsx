@@ -14,11 +14,11 @@ import styles from './NotionRenderer.module.css';
 
 // define components
 const CodeRenderer: React.FunctionComponent<{
-  value: { caption: FixMeLater; language: string; text: NotionBlockTextType[] };
+  value: { caption: FixMeLater; language: string; rich_text: NotionBlockTextType[] };
 }> = ({ value }) => {
   // render html
   if (value?.caption[0]?.plain_text?.toUpperCase() === 'RENDER-HTML') {
-    return <div dangerouslySetInnerHTML={{ __html: value.text[0].plain_text }} />;
+    return <div dangerouslySetInnerHTML={{ __html: value.rich_text[0].plain_text }} />;
   }
 
   // render html
@@ -27,7 +27,7 @@ const CodeRenderer: React.FunctionComponent<{
     value?.language === 'json'
   ) {
     // get image data
-    const image = JSON.parse(value.text[0].plain_text);
+    const image = JSON.parse(value.rich_text[0].plain_text);
 
     // render image
     return (
@@ -49,7 +49,7 @@ const CodeRenderer: React.FunctionComponent<{
   // render code
   return (
     <pre>
-      <code>{value.text[0].plain_text}</code>
+      <code>{value.rich_text[0].plain_text}</code>
     </pre>
   );
 };

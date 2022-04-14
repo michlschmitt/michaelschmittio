@@ -25,7 +25,7 @@ const RevueForm: React.FunctionComponent<{ alignment?: TextAlignment; content: R
   const [email, setEmail] = React.useState<string>('');
 
   // init methods
-  const onChange = React.useCallback((event) => {
+  const onChange = React.useCallback((event: React.ChangeEvent<HTMLInputElement>) => {
     setEmail(event.target.value);
   }, []);
 

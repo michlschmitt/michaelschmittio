@@ -27,20 +27,23 @@ const ContactForm: React.FunctionComponent<{
   const [errorMessage, setErrorMessage] = React.useState<string>('');
 
   // init methods
-  const onChange = React.useCallback((event) => {
-    if (event.target.name === 'name') {
-      setName(event.target.value);
-    }
-    if (event.target.name === 'email') {
-      setEmail(event.target.value);
-    }
-    if (event.target.name === 'message') {
-      setMessage(event.target.value);
-    }
-  }, []);
+  const onChange = React.useCallback(
+    (event: React.ChangeEvent<HTMLInputElement> | React.ChangeEvent<HTMLTextAreaElement>) => {
+      if (event.target.name === 'name') {
+        setName(event.target.value);
+      }
+      if (event.target.name === 'email') {
+        setEmail(event.target.value);
+      }
+      if (event.target.name === 'message') {
+        setMessage(event.target.value);
+      }
+    },
+    [],
+  );
 
   const onSubmit = React.useCallback(
-    async (event) => {
+    async (event: React.FormEvent) => {
       // prevent default
       event.preventDefault();
 

@@ -1,4 +1,20 @@
-## [1.1.3](https://github.com/michlschmitt/portfolio-website/compare/1.1.2...1.1.3) (2022-03-19)
+
+
+## [1.2.0](https://github.com/michlschmitt/portfolio-website/compare/1.1.3...1.2.0) (2022-04-14)
+
+
+### Features
+
+* adds interim management to contact page ([45550c2](https://github.com/michlschmitt/portfolio-website/commit/45550c2aaf8e1008de705177f7c4af6e7e085c6e))
+
+
+### Bug Fixes
+
+* changes text key on NotionRenderer ([411a6cb](https://github.com/michlschmitt/portfolio-website/commit/411a6cbb530320ec98d593ebdb0ce72882e52d39))
+* makes timelinecard interactive ([09cd6f0](https://github.com/michlschmitt/portfolio-website/commit/09cd6f0d9ff0865c9f801afbbc0fd34112a05d5c))
+* removes height and width from portfolio image preview ([1e26a87](https://github.com/michlschmitt/portfolio-website/commit/1e26a87bcb89fef42a48c9605a73f28bc4cdd115))
+* updates notion renderer and fixes type issues ([b839de2](https://github.com/michlschmitt/portfolio-website/commit/b839de29245ef0876aaf017057474cedfdf1fcf2))
+* updates release-it config ([8e18c50](https://github.com/michlschmitt/portfolio-website/commit/8e18c5066fb7383bfefe9d64e877df7ebbac63b7))## [1.1.3](https://github.com/michlschmitt/portfolio-website/compare/1.1.2...1.1.3) (2022-03-19)
 
 
 ### fix
@@ -111,4 +127,3 @@
 * loads page data from notion and adds seo component to every page ([d6abc73](https://github.com/michlschmitt/nextjs-website/commit/d6abc73cc8dbc8fe7dc49dedbbc3d3a571bf3b27))
 * updates content and adds contact form notion function ([d0ceff2](https://github.com/michlschmitt/nextjs-website/commit/d0ceff2dff53a5d2bee8b121473ec0220f887f29))
 * updates font and next/image loader due to static export ([b6baa14](https://github.com/michlschmitt/nextjs-website/commit/b6baa1435025f59fa813968d86bb3749cf522fa9))
-

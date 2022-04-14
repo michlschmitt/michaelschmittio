@@ -6,7 +6,9 @@ import * as React from 'react';
 import styles from './CheckeredPaperCard.module.css';
 
 // define component
-const CheckeredPaperCard: React.FunctionComponent = ({ children }) => (
+const CheckeredPaperCard: React.FunctionComponent<{ children: React.ReactNode }> = ({
+  children,
+}) => (
   <div className={styles.container}>
     <div className={styles.cardContainer}>
       {/* Component */}
@@ -24,7 +26,7 @@ const CheckeredPaperCard: React.FunctionComponent = ({ children }) => (
 );
 
 CheckeredPaperCard.propTypes = {
-  children: PropTypes.node.isRequired,
+  children: PropTypes.node.isRequired as React.Validator<React.ReactNode>,
 };
 
 export default CheckeredPaperCard;

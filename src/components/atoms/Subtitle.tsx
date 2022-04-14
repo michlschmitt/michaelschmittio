@@ -47,7 +47,7 @@ Subtitle.defaultProps = {
 
 Subtitle.propTypes = {
   alignment: PropTypes.oneOf(Object.values(HeadingAlignmentEnum)),
-  children: PropTypes.node.isRequired,
+  children: PropTypes.node.isRequired as React.Validator<React.ReactNode>,
   customClasses: PropTypes.string,
   isBlack: PropTypes.bool,
   isWhite: PropTypes.bool,

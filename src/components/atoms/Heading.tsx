@@ -84,7 +84,7 @@ Heading.defaultProps = {
 
 Heading.propTypes = {
   alignment: PropTypes.oneOf<HeadingAlignment>(Object.values(HeadingAlignmentEnum)),
-  children: PropTypes.node.isRequired,
+  children: PropTypes.node.isRequired as React.Validator<React.ReactNode>,
   customClasses: PropTypes.string,
   isBlack: PropTypes.bool,
   tag: PropTypes.oneOf<HeadingTag>(Object.values(HeadingTagEnum)).isRequired,

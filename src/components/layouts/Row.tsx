@@ -56,7 +56,7 @@ Row.defaultProps = {
 
 Row.propTypes = {
   alignItems: PropTypes.oneOf(Object.values(RowAlignItemsEnum)),
-  children: PropTypes.node.isRequired,
+  children: PropTypes.node.isRequired as React.Validator<React.ReactNode>,
   justify: PropTypes.oneOf(Object.values(RowJustifyEnum)),
   wrap: PropTypes.oneOf(Object.values(RowWrapEnum)),
 };

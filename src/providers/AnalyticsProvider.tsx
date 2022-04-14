@@ -7,7 +7,9 @@ import TagManager from 'react-gtm-module';
 import { useRouter } from 'next/router';
 
 // component for updating dataLayer
-const AnalyticsProvider: React.FunctionComponent = ({ children }) => {
+const AnalyticsProvider: React.FunctionComponent<{ children: React.ReactNode }> = ({
+  children,
+}) => {
   // init hooks
   const router = useRouter();
 
@@ -51,7 +53,7 @@ const AnalyticsProvider: React.FunctionComponent = ({ children }) => {
 };
 
 AnalyticsProvider.propTypes = {
-  children: PropTypes.node.isRequired,
+  children: PropTypes.node.isRequired as React.Validator<React.ReactNode>,
 };
 
 export default AnalyticsProvider;

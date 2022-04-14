@@ -5,7 +5,9 @@ import Script from 'next/script';
 
 // PlausibleProvider component
 // https://plausible.io/docs/proxy/guides/nextjs
-const PlausibleProvider: React.FunctionComponent = ({ children }) => {
+const PlausibleProvider: React.FunctionComponent<{ children: React.ReactNode }> = ({
+  children,
+}) => {
   // define methods
   const onOptOut = React.useCallback(() => {
     // set opt out flag
@@ -38,14 +40,14 @@ const PlausibleProvider: React.FunctionComponent = ({ children }) => {
   // init render
   return (
     <>
-      <Script defer data-domain={process.env.NEXT_PUBLIC_PLAUSIBLE_DOMAIN} src="/js/script.js" />
       <>{children}</>
+      <Script defer data-domain={process.env.NEXT_PUBLIC_PLAUSIBLE_DOMAIN} src="/js/script.js" />
     </>
   );
 };
 
 PlausibleProvider.propTypes = {
-  children: PropTypes.node.isRequired,
+  children: PropTypes.node.isRequired as React.Validator<React.ReactNode>,
 };
 
 export default PlausibleProvider;

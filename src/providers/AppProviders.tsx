@@ -12,7 +12,7 @@ import YoutubePrivacyProvider from './YoutubePrivacyProvider';
 // NOTE: order matters!
 
 // AppProviders component
-const AppProviders: React.FunctionComponent = ({ children }) => (
+const AppProviders: React.FunctionComponent<{ children: React.ReactNode }> = ({ children }) => (
   <PasswordProtectionProvider>
     <AnalyticsProvider>
       <PlausibleProvider>
@@ -25,7 +25,7 @@ const AppProviders: React.FunctionComponent = ({ children }) => (
 );
 
 AppProviders.propTypes = {
-  children: PropTypes.node.isRequired,
+  children: PropTypes.node.isRequired as React.Validator<React.ReactNode>,
 };
 
 export default AppProviders;

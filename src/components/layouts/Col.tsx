@@ -174,7 +174,7 @@ Col.defaultProps = {
 };
 
 Col.propTypes = {
-  children: PropTypes.node.isRequired,
+  children: PropTypes.node.isRequired as React.Validator<React.ReactNode>,
   offset: PropTypes.oneOf<ColOffsetType>([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]),
   offsetSm: PropTypes.oneOf<ColOffsetType>([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]),
   offsetMd: PropTypes.oneOf<ColOffsetType>([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]),

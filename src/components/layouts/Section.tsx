@@ -49,7 +49,7 @@ Section.defaultProps = {
 };
 
 Section.propTypes = {
-  children: PropTypes.node.isRequired,
+  children: PropTypes.node.isRequired as React.Validator<React.ReactNode>,
   color: PropTypes.oneOf(Object.values(SectionColorEnum)),
   padding: PropTypes.oneOf(Object.values(SectionPaddingEnum)),
 };

@@ -48,7 +48,8 @@ export const getPageContent = async (pageIdentifier: string) => {
       item?.code?.language === 'json' &&
       item?.code?.caption[0]?.text?.content?.toUpperCase() === 'PAGE-CONTENT',
   );
-  const pageContent = pageJson && JSON.parse(pageJson?.code?.text[0].plain_text);
+
+  const pageContent = pageJson && JSON.parse(pageJson?.code?.rich_text[0].text?.content);
 
   // get nested blocks
   const pageBlocks = await getNestedNotionBlocks(filterPageBlocks);

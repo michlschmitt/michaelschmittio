@@ -51,7 +51,7 @@ Text.defaultProps = {
 
 Text.propTypes = {
   alignment: PropTypes.oneOf<TextAlignment>(Object.values(TextAlignmentEnum)),
-  children: PropTypes.node.isRequired,
+  children: PropTypes.node.isRequired as React.Validator<React.ReactNode>,
   isBlack: PropTypes.bool,
   isHelpText: PropTypes.bool,
   size: PropTypes.oneOf<TextSize>(Object.values(TextSizeEnum)),

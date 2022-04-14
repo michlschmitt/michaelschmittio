@@ -5,7 +5,9 @@ import NProgress from 'nprogress';
 import { useRouter } from 'next/router';
 
 // NProgressProvider component
-const NProgressProvider: React.FunctionComponent = ({ children }) => {
+const NProgressProvider: React.FunctionComponent<{ children: React.ReactNode }> = ({
+  children,
+}) => {
   // init hooks
   const router = useRouter();
 
@@ -41,7 +43,7 @@ const NProgressProvider: React.FunctionComponent = ({ children }) => {
 };
 
 NProgressProvider.propTypes = {
-  children: PropTypes.node.isRequired,
+  children: PropTypes.node.isRequired as React.Validator<React.ReactNode>,
 };
 
 export default NProgressProvider;

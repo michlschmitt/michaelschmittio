@@ -32,7 +32,7 @@ const MainLayout: React.FunctionComponent<{
 );
 
 MainLayout.propTypes = {
-  children: PropTypes.node.isRequired,
+  children: PropTypes.node.isRequired as React.Validator<React.ReactNode>,
   content: PropTypes.shape({
     MainNav: mainNavPropTypes,
     Footer: footerPropTypes,

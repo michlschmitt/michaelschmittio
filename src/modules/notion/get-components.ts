@@ -18,7 +18,7 @@ export const getComponentContent = async (pageIdentifier: string) => {
   // get blocks
   const blocks = await getNotionBlocks(page?.id as string);
   const rawJson = blocks.find((item) => item.type === 'code');
-  const pageContent = JSON.parse(rawJson?.code?.text[0].plain_text);
+  const pageContent = JSON.parse(rawJson?.code?.rich_text[0].text?.content);
 
   return [pageIdentifier, pageContent];
 };

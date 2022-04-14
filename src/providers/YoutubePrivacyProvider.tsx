@@ -7,7 +7,9 @@ import { iframeOptin } from '../modules/privacy';
 
 // YoutubePrivacyProvider component
 // https://support.cookiehub.com/article/75-youtube-embed-videos
-const YoutubePrivacyProvider: React.FunctionComponent = ({ children }) => {
+const YoutubePrivacyProvider: React.FunctionComponent<{ children: React.ReactNode }> = ({
+  children,
+}) => {
   // handle data changes
   React.useEffect(() => {
     if (typeof window !== 'undefined') {
@@ -28,7 +30,7 @@ const YoutubePrivacyProvider: React.FunctionComponent = ({ children }) => {
 };
 
 YoutubePrivacyProvider.propTypes = {
-  children: PropTypes.node.isRequired,
+  children: PropTypes.node.isRequired as React.Validator<React.ReactNode>,
 };
 
 export default YoutubePrivacyProvider;

@@ -6,12 +6,14 @@ import * as PropTypes from 'prop-types';
 import { useCookies } from 'react-cookie';
 
 // define component
-const PasswordProtection: React.FunctionComponent = ({ children }) => {
+const PasswordProtection: React.FunctionComponent<{ children: React.ReactNode }> = ({
+  children,
+}) => {
   // init hooks
   const [, setCookie] = useCookies(['passwordProtection']);
 
   // init states
-  const [hasAccess, updateAccess] = React.useState<boolean>(false);
+  const [hasAccess, updateAccess] = React.useState<boolean>(true);
 
   // show alert on render
   React.useEffect(() => {
@@ -31,20 +33,22 @@ const PasswordProtection: React.FunctionComponent = ({ children }) => {
   }, [setCookie, updateAccess]);
 
   // render website
-  if (hasAccess) {
-    return <>{children}</>;
+  if (!hasAccess) {
+    return <></>;
   }
 
   // passwordProtected
-  return <></>;
+  return <>{children}</>;
 };
 
 PasswordProtection.propTypes = {
-  children: PropTypes.node.isRequired,
+  children: PropTypes.node.isRequired as React.Validator<React.ReactNode>,
 };
 
 // PasswordProtectionProvider component
-const PasswordProtectionProvider: React.FunctionComponent = ({ children }) => {
+const PasswordProtectionProvider: React.FunctionComponent<{ children: React.ReactNode }> = ({
+  children,
+}) => {
   // init hooks
   const [cookies] = useCookies(['passwordProtection']);
 
@@ -63,7 +67,7 @@ const PasswordProtectionProvider: React.FunctionComponent = ({ children }) => {
 };
 
 PasswordProtectionProvider.propTypes = {
-  children: PropTypes.node.isRequired,
+  children: PropTypes.node.isRequired as React.Validator<React.ReactNode>,
 };
 
 export default PasswordProtectionProvider;

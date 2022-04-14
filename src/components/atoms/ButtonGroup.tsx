@@ -35,7 +35,7 @@ ButtonGroup.defaultProps = {
 
 ButtonGroup.propTypes = {
   alignment: PropTypes.oneOf(Object.values(ButtonGroupAlignmentEnum)),
-  children: PropTypes.node.isRequired,
+  children: PropTypes.node.isRequired as React.Validator<React.ReactNode>,
 };
 
 export default ButtonGroup;

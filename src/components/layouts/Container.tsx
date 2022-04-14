@@ -39,7 +39,7 @@ Container.defaultProps = {
 };
 
 Container.propTypes = {
-  children: PropTypes.node.isRequired,
+  children: PropTypes.node.isRequired as React.Validator<React.ReactNode>,
   lg: PropTypes.bool,
   md: PropTypes.bool,
   xl: PropTypes.bool,

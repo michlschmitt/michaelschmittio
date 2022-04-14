@@ -1,9 +1,41 @@
 /* TimelineCard */
 
+.cardContainer {
+  @apply mb-6 flex h-full w-full before:absolute before:-left-6 before:mt-6 before:h-4 before:w-4 before:rounded-xl before:bg-secondary before:content-[''] before:md:-left-10;
+}
+
 .card {
-  @apply mb-6 flex h-full w-full flex-col rounded-xl bg-grey-5 p-4 before:absolute before:-left-6 before:h-4 before:w-4 before:rounded-xl before:bg-secondary before:content-[''] before:md:-left-10;
+  @apply flex h-full w-full flex-col rounded-xl bg-grey-5 p-4 transition-all ease-out hover:scale-[1.01] before:md:-left-10;
 
   a {
     @apply text-primary hover:text-secondary;
   }
+}
+
+.header {
+  @apply relative w-full pr-8;
+}
+
+.headerTitle {
+  @apply !mb-0;
+}
+
+.headerText {
+  @apply !mb-0 text-primary;
+}
+
+.headerIcon {
+  @apply absolute right-4 top-[50%] -mt-4;
+}
+
+.content {
+  @apply mt-3;
+}
+
+.contentFadeIn {
+  @apply flex animate-fade-in;
+}
+
+.contentHidden {
+  @apply hidden;
 }

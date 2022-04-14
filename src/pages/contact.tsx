@@ -14,11 +14,13 @@ import Col from '../components/layouts/Col';
 import ContactForm from '../components/vendors/ContactForm';
 import Container from '../components/layouts/Container';
 import Heading from '../components/atoms/Heading';
+import Image from '../components/atoms/Image';
 import MainLayout from '../components/layouts/MainLayout';
 import Row from '../components/layouts/Row';
 import SEO from '../components/meta/SEO';
 import Section from '../components/layouts/Section';
 import Spacer from '../components/layouts/Spacer';
+import Subtitle from '../components/atoms/Subtitle';
 import Text from '../components/atoms/Text';
 
 // define page
@@ -59,6 +61,34 @@ const ContactPage: NextPageWithLayout = ({ componentsContent, pageContent }) => 
               </CheckeredPaperCard>
               <Spacer height="32px" />
             </Col>
+          </Row>
+        </Container>
+      </Section>
+
+      {/* FeaturedIn Logos */}
+      <Section color="primary">
+        <Container xl>
+          <Row alignItems="center" justify="center">
+            <Col span={12} spanXl={3}>
+              <Spacer height="12px" />
+              <Subtitle alignment="center" isWhite>
+                {pageContent.featuredIn.title}
+              </Subtitle>
+              <Spacer height="12px" />
+            </Col>
+            {pageContent.featuredIn.logos.map((logo: { alt: string; src: string }) => (
+              <Col key={logo.src} span={6} spanMd={3} spanXl={2}>
+                <Image
+                  alt={logo.alt}
+                  height={360}
+                  isRound
+                  isWhite
+                  layout="responsive"
+                  src={logo.src}
+                  width={720}
+                />
+              </Col>
+            ))}
           </Row>
         </Container>
       </Section>

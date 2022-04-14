@@ -77,7 +77,7 @@ const ContactPage: NextPageWithLayout = ({ componentsContent, pageContent }) => 
           <Row alignItems="flex-start" justify="space-between">
             {pageContent.faq.items.map(
               ({ question, answer }: { question: string; answer: string }) => (
-                <Col span={12} spanSm={6} spanMd={4} key={question}>
+                <Col span={12} spanSm={6} spanMd={6} key={question}>
                   <Spacer height="16px" />
                   <Heading customClasses="text-base lg:text-xl" tag="h3">
                     {question}

@@ -163,49 +163,49 @@ const BlockRenderer: React.FunctionComponent<{ block: NotionBlockType }> = ({ bl
     case 'paragraph':
       return (
         <p>
-          <TextRenderer text={value.text} />
+          <TextRenderer text={value.rich_text} />
         </p>
       );
 
     case 'heading_1':
       return (
         <h1>
-          <TextRenderer renderMarkup={false} text={value.text} />
+          <TextRenderer renderMarkup={false} text={value.rich_text} />
         </h1>
       );
 
     case 'heading_2':
       return (
         <h2>
-          <TextRenderer renderMarkup={false} text={value.text} />
+          <TextRenderer renderMarkup={false} text={value.rich_text} />
         </h2>
       );
 
     case 'heading_3':
       return (
         <h3>
-          <TextRenderer renderMarkup={false} text={value.text} />
+          <TextRenderer renderMarkup={false} text={value.rich_text} />
         </h3>
       );
 
     case 'heading_4':
       return (
         <h4>
-          <TextRenderer renderMarkup={false} text={value.text} />
+          <TextRenderer renderMarkup={false} text={value.rich_text} />
         </h4>
       );
 
     case 'heading_5':
       return (
         <h5>
-          <TextRenderer renderMarkup={false} text={value.text} />
+          <TextRenderer renderMarkup={false} text={value.rich_text} />
         </h5>
       );
 
     case 'heading_6':
       return (
         <h6>
-          <TextRenderer renderMarkup={false} text={value.text} />
+          <TextRenderer renderMarkup={false} text={value.rich_text} />
         </h6>
       );
 
@@ -221,7 +221,7 @@ const BlockRenderer: React.FunctionComponent<{ block: NotionBlockType }> = ({ bl
     case 'bulleted_list_item':
       return (
         <li>
-          <TextRenderer text={value.text} />
+          <TextRenderer text={value.rich_text} />
         </li>
       );
 
@@ -237,7 +237,7 @@ const BlockRenderer: React.FunctionComponent<{ block: NotionBlockType }> = ({ bl
     case 'numbered_list_item':
       return (
         <li>
-          <TextRenderer text={value.text} />
+          <TextRenderer text={value.rich_text} />
         </li>
       );
 
@@ -246,7 +246,7 @@ const BlockRenderer: React.FunctionComponent<{ block: NotionBlockType }> = ({ bl
         <div>
           <label htmlFor={id}>
             <input type="checkbox" id={id} defaultChecked={value.checked} />{' '}
-            <TextRenderer text={value.text} />
+            <TextRenderer text={value.rich_text} />
           </label>
         </div>
       );
@@ -255,7 +255,7 @@ const BlockRenderer: React.FunctionComponent<{ block: NotionBlockType }> = ({ bl
       return (
         <details>
           <summary>
-            <TextRenderer text={value.text} />
+            <TextRenderer text={value.rich_text} />
           </summary>
           {value.children?.map((block: NotionBlockType) => (
             <BlockRenderer key={block.id} block={block} />
@@ -270,7 +270,7 @@ const BlockRenderer: React.FunctionComponent<{ block: NotionBlockType }> = ({ bl
       return <hr key={id} />;
 
     case 'quote':
-      return <blockquote key={id}>{value.text[0].plain_text}</blockquote>;
+      return <blockquote key={id}>{value.rich_text[0].plain_text}</blockquote>;
 
     case 'file':
       const src_file = value.type === 'external' ? value.external.url : value.file.url;

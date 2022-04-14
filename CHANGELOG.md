@@ -1,6 +1,11 @@
 
 
-## [1.2.0](https://github.com/michlschmitt/portfolio-website/compare/1.1.3...1.2.0) (2022-04-14)
+## [1.3.0](https://github.com/michlschmitt/portfolio-website/compare/1.2.0...1.3.0) (2022-04-14)
+
+
+### Bug Fixes
+
+* adds featured in section to contact page ([9b9996d](https://github.com/michlschmitt/portfolio-website/commit/9b9996d7c64b0c075d5849fc40cec1117b5256e8))## [1.2.0](https://github.com/michlschmitt/portfolio-website/compare/1.1.3...1.2.0) (2022-04-14)
 
 
 ### Features

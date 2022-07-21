@@ -113,9 +113,7 @@ export function iframeOptin({ autoplay }: { autoplay: boolean }): void {
       }
 
       // check if already opted in
-      // https://support.cookiehub.com/article/75-youtube-embed-videos
-      // @ts-ignore
-      if (localStorage.getItem('youtube-optin') || window?.cookiehub?.hasConsented('analytics')) {
+      if (localStorage.getItem('youtube-optin')) {
         optin();
       }
     }

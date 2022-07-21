@@ -30,9 +30,6 @@ export interface MainNavType {
 }
 
 export interface FooterType {
-  cookiePolicy: {
-    label: string;
-  };
   copyright: {
     href: string;
     label: string;

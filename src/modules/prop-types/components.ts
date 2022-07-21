@@ -34,9 +34,6 @@ export const mainNavPropTypes = PropTypes.exact({
 }).isRequired;
 
 export const footerPropTypes = PropTypes.exact({
-  cookiePolicy: PropTypes.exact({
-    label: PropTypes.string.isRequired,
-  }).isRequired,
   copyright: PropTypes.exact({
     href: PropTypes.string.isRequired,
     label: PropTypes.string.isRequired,

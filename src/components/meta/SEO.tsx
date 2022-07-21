@@ -8,6 +8,9 @@ import Head from 'next/head';
 import Script from 'next/script';
 import { useRouter } from 'next/router';
 
+// import config
+import { rootDomain } from '../../../config';
+
 // SEO component
 const SEO: React.FunctionComponent<{
   description: string;
@@ -19,8 +22,8 @@ const SEO: React.FunctionComponent<{
 
   // init vars
   const brandedTitle = title;
-  const canonicalUrl = `${process.env.NEXT_PUBLIC_ROOT_DOMAIN}${asPath}`;
-  const imageUrl = `${process.env.NEXT_PUBLIC_ROOT_DOMAIN}${image}`;
+  const canonicalUrl = `${rootDomain}${asPath}`;
+  const imageUrl = `${rootDomain}${image}`;
 
   // META TAGS
   const metaTags = [
@@ -61,7 +64,7 @@ const SEO: React.FunctionComponent<{
       key: 'rss-feed',
       href: asPath?.includes('/de/') ? '/rss_de.xml' : '/rss_en.xml',
       rel: 'alternate',
-      title: 'RSS Feed for storyliner.app',
+      title: 'RSS Feed for michaelschmitt.io',
       type: 'application/rss+xml',
     },
 

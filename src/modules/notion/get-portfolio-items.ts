@@ -3,15 +3,18 @@
 // import modules
 import { getNotionBlocks, getNotionPage, getNestedNotionBlocks, getNotionDatabase } from './utils';
 
+// import config
+import { notionPortfolioDatabaseId } from '../../../config';
+
 // define modules
 export const getPortfolioItemContent = async (slug: string) => {
   // get database of pages
-  const database = await getNotionDatabase(process.env.NOTION_PORTFOLIO_DATABASE_ID as string);
+  const database = await getNotionDatabase(notionPortfolioDatabaseId as string);
 
   // get page id
   const page = database.find(
     (item) =>
-      (item as any)?.properties?.slug?.rich_text[0]?.plain_text?.toLowerCase() ===
+      (item as any)?.properties?.slug?.rich_text?.[0]?.plain_text?.toLowerCase() ===
       slug.toLowerCase(),
   );
 
@@ -20,14 +23,14 @@ export const getPortfolioItemContent = async (slug: string) => {
 
   // get seo meta data
   const metaData = {
-    image: (pageData as any)?.properties?.image?.rich_text[0]?.text?.content,
-    name: (pageData as any)?.properties?.name.title[0].plain_text,
+    image: (pageData as any)?.properties?.image?.rich_text?.[0]?.text?.content,
+    name: (pageData as any)?.properties?.name?.title?.[0]?.plain_text,
     seo: {
-      description: (pageData as any)?.properties?.seoDescription?.rich_text[0]?.text?.content,
-      image: (pageData as any)?.properties?.seoImage?.rich_text[0]?.text?.content,
-      title: (pageData as any)?.properties?.seoTitle?.rich_text[0]?.text?.content,
+      description: (pageData as any)?.properties?.seoDescription?.rich_text?.[0]?.text?.content,
+      image: (pageData as any)?.properties?.seoImage?.rich_text?.[0]?.text?.content,
+      title: (pageData as any)?.properties?.seoTitle?.rich_text?.[0]?.text?.content,
     },
-    title: (pageData as any)?.properties?.title?.rich_text[0]?.text?.content,
+    title: (pageData as any)?.properties?.title?.rich_text?.[0]?.text?.content,
   };
 
   // get blocks
@@ -39,7 +42,7 @@ export const getPortfolioItemContent = async (slug: string) => {
       !(
         item?.type === 'code' &&
         item?.code?.language === 'json' &&
-        item?.code?.caption[0]?.text?.content?.toUpperCase() === 'PAGE-CONTENT'
+        item?.code?.caption?.[0]?.text?.content?.toUpperCase() === 'PAGE-CONTENT'
       ),
   );
 
@@ -48,7 +51,7 @@ export const getPortfolioItemContent = async (slug: string) => {
     (item) =>
       item?.type === 'code' &&
       item?.code?.language === 'json' &&
-      item?.code?.caption[0]?.text?.content?.toUpperCase() === 'PAGE-CONTENT',
+      item?.code?.caption?.[0]?.text?.content?.toUpperCase() === 'PAGE-CONTENT',
   );
   const structuredPageContent = pageJson && JSON.parse(pageJson?.code?.text[0].plain_text);
 
@@ -61,7 +64,7 @@ export const getPortfolioItemContent = async (slug: string) => {
 
 export const getPortfolioItems = async (params?: { exclude?: string; limit?: number }) => {
   // get database of pages
-  const database = await getNotionDatabase(process.env.NOTION_PORTFOLIO_DATABASE_ID as string);
+  const database = await getNotionDatabase(notionPortfolioDatabaseId as string);
 
   // filter items
   let portfolioItems = database
@@ -73,7 +76,7 @@ export const getPortfolioItems = async (params?: { exclude?: string; limit?: num
   if (params?.exclude) {
     portfolioItems = portfolioItems.filter(
       (item) =>
-        (item as any)?.slug?.rich_text[0]?.plain_text?.toLowerCase() !==
+        (item as any)?.slug?.rich_text?.[0]?.plain_text?.toLowerCase() !==
         params?.exclude?.toLowerCase(),
     );
   }

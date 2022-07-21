@@ -31,10 +31,8 @@ const Image: React.FunctionComponent<{
   );
 
   // NOTE: this is since next export does not support automated image optimization
-  const loader =
-    process.env.VERCEL === '1' || process.env.NODE_ENV === 'development'
-      ? undefined
-      : { loader: () => src };
+  const isDevelopment = process.env.VERCEL === '1' || process.env.NODE_ENV === 'development';
+  const loader = isDevelopment ? undefined : { loader: () => src };
   const loading = isPriority ? undefined : { loading: 'lazy' };
 
   // render

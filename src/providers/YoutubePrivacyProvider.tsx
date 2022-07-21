@@ -6,7 +6,6 @@ import * as PropTypes from 'prop-types';
 import { iframeOptin } from '../modules/privacy';
 
 // YoutubePrivacyProvider component
-// https://support.cookiehub.com/article/75-youtube-embed-videos
 const YoutubePrivacyProvider: React.FunctionComponent<{ children: React.ReactNode }> = ({
   children,
 }) => {

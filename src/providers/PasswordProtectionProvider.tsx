@@ -5,6 +5,9 @@ import * as React from 'react';
 import * as PropTypes from 'prop-types';
 import { useCookies } from 'react-cookie';
 
+// import config
+import { cookieBaseDomain, passwordProtection } from '../../config';
+
 // define component
 const PasswordProtection: React.FunctionComponent<{ children: React.ReactNode }> = ({
   children,
@@ -19,11 +22,11 @@ const PasswordProtection: React.FunctionComponent<{ children: React.ReactNode }>
   React.useEffect(() => {
     // ask for password
     const password = prompt('Open sesame:', '');
-    if (password === process.env.NEXT_PUBLIC_PASSWORD_PROTECTION) {
+    if (password === passwordProtection) {
       updateAccess(true);
       setCookie('passwordProtection', 'true', {
+        domain: cookieBaseDomain,
         path: '/',
-        domain: process.env.NEXT_PUBLIC_COOKIES_BASE_DOMAIN,
         sameSite: 'lax',
         secure: process.env.VERCEL === '1',
       });
@@ -58,7 +61,7 @@ const PasswordProtectionProvider: React.FunctionComponent<{ children: React.Reac
   }
 
   // has password protection on
-  if (process.env.NEXT_PUBLIC_PASSWORD_PROTECTION) {
+  if (passwordProtection) {
     return <PasswordProtection>{children}</PasswordProtection>;
   }
 

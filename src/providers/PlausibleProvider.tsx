@@ -3,6 +3,9 @@ import * as React from 'react';
 import * as PropTypes from 'prop-types';
 import Script from 'next/script';
 
+// import config
+import { plausibleDomain } from '../../config';
+
 // PlausibleProvider component
 // https://plausible.io/docs/proxy/guides/nextjs
 const PlausibleProvider: React.FunctionComponent<{ children: React.ReactNode }> = ({
@@ -41,7 +44,7 @@ const PlausibleProvider: React.FunctionComponent<{ children: React.ReactNode }> 
   return (
     <>
       <>{children}</>
-      <Script defer data-domain={process.env.NEXT_PUBLIC_PLAUSIBLE_DOMAIN} src="/js/script.js" />
+      <Script defer data-domain={plausibleDomain} src="/js/script.js" />
     </>
   );
 };

@@ -1,6 +1,9 @@
 // import modules
 import { notionClient } from './notion-client';
 
+// import config
+import { notionFormDatabaseId } from '../../../config';
+
 // add contact form subscriber to notion
 export const addSubscriber = async ({
   name,
@@ -15,7 +18,7 @@ export const addSubscriber = async ({
     // create new entry
     await notionClient.pages.create({
       parent: {
-        database_id: process.env.NOTION_CONTACT_FORM_DATABASE_ID as string,
+        database_id: notionFormDatabaseId as string,
       },
       properties: {
         Name: {

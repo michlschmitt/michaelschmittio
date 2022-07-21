@@ -3,10 +3,13 @@
 // import modules
 import { getNotionBlocks, getNotionDatabase } from './utils';
 
+// import config
+import { notionComponentsDatabaseId } from '../../../config';
+
 // define modules
 export const getComponentContent = async (pageIdentifier: string) => {
   // get database of pages
-  const database = await getNotionDatabase(process.env.NOTION_COMPONENTS_DATABASE_ID as string);
+  const database = await getNotionDatabase(notionComponentsDatabaseId as string);
 
   // get page id
   const page = database.find(

@@ -54,7 +54,7 @@ This site uses Google Tag Manager to manage scripts. GTM is implemented with [re
 
 ### Cookies and Consent management
 
-This site uses CookieHub to manage cookies and consent.
+This site doesn't use cookies.
 
 ### Plausible Analytics
 

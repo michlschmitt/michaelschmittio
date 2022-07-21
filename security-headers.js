@@ -5,14 +5,10 @@ const cspPolicy = [];
 cspPolicy.push("default-src 'self'");
 cspPolicy.push("img-src 'self' data: https: http:");
 cspPolicy.push("font-src 'self'");
-cspPolicy.push("style-src 'self' 'unsafe-inline' *.cookiehub.net cookiehub.net");
-cspPolicy.push(
-  "script-src 'self' 'unsafe-eval' 'unsafe-inline' www.youtube.com www.googletagmanager.com *.google-analytics.com *.cookiehub.net cookiehub.net",
-);
+cspPolicy.push("style-src 'self' 'unsafe-inline'");
+cspPolicy.push("script-src 'self' 'unsafe-eval' 'unsafe-inline' www.youtube.com");
 cspPolicy.push("frame-src 'self' https://www.youtube-nocookie.com");
-cspPolicy.push(
-  "connect-src 'self' www.googletagmanager.com www.google-analytics.com *.cookiehub.net cookiehub.net",
-);
+cspPolicy.push("connect-src 'self'");
 
 // You can choose which headers to add to the list
 // after learning more below.

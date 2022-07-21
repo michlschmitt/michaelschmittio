@@ -20,7 +20,7 @@ const generateFeeds = () => {
     language: 'en', // optional, used only in RSS 2.0, possible values: http://www.w3.org/TR/REC-html40/struct/dirlang.html#langcodes
     image: 'TODO: add screensaver image',
     favicon: 'https://www.michaelschmitt.io/favicon.ico',
-    copyright: `All rights reserved ${currentYear}, Gravitales GmbH`,
+    copyright: `All rights reserved ${currentYear}, mii ventures GmbH`,
     updated: today, // optional, default = today
     generator: 'Michael Schmitt', // optional, default = 'Feed for Node.js'
     feedLinks: { rss2: 'https://www.michaelschmitt.io/rss_en.xml' },

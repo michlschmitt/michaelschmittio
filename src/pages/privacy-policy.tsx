@@ -46,7 +46,7 @@ PrivacyPolicyPage.getLayout = (page) => (
 
 export const getStaticProps: GetStaticProps = async () => {
   // get notion data
-  const pageId = 'Privacy policy';
+  const pageId = 'Privacy-policy';
   const componentIds = ['MainNav', 'Footer'];
 
   // get pageContent

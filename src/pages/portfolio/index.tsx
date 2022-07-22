@@ -94,14 +94,14 @@ const PortfolioPage: NextPageWithLayout = ({ componentsContent, portfolioItems, 
           <Spacer height="12px" />
           <Row alignItems="stretch">
             {portfolioItems.map((item: FixMeLater) => (
-              <Col span={12} spanMd={6} key={item.name.title[0].plain_text}>
+              <Col span={12} spanMd={6} key={item.name}>
                 <PortfolioItemCard
-                  image={item.image.rich_text[0].plain_text}
+                  image={item.image}
                   linkLabel={componentsContent.PortfolioItemCard.link.label}
-                  name={item.name.title[0].plain_text}
-                  slug={item.slug.rich_text[0].plain_text}
-                  text={item.excerpt.rich_text[0].plain_text}
-                  title={item.title.rich_text[0].plain_text}
+                  name={item.name}
+                  slug={item.slug}
+                  text={item.excerpt}
+                  title={item.title}
                 />
               </Col>
             ))}

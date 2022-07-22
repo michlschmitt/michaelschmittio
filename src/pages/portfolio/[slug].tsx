@@ -110,14 +110,14 @@ const PortfolioItemPage: NextPageWithLayout = ({
         </Row>
         <Row alignItems="stretch">
           {portfolioItems.map((item: FixMeLater) => (
-            <Col span={12} spanMd={6} key={item.name.title[0].plain_text}>
+            <Col span={12} spanMd={6} key={item.name}>
               <PortfolioItemCard
-                image={item.image.rich_text[0].plain_text}
+                image={item.image}
                 linkLabel={componentsContent.PortfolioItemCard.link.label}
-                name={item.name.title[0].plain_text}
-                slug={item.slug.rich_text[0].plain_text}
-                text={item.excerpt.rich_text[0].plain_text}
-                title={item.title.rich_text[0].plain_text}
+                name={item.name}
+                slug={item.slug}
+                text={item.excerpt}
+                title={item.title}
               />
             </Col>
           ))}
@@ -174,7 +174,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
   // create params
   const paths = portfolioItems.map((item) => ({
-    params: { slug: item.slug.rich_text[0].plain_text },
+    params: { slug: item.slug },
   }));
 
   return { paths, fallback: false };
@@ -188,7 +188,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   const componentIds = ['MainNav', 'Footer', 'PortfolioItemCard'];
 
   // get portfolio items
-  const portfolioPageContent = await notion.getPageContent('Portfolio');
+  const pageContent = await notion.getPageContent('Portfolio');
   const portfolioItemContent = await notion.getPortfolioItemContent(slug as string);
   const componentsContent = await notion.getComponentsContent(componentIds);
   const portfolioItems = await notion.getPortfolioItems({ exclude: slug as string, limit: 2 });
@@ -197,8 +197,8 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   return {
     props: {
       componentsContent,
-      portfolioItems: portfolioItems,
-      pageContent: { ...portfolioPageContent, ...portfolioItemContent },
+      portfolioItems,
+      pageContent: { ...pageContent, ...portfolioItemContent },
     },
     revalidate: false,
   };

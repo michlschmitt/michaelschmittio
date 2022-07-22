@@ -82,7 +82,7 @@ const generateSitemap = async () => {
   const portfolioItems = await getPortfolioItems();
   portfolioItems.forEach((item) => {
     portfolio.push({
-      url: `https://www.michaelschmitt.io/portfolio/${item.slug.rich_text[0].plain_text}/`,
+      url: `https://www.michaelschmitt.io/portfolio/${item.slug}/`,
       changefreq: 'yearly',
       priority: 0.7,
       lastmod: item.lastModifiedAt.last_edited_time,

@@ -7,6 +7,36 @@ import { FixMeLater } from '../../types';
 import { notionClient } from './notion-client';
 
 // define helpers
+export const getPageProperty = async (pageId?: string, propertyId?: string) => {
+  // check args
+  if (!propertyId || !pageId) {
+    return '';
+  }
+
+  const response = await notionClient.pages.properties.retrieve({
+    page_id: pageId,
+    property_id: propertyId,
+  });
+
+  // text property
+  if (response.object === 'list') {
+    return (response as FixMeLater)?.results?.[0]?.rich_text?.plain_text || '';
+  }
+
+  // select property
+  if (response.object === 'property_item') {
+    if (response.type === 'date') {
+      return (response as FixMeLater)?.date?.start || '';
+    }
+
+    if (response.type === 'select') {
+      return (response as FixMeLater)?.select?.name || '';
+    }
+  }
+
+  return '';
+};
+
 export const getNotionPage = async (pageId: string) => {
   const response = await notionClient.pages.retrieve({ page_id: pageId });
   return response;
@@ -18,6 +48,11 @@ export const getNotionDatabase = async (databaseId: string) => {
 };
 
 export const getNotionBlocks = async (blockId: string) => {
+  // checks args
+  if (!blockId) {
+    return [];
+  }
+
   // loop over blocks
   const blocks = [];
 
@@ -28,10 +63,7 @@ export const getNotionBlocks = async (blockId: string) => {
   while (true) {
     // get blocks
     const { results, next_cursor }: { results: FixMeLater; next_cursor: string | null } =
-      await notionClient.blocks.children.list({
-        start_cursor: cursor,
-        block_id: blockId,
-      });
+      await notionClient.blocks.children.list({ start_cursor: cursor, block_id: blockId });
 
     // store results
     blocks.push(...results);

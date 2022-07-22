@@ -46,7 +46,7 @@ LegalNoticePage.getLayout = (page) => (
 
 export const getStaticProps: GetStaticProps = async () => {
   // get notion data
-  const pageId = 'Legal notice';
+  const pageId = 'Legal-notice';
   const componentIds = ['MainNav', 'Footer'];
 
   // get pageContent

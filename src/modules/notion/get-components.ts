@@ -12,16 +12,14 @@ export const getComponentContent = async (pageIdentifier: string) => {
   const database = await getNotionDatabase(notionComponentsDatabaseId as string);
 
   // get page id
-  const page = database.find(
-    (item) =>
-      (item as any)?.properties?.title?.title[0]?.plain_text?.toLowerCase() ===
-      pageIdentifier.toLowerCase(),
+  const page = database.find((item) =>
+    (item as { url: string })?.url?.toLowerCase()?.includes(pageIdentifier.toLowerCase()),
   );
 
   // get blocks
   const blocks = await getNotionBlocks(page?.id as string);
   const rawJson = blocks.find((item) => item.type === 'code');
-  const pageContent = JSON.parse(rawJson?.code?.rich_text[0].text?.content);
+  const pageContent = JSON.parse(rawJson?.code?.rich_text?.[0].text?.content);
 
   return [pageIdentifier, pageContent];
 };

@@ -1,8 +1,5 @@
 // config
 
-// security
-export const csrfSecret = process.env.CSRF_SECRET;
-
 // General
 export const rootDomain = process.env.NEXT_PUBLIC_ROOT_DOMAIN;
 export const passwordProtection = process.env.NEXT_PUBLIC_PASSWORD_PROTECTION;

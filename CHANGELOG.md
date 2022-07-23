@@ -1,5 +1,12 @@
 
 
+## [1.4.0](https://github.com/michlschmitt/portfolio-website/compare/1.3.0...1.4.0) (2022-07-23)
+
+
+### Bug Fixes
+
+* removes google tag manager and cookiehub ([30d65d7](https://github.com/michlschmitt/portfolio-website/commit/30d65d79171ec8b906fce3802f6e4c1df7e6cecb))
+
 ## [1.3.0](https://github.com/michlschmitt/portfolio-website/compare/1.2.0...1.3.0) (2022-04-14)
 
 

@@ -1,0 +1,74 @@
+/* Toast */
+.toast {
+  @apply fixed top-4 right-4 z-[1002] flex min-w-[300px] max-w-md items-start gap-x-4 rounded-[4px] p-4 leading-tight text-black shadow-xl;
+}
+
+.toast[data-state='open'] {
+  @apply animate-[slideIn_250ms_linear];
+}
+
+.toast[data-state='closed'] {
+  @apply animate-[hide_100ms_ease-in];
+}
+
+.toast[data-swipe='move'] {
+  @apply translate-x-[var(--radix-toast-swipe-move-x)];
+}
+
+.toast[data-swipe='cancel'] {
+  @apply translate-x-0 transition-transform ease-linear;
+}
+
+.toast[data-swipe='end'] {
+  @apply animate-[swipeOut_100ms_ease-out];
+}
+
+.info {
+  @apply bg-primary text-white;
+}
+
+.error {
+  @apply bg-tertiary-3 text-white;
+}
+
+.warning {
+  @apply bg-tertiary-1 text-white;
+}
+
+.success {
+  @apply bg-secondary text-white;
+}
+
+.close {
+  @apply ml-auto bg-transparent;
+}
+
+@keyframes hide {
+  from {
+    @apply opacity-100;
+  }
+
+  to {
+    @apply opacity-0;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes swipeOut {
+  from {
+    @apply translate-x-[var(--radix-toast-swipe-end-x)];
+  }
+
+  to {
+    @apply translate-x-[calc(100%_+_16px)];
+  }
+}

@@ -34,6 +34,7 @@
   "dependencies": {
     "@fontsource/poppins": "^4.5.10",
     "@notionhq/client": "^2.2.2",
+    "@radix-ui/react-toast": "^1.1.2",
     "classnames": "^2.3.2",
     "cookie-parser": "^1.4.6",
     "csurf": "^1.11.0",

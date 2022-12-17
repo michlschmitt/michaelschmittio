@@ -59,11 +59,10 @@ export interface FeaturedInLogoSectionType {
   logos: { alt: string; src: string }[];
 }
 
-export interface RevueFormType {
-  action: string;
+export interface ConvertKitFormType {
   email: { placeholder: string };
   privacy: { html: string };
-  submit: { label: string };
+  submit: { error: string; label: string; success: string };
 }
 
 export interface ContactFormType {
@@ -97,7 +96,7 @@ export interface ContactFormType {
 export interface NewsletterSectionType {
   title: string;
   teaser: string;
-  RevueForm: RevueFormType;
+  ConvertKitForm: ConvertKitFormType;
 }
 
 export interface TestimonialType {

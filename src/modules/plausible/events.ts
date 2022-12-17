@@ -7,7 +7,7 @@ export const trackNewsletterSubscription = async () => {
     const response = await fetch('https://plausible.io/api/event', {
       body: JSON.stringify({
         name: 'Newsletter subscription',
-        url: 'https://michaelschmitt.io/newsletter/',
+        url: 'https://www.michaelschmitt.io/newsletter/',
         domain: 'michaelschmitt.io',
       }),
       headers: {
@@ -34,7 +34,7 @@ export const trackContactFormRequest = async () => {
     const response = await fetch('https://plausible.io/api/event', {
       body: JSON.stringify({
         name: 'Contact form request',
-        url: 'https://michaelschmitt.io/contact/',
+        url: 'https://www.michaelschmitt.io/contact/',
         domain: 'michaelschmitt.io',
       }),
       headers: {

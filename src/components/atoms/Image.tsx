@@ -1,7 +1,7 @@
 // import node_modules
 import * as PropTypes from 'prop-types';
 import * as React from 'react';
-import NextImage from 'next/image';
+import NextImage from "next/legacy/image";
 import cn from 'classnames';
 
 // import styles

@@ -53,8 +53,8 @@ const LinkButton: React.FunctionComponent<{
   }
 
   return (
-    <Link href={href} passHref>
-      <a className={buttonStyles}>{text}</a>
+    <Link href={href} passHref className={buttonStyles}>
+      {text}
     </Link>
   );
 };

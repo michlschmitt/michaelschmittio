@@ -68,11 +68,14 @@ export const featuredInLogoSectionPropTypes = PropTypes.exact({
   ).isRequired,
 }).isRequired;
 
-export const revueFormPropTypes = PropTypes.exact({
-  action: PropTypes.string.isRequired,
+export const convertKitPropTypes = PropTypes.exact({
   email: PropTypes.exact({ placeholder: PropTypes.string.isRequired }).isRequired,
   privacy: PropTypes.exact({ html: PropTypes.string.isRequired }).isRequired,
-  submit: PropTypes.exact({ label: PropTypes.string.isRequired }).isRequired,
+  submit: PropTypes.exact({
+    error: PropTypes.string.isRequired,
+    label: PropTypes.string.isRequired,
+    success: PropTypes.string.isRequired,
+  }).isRequired,
 }).isRequired;
 
 export const contactFormPropTypes = PropTypes.exact({

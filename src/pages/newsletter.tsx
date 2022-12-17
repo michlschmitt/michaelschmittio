@@ -11,10 +11,10 @@ import * as notion from '../modules/notion';
 // import components
 import Col from '../components/layouts/Col';
 import Container from '../components/layouts/Container';
+import ConvertKitForm from '../components/vendors/ConvertKitForm';
 import FullHeightContainer from '../components/layouts/FullHeightContainer';
 import Heading from '../components/atoms/Heading';
 import MainLayout from '../components/layouts/MainLayout';
-import RevueForm from '../components/vendors/RevueForm';
 import Row from '../components/layouts/Row';
 import SEO from '../components/meta/SEO';
 import Section from '../components/layouts/Section';
@@ -47,7 +47,7 @@ const NewsletterPage: NextPageWithLayout = ({ componentsContent, pageContent }) 
             <Spacer height="16px" />
             <Row justify="center">
               <Col span={12} spanMd={10} spanLg={7}>
-                <RevueForm alignment="center" content={componentsContent.RevueForm} />
+                <ConvertKitForm alignment="center" content={componentsContent.ConvertKitForm} />
               </Col>
             </Row>
           </Container>
@@ -64,7 +64,7 @@ NewsletterPage.getLayout = (page) => (
 export const getStaticProps: GetStaticProps = async () => {
   // get notion data
   const pageId = 'Newsletter';
-  const componentIds = ['MainNav', 'Footer', 'RevueForm'];
+  const componentIds = ['MainNav', 'Footer', 'ConvertKitForm'];
 
   // get pageContent
   const pageContent = await notion.getPageContent(pageId);

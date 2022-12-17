@@ -1,6 +1,6 @@
-/* RevueForm */
+/* ConvertKitForm */
 
-.formContainer {
+.form-container {
   @apply flex w-full;
 }
 
@@ -8,7 +8,7 @@
   @apply flex w-full flex-col;
 }
 
-.inputContainer {
+.input-container {
   @apply mb-3 flex w-full flex-col px-3 md:flex-row;
 }
 
@@ -16,6 +16,14 @@
   @apply mb-2 md:mb-0;
 }
 
-.privacyContainer {
+.privacy-container {
   @apply flex w-full px-3;
+
+  &.is-left {
+    @apply justify-start;
+  }
+
+  &.is-center {
+    @apply justify-center;
+  }
 }

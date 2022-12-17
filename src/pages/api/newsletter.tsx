@@ -5,10 +5,23 @@ import type { NextApiRequest, NextApiResponse } from 'next';
 
 // import modules
 import * as plausible from '../../modules/plausible';
+import * as convertKit from '../../modules/convertkit';
 
 // track newsletter subscription
 const newsletterSubscription = async (req: NextApiRequest, res: NextApiResponse) => {
   try {
+    // get email
+    const { email } = req.body;
+
+    // validate email
+    if (!email) {
+      res.status(400).json({ error: 'Email is required!' });
+      return;
+    }
+
+    // subscribe to convertkit
+    await convertKit.subscribeToNewsletter(email);
+
     // track event
     await plausible.trackNewsletterSubscription();
 

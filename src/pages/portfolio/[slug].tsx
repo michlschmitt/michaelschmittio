@@ -50,7 +50,7 @@ const PortfolioItemPage: NextPageWithLayout = ({
             <Subtitle>
               <>
                 <Link href={pageContent.detail.subtitleButton.href}>
-                  <a>{pageContent.detail.subtitleButton.label}</a>
+                  {pageContent.detail.subtitleButton.label}
                 </Link>
                 &nbsp;&gt;&nbsp;{pageContent.name}
               </>

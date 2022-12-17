@@ -53,105 +53,103 @@ const MainNav: React.FunctionComponent<{ content: MainNavType }> = ({ content })
   }, [onCloseMobileMenu, router]);
 
   // render
-  return (
-    <>
-      <nav className={styles.mainNav}>
-        <Container>
-          <div className={styles.container}>
-            {/* Logo */}
-            <ul className={styles.logoMenu}>
-              <li className={styles.logoMenuItem}>
-                <Link href={content.logo.href} passHref>
-                  <a className={styles.logoLink}>{content.logo.label}</a>
+  return <>
+    <nav className={styles.mainNav}>
+      <Container>
+        <div className={styles.container}>
+          {/* Logo */}
+          <ul className={styles.logoMenu}>
+            <li className={styles.logoMenuItem}>
+              <Link href={content.logo.href} passHref className={styles.logoLink}>
+                {content.logo.label}
+              </Link>
+            </li>
+          </ul>
+
+          {/* Links */}
+          <ul className={styles.linksMenu}>
+            {content.navItems.map((navItem) => (
+              <li className={styles.linksMenuItem} key={navItem.href}>
+                <Link href={navItem.href} className={styles.link}>
+                  {navItem.label}
                 </Link>
               </li>
-            </ul>
+            ))}
+          </ul>
 
-            {/* Links */}
-            <ul className={styles.linksMenu}>
-              {content.navItems.map((navItem) => (
-                <li className={styles.linksMenuItem} key={navItem.href}>
-                  <Link href={navItem.href}>
-                    <a className={styles.link}>{navItem.label}</a>
-                  </Link>
-                </li>
-              ))}
-            </ul>
+          {/* Call to action */}
+          <ul className={styles.ctaMenu}>
+            <li className={styles.ctaMenuItem}>
+              <LinkButton
+                color="gradient"
+                href={content.callToAction.href}
+                size="small"
+                text={content.callToAction.label}
+              />
+            </li>
+            <li className={styles.ctaMenuItem}>
+              <a
+                className={styles.link}
+                href={content.socialLinks.github.href}
+                rel="noopener noreferrer"
+                target="_blank"
+                title={content.socialLinks.github.label}
+              >
+                <GithubIcon />
+              </a>
+            </li>
+            <li className={styles.ctaMenuItem}>
+              <a
+                className={styles.link}
+                href={content.socialLinks.linkedIn.href}
+                rel="noopener noreferrer"
+                target="_blank"
+                title={content.socialLinks.linkedIn.label}
+              >
+                <LinkedInIcon />
+              </a>
+            </li>
+            <li className={styles.ctaMenuItem}>
+              <a
+                className={styles.link}
+                href={content.socialLinks.twitter.href}
+                rel="noopener noreferrer"
+                target="_blank"
+                title={content.socialLinks.twitter.label}
+              >
+                <TwitterIcon />
+              </a>
+            </li>
+          </ul>
 
-            {/* Call to action */}
-            <ul className={styles.ctaMenu}>
-              <li className={styles.ctaMenuItem}>
-                <LinkButton
-                  color="gradient"
-                  href={content.callToAction.href}
-                  size="small"
-                  text={content.callToAction.label}
-                />
-              </li>
-              <li className={styles.ctaMenuItem}>
-                <a
-                  className={styles.link}
-                  href={content.socialLinks.github.href}
-                  rel="noopener noreferrer"
-                  target="_blank"
-                  title={content.socialLinks.github.label}
-                >
-                  <GithubIcon />
-                </a>
-              </li>
-              <li className={styles.ctaMenuItem}>
-                <a
-                  className={styles.link}
-                  href={content.socialLinks.linkedIn.href}
-                  rel="noopener noreferrer"
-                  target="_blank"
-                  title={content.socialLinks.linkedIn.label}
-                >
-                  <LinkedInIcon />
-                </a>
-              </li>
-              <li className={styles.ctaMenuItem}>
-                <a
-                  className={styles.link}
-                  href={content.socialLinks.twitter.href}
-                  rel="noopener noreferrer"
-                  target="_blank"
-                  title={content.socialLinks.twitter.label}
-                >
-                  <TwitterIcon />
-                </a>
-              </li>
-            </ul>
+          {/* Mobile button */}
+          <ul className={styles.mobileButtonMenu}>
+            <li className={styles.mobileButtonMenuItem}>
+              <LinkButton
+                color="gradient"
+                href={content.callToAction.href}
+                size="small"
+                text={content.callToAction.label}
+              />
+            </li>
 
-            {/* Mobile button */}
-            <ul className={styles.mobileButtonMenu}>
-              <li className={styles.mobileButtonMenuItem}>
-                <LinkButton
-                  color="gradient"
-                  href={content.callToAction.href}
-                  size="small"
-                  text={content.callToAction.label}
-                />
-              </li>
+            <li className={styles.mobileButtonMenuItem}>
+              <button
+                className={styles.mobileButtonMenuLink}
+                onClick={onToggleMobileMenu}
+                type="button"
+              >
+                <MobileMenuIcon />
+              </button>
+            </li>
+          </ul>
+        </div>
+      </Container>
+    </nav>
 
-              <li className={styles.mobileButtonMenuItem}>
-                <button
-                  className={styles.mobileButtonMenuLink}
-                  onClick={onToggleMobileMenu}
-                  type="button"
-                >
-                  <MobileMenuIcon />
-                </button>
-              </li>
-            </ul>
-          </div>
-        </Container>
-      </nav>
-
-      {/* Mobile menu */}
-      {mobileMenuState && <FullScreenNav content={content} closeMenu={onCloseMobileMenu} />}
-    </>
-  );
+    {/* Mobile menu */}
+    {mobileMenuState && <FullScreenNav content={content} closeMenu={onCloseMobileMenu} />}
+  </>;
 };
 
 MainNav.propTypes = {

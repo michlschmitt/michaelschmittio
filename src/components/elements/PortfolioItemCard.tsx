@@ -23,32 +23,32 @@ const PortfolioItemCard: React.FunctionComponent<{
   title: string;
 }> = ({ linkLabel, image, name, slug, text, title }) => (
   <div className={styles.cardContainer}>
-    <Link href={`/portfolio/${slug}/`}>
-      <a className={styles.card}>
-        <div className={styles.imageContainer}>
-          <Image
-            // height={1280}
-            // width={720}
-            alt={name}
-            className={styles.image}
-            layout="fill"
-            src={image}
-          />
-        </div>
-        <div className={styles.contentContainer}>
-          <Spacer height="8px" />
-          <Subtitle>{name}</Subtitle>
-          <Spacer height="8px" />
-          <Heading customClasses={styles.heading} tag="h3">
-            {title}
-          </Heading>
-          <Text customClasses={styles.text}>{text}</Text>
-        </div>
-        <Spacer height="16px" />
-        <div className={styles.buttonContainer}>
-          <div className={styles.button}>{linkLabel}</div>
-        </div>
-      </a>
+    <Link href={`/portfolio/${slug}/`} className={styles.card}>
+
+      <div className={styles.imageContainer}>
+        <Image
+          // height={1280}
+          // width={720}
+          alt={name}
+          className={styles.image}
+          layout="fill"
+          src={image}
+        />
+      </div>
+      <div className={styles.contentContainer}>
+        <Spacer height="8px" />
+        <Subtitle>{name}</Subtitle>
+        <Spacer height="8px" />
+        <Heading customClasses={styles.heading} tag="h3">
+          {title}
+        </Heading>
+        <Text customClasses={styles.text}>{text}</Text>
+      </div>
+      <Spacer height="16px" />
+      <div className={styles.buttonContainer}>
+        <div className={styles.button}>{linkLabel}</div>
+      </div>
+
     </Link>
   </div>
 );

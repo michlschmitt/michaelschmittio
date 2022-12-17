@@ -32,8 +32,8 @@ const FullScreenNav: React.FunctionComponent<{ content: MainNavType; closeMenu: 
     {/* Logo */}
     <ul className={styles.menu}>
       <li className={styles.menuItem}>
-        <Link href={content.logo.href} passHref>
-          <a className={styles.logoLink}>{content.logo.label}</a>
+        <Link href={content.logo.href} passHref className={styles.logoLink}>
+          {content.logo.label}
         </Link>
       </li>
     </ul>
@@ -42,8 +42,8 @@ const FullScreenNav: React.FunctionComponent<{ content: MainNavType; closeMenu: 
     <ul className={styles.menu}>
       {content.navItems.map((navItem) => (
         <li className={styles.menuItem} key={navItem.href}>
-          <Link href={navItem.href} passHref>
-            <a className={styles.link}>{navItem.label}</a>
+          <Link href={navItem.href} passHref className={styles.link}>
+            {navItem.label}
           </Link>
         </li>
       ))}

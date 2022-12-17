@@ -62,7 +62,7 @@ const LinkRenderer: React.FunctionComponent<{ children: React.ReactNode; url: st
   if (url.startsWith('https://www.michaelschmitt.io')) {
     return (
       <Link href={url.replace('https://www.michaelschmitt.io', '')} passHref>
-        <a>{children}</a>
+        {children}
       </Link>
     );
   }
@@ -281,7 +281,7 @@ const BlockRenderer: React.FunctionComponent<{ block: NotionBlockType }> = ({ bl
         <figure>
           <div className={styles.file}>
             📎{' '}
-            <Link href={src_file} passHref>
+            <Link href={src_file} passHref legacyBehavior>
               {lastElementInArray.split('?')[0]}
             </Link>
           </div>

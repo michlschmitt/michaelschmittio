@@ -22,8 +22,8 @@ const Footer: React.FunctionComponent<{ content: FooterType }> = ({ content }) =
     <div className={styles.container}>
       <ul className={styles.copyrightMenu}>
         <li className={styles.copyrightMenuItem}>
-          <Link href={content.copyright.href} passHref>
-            <a className={styles.link}>{content.copyright.label}</a>
+          <Link href={content.copyright.href} passHref className={styles.link}>
+            {content.copyright.label}
           </Link>
         </li>
       </ul>
@@ -31,8 +31,8 @@ const Footer: React.FunctionComponent<{ content: FooterType }> = ({ content }) =
       <ul className={styles.linksMenu}>
         {content.links.map((link) => (
           <li className={styles.linksMenuItem} key={link.label}>
-            <Link href={link.href} passHref>
-              <a className={styles.link}>{link.label}</a>
+            <Link href={link.href} passHref className={styles.link}>
+              {link.label}
             </Link>
           </li>
         ))}

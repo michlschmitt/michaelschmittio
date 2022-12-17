@@ -28,7 +28,7 @@
     "generate-static-files": "dotenv node src/modules/generators/generate-static-files.js",
     "lint": "next lint && eslint src --ext .ts,.tsx,.js,.jsx",
     "prepare": "husky install",
-    "release": "dotenv release-it",
+    "release": "dotenv -e ./.env.local release-it",
     "start": "NODE_ENV=production next start -p 3000"
   },
   "dependencies": {

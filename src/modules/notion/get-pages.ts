@@ -12,7 +12,7 @@ import {
 } from './utils';
 
 // import config
-import { notionPagesDatabaseId } from '../../../config';
+import { notionPagesDatabaseId } from './config';
 
 // define modules
 export const getPageWithProperties = async (page: FixMeLater) => {

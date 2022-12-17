@@ -4,7 +4,7 @@ import * as PropTypes from 'prop-types';
 import Script from 'next/script';
 
 // import config
-import { plausibleDomain } from '../../config';
+import { plausibleDomain } from '../modules/plausible';
 
 // PlausibleProvider component
 // https://plausible.io/docs/proxy/guides/nextjs

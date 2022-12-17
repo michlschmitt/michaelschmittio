@@ -4,7 +4,7 @@
 import { getNotionBlocks, getNotionDatabase } from './utils';
 
 // import config
-import { notionComponentsDatabaseId } from '../../../config';
+import { notionComponentsDatabaseId } from './config';
 
 // define modules
 export const getComponentContent = async (pageIdentifier: string) => {

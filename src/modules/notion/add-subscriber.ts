@@ -2,7 +2,7 @@
 import { notionClient } from './notion-client';
 
 // import config
-import { notionFormDatabaseId } from '../../../config';
+import { notionFormDatabaseId } from './config';
 
 // add contact form subscriber to notion
 export const addSubscriber = async ({

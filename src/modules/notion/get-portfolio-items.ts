@@ -12,7 +12,7 @@ import {
 } from './utils';
 
 // import config
-import { notionPortfolioDatabaseId } from '../../../config';
+import { notionPortfolioDatabaseId } from './config';
 
 // define modules
 export const getPortfolioItemWithProperties = async (item: FixMeLater) => {

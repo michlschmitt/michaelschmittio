@@ -2,7 +2,7 @@
 import { Client } from '@notionhq/client';
 
 // import config
-import { notionApiKey } from '../../../config';
+import { notionApiKey } from './config';
 
 // init notion client
 export const notionClient = new Client({ auth: notionApiKey });

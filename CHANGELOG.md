@@ -1,5 +1,18 @@
 
 
+## [1.5.0](https://github.com/michlschmitt/portfolio-website/compare/1.3.0...1.5.0) (2022-12-17)
+
+
+### Features
+
+* replaces Revue with ConvertKit ([e364449](https://github.com/michlschmitt/portfolio-website/commit/e364449aa18e80ca4d83e992139d19d15e936ab7))
+
+
+### Bug Fixes
+
+* fetches github token from .env.local while releasing ([fb41364](https://github.com/michlschmitt/portfolio-website/commit/fb413640c023962d6b8cb5d5b74a71eefd940a33))
+* removes google tag manager and cookiehub ([30d65d7](https://github.com/michlschmitt/portfolio-website/commit/30d65d79171ec8b906fce3802f6e4c1df7e6cecb))
+
 ## [1.4.0](https://github.com/michlschmitt/portfolio-website/compare/1.3.0...1.4.0) (2022-07-23)
 
 

@@ -1,5 +1,12 @@
 
 
+### [1.5.1](https://github.com/michlschmitt/portfolio-website/compare/1.5.0...1.5.1) (2023-03-18)
+
+
+### Bug Fixes
+
+* removes Copilot comments and fixes sitemap portfolio slugs ([8701fa9](https://github.com/michlschmitt/portfolio-website/commit/8701fa9c5818e908e8088b7864a5adf1808f758f))
+
 ## [1.5.0](https://github.com/michlschmitt/portfolio-website/compare/1.3.0...1.5.0) (2022-12-17)
 
 

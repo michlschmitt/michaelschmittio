@@ -1,12 +1,9 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
-// import modules
 import { getNotionBlocks, getNotionDatabase } from './utils';
 
-// import config
 import { notionComponentsDatabaseId } from './config';
 
-// define modules
 export const getComponentContent = async (pageIdentifier: string) => {
   // get database of pages
   const database = await getNotionDatabase(notionComponentsDatabaseId as string);

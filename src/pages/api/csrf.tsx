@@ -1,9 +1,7 @@
 // pages/api/contact.tsx
 
-// import types
 import type { NextApiRequest, NextApiResponse } from 'next';
 
-// import modules
 import * as csrf from '../../modules/csrf';
 
 // handle contact from

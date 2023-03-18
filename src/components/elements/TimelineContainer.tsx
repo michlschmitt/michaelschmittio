@@ -1,11 +1,8 @@
-// import node_modules
-import * as React from 'react';
+import React from 'react';
 import * as PropTypes from 'prop-types';
 
-// import styles
 import styles from './TimelineContainer.module.css';
 
-// define component
 const TimelineContainer: React.FunctionComponent<{ children: React.ReactNode }> = ({
   children,
 }) => (

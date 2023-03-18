@@ -1,15 +1,11 @@
-// import node_modules
 import * as PropTypes from 'prop-types';
-import * as React from 'react';
-import cn from 'classnames';
+import React from 'react';
+import classNames from 'classnames';
 
-// import types
 import { InputType, InputTypeEnum, InputSizeEnum, InputSize } from '../../types';
 
-// import styles
 import styles from './Input.module.css';
 
-// define components
 const Input: React.FunctionComponent<{
   customInputClasses?: string;
   customLabelClasses?: string;
@@ -35,32 +31,21 @@ const Input: React.FunctionComponent<{
   type,
   value,
 }) => {
-  // init styles
-  const inputStyles = React.useMemo(
-    () =>
-      cn(
-        styles.input,
-        {
-          [styles.inputIsSmall]: size === 'small',
-          [styles.inputIsMedium]: size === 'medium',
-          [styles.inputIsLarge]: size === 'large',
-        },
-        customInputClasses,
-      ),
-    [customInputClasses, size],
-  );
-  const labelTextStyles = React.useMemo(
-    () => cn(styles.labelText, customLabelClasses),
-    [customLabelClasses],
-  );
-
   // has label
   if (labelText) {
     return (
       <label className={styles.label} htmlFor={id}>
-        <span className={labelTextStyles}>{labelText}</span>
+        <span className={classNames(styles.labelText, customLabelClasses)}>{labelText}</span>
         <input
-          className={inputStyles}
+          className={classNames(
+            styles.input,
+            {
+              [styles.inputIsSmall]: size === 'small',
+              [styles.inputIsMedium]: size === 'medium',
+              [styles.inputIsLarge]: size === 'large',
+            },
+            customInputClasses,
+          )}
           form={form}
           id={id}
           name={name}
@@ -73,10 +58,17 @@ const Input: React.FunctionComponent<{
     );
   }
 
-  // render
   return (
     <input
-      className={inputStyles}
+      className={classNames(
+        styles.input,
+        {
+          [styles.inputIsSmall]: size === 'small',
+          [styles.inputIsMedium]: size === 'medium',
+          [styles.inputIsLarge]: size === 'large',
+        },
+        customInputClasses,
+      )}
       form={form}
       id={id}
       name={name}

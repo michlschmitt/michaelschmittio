@@ -1,14 +1,10 @@
-// import node_modules
-import * as React from 'react';
+import React from 'react';
 
-// import types
 import type { GetStaticProps } from 'next';
 import { NextPageWithLayout } from '../types';
 
-// import modules
 import * as notion from '../modules/notion';
 
-// import components
 import ButtonGroup from '../components/atoms/ButtonGroup';
 import CheckeredPaperCard from '../components/elements/CheckeredPaperCard';
 import Col from '../components/layouts/Col';
@@ -28,7 +24,6 @@ import TextWall from '../components/elements/TextWall';
 import TimelineCard from '../components/elements/TimelineCard';
 import TimelineContainer from '../components/elements/TimelineContainer';
 
-// define page
 const AboutPage: NextPageWithLayout = ({ componentsContent, pageContent }) => {
   return (
     <>
@@ -229,15 +224,12 @@ AboutPage.getLayout = (page) => (
 );
 
 export const getStaticProps: GetStaticProps = async () => {
-  // get notion data
   const pageId = 'About';
   const componentIds = ['MainNav', 'Footer', 'Testimonials'];
 
-  // get pageContent
   const pageContent = await notion.getPageContent(pageId);
   const componentsContent = await notion.getComponentsContent(componentIds);
 
-  // return props
   return { props: { componentsContent, pageContent }, revalidate: false };
 };
 

@@ -1,4 +1,3 @@
-// import config
 import { convertKitNewsletterFormId, convertKitApiKey } from './config';
 
 export const subscribeToNewsletter = async (email: string) =>

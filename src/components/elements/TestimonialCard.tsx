@@ -1,12 +1,9 @@
-// import node_modules
-import * as React from 'react';
+import React from 'react';
 import * as PropTypes from 'prop-types';
 
-// import styles
 import styles from './TestimonialCard.module.css';
 import Image from '../atoms/Image';
 
-// define component
 const TestimonialCard: React.FunctionComponent<{
   image: string;
   name: string;

@@ -1,15 +1,11 @@
-// import node_modules
 import * as PropTypes from 'prop-types';
-import * as React from 'react';
+import React from 'react';
 import cn from 'classnames';
 
-// import types
 import { TextAlignment, TextAlignmentEnum, TextSize, TextSizeEnum } from '../../types';
 
-// import styles
 import styles from './Text.module.css';
 
-// define components
 const Text: React.FunctionComponent<{
   alignment?: TextAlignment;
   children: React.ReactNode;
@@ -18,7 +14,6 @@ const Text: React.FunctionComponent<{
   isHelpText?: boolean;
   size?: TextSize;
 }> = ({ alignment, children, customClasses, isBlack, isHelpText, size }) => {
-  // init styles
   const textStyles = React.useMemo(
     () =>
       cn(

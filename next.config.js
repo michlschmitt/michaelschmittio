@@ -2,7 +2,6 @@
 
 // next.config.js
 
-// import node_modules
 const loaderUtils = require('loader-utils');
 const path = require('path');
 

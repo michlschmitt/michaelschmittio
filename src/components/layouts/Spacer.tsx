@@ -1,8 +1,6 @@
-// import node_modules
-import * as React from 'react';
+import React from 'react';
 import * as PropTypes from 'prop-types';
 
-// define component
 const Spacer: React.FunctionComponent<{ height: string; width?: string }> = ({ height, width }) => (
   <div style={{ height, width }} />
 );

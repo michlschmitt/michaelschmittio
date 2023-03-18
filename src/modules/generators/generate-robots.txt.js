@@ -1,6 +1,5 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 
-// import node_modules
 const fs = require('fs');
 
 // define methods

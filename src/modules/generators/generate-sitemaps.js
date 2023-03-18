@@ -1,6 +1,5 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 
-// import node_modules
 // const fs = require('fs');
 // const path = require('path');
 const { Client } = require('@notionhq/client');
@@ -82,7 +81,7 @@ const generateSitemap = async () => {
   const portfolioItems = await getPortfolioItems();
   portfolioItems.forEach((item) => {
     portfolio.push({
-      url: `https://www.michaelschmitt.io/portfolio/${item.slug}/`,
+      url: `https://www.michaelschmitt.io/portfolio/${item?.slug?.rich_text?.[0]?.plain_text}/`,
       changefreq: 'yearly',
       priority: 0.7,
       lastmod: item.lastModifiedAt.last_edited_time,

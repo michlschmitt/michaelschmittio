@@ -1,19 +1,15 @@
-// import node_modules
-import * as React from 'react';
+import React from 'react';
 import * as PropTypes from 'prop-types';
 
-// import components
 import Heading from '../atoms/Heading';
 import Image from '../atoms/Image';
 import Spacer from '../layouts/Spacer';
 import Subtitle from '../atoms/Subtitle';
 import Text from '../atoms/Text';
 
-// import styles
 import styles from './PortfolioItemCard.module.css';
 import Link from 'next/link';
 
-// define component
 const PortfolioItemCard: React.FunctionComponent<{
   image: string;
   linkLabel: string;
@@ -24,7 +20,6 @@ const PortfolioItemCard: React.FunctionComponent<{
 }> = ({ linkLabel, image, name, slug, text, title }) => (
   <div className={styles.cardContainer}>
     <Link href={`/portfolio/${slug}/`} className={styles.card}>
-
       <div className={styles.imageContainer}>
         <Image
           // height={1280}
@@ -48,7 +43,6 @@ const PortfolioItemCard: React.FunctionComponent<{
       <div className={styles.buttonContainer}>
         <div className={styles.button}>{linkLabel}</div>
       </div>
-
     </Link>
   </div>
 );

@@ -1,7 +1,5 @@
-// import node_modules
-import * as React from 'react';
+import React from 'react';
 
-// define component
 const GithubIcon: React.FunctionComponent = () => (
   <svg
     height="20"

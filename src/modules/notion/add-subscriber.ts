@@ -1,7 +1,5 @@
-// import modules
 import { notionClient } from './notion-client';
 
-// import config
 import { notionFormDatabaseId } from './config';
 
 // add contact form subscriber to notion

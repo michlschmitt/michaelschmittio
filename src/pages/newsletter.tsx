@@ -1,14 +1,10 @@
-// import node_modules
-import * as React from 'react';
+import React from 'react';
 
-// import types
 import type { GetStaticProps } from 'next';
 import { NextPageWithLayout } from '../types';
 
-// import modules
 import * as notion from '../modules/notion';
 
-// import components
 import Col from '../components/layouts/Col';
 import Container from '../components/layouts/Container';
 import ConvertKitForm from '../components/vendors/ConvertKitForm';
@@ -21,7 +17,6 @@ import Section from '../components/layouts/Section';
 import Spacer from '../components/layouts/Spacer';
 import Text from '../components/atoms/Text';
 
-// define page
 const NewsletterPage: NextPageWithLayout = ({ componentsContent, pageContent }) => {
   return (
     <>
@@ -62,15 +57,12 @@ NewsletterPage.getLayout = (page) => (
 );
 
 export const getStaticProps: GetStaticProps = async () => {
-  // get notion data
   const pageId = 'Newsletter';
   const componentIds = ['MainNav', 'Footer', 'ConvertKitForm'];
 
-  // get pageContent
   const pageContent = await notion.getPageContent(pageId);
   const componentsContent = await notion.getComponentsContent(componentIds);
 
-  // return props
   return {
     props: { componentsContent, pageContent },
     revalidate: false,

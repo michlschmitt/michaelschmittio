@@ -1,15 +1,11 @@
-// import node_modules
-import * as React from 'react';
+import React from 'react';
 import * as PropTypes from 'prop-types';
 import cn from 'classnames';
 
-// import types
 import { ColOffsetType, ColSpanType } from '../../types';
 
-// import styles
 import styles from './Col.module.css';
 
-// define component
 const Col: React.FunctionComponent<{
   children: React.ReactNode;
   offset?: ColOffsetType;
@@ -35,7 +31,6 @@ const Col: React.FunctionComponent<{
   spanSm,
   spanXl,
 }) => {
-  // init styles
   const colStyles = React.useMemo(
     () =>
       cn(

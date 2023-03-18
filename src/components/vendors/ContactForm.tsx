@@ -1,32 +1,24 @@
-// import node_modules
-import * as React from 'react';
+import React from 'react';
 
-// import types
 import { ContactFormType } from '../../types';
 
-// import components
 import Button from '../atoms/Button';
 import Input from '../atoms/Input';
 import Text from '../atoms/Text';
 import Textarea from '../atoms/Textarea';
 
-// import modules
 import { contactFormPropTypes } from '../../modules/prop-types';
 
-// import styles
 import styles from './ContactForm.module.css';
 
-// define components
 const ContactForm: React.FunctionComponent<{
   content: ContactFormType;
 }> = ({ content }) => {
-  // init states
   const [name, setName] = React.useState<string>('');
   const [email, setEmail] = React.useState<string>('');
   const [message, setMessage] = React.useState<string>('');
   const [errorMessage, setErrorMessage] = React.useState<string>('');
 
-  // init methods
   const onChange = React.useCallback(
     (event: React.ChangeEvent<HTMLInputElement> | React.ChangeEvent<HTMLTextAreaElement>) => {
       if (event.target.name === 'name') {

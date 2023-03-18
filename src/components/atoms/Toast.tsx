@@ -1,9 +1,7 @@
-// import node_modules
-import * as React from 'react';
+import React from 'react';
 import * as ToastPrimitive from '@radix-ui/react-toast';
 import classNames from 'classnames';
 
-// import styles
 import styles from './Toast.module.css';
 
 // define types
@@ -18,7 +16,6 @@ export interface ToastProps {
   variant?: ToastVariants;
 }
 
-// define components
 export const Toast: React.FunctionComponent<ToastProps> = ({
   children,
   closeable = true,

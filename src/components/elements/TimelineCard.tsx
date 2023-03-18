@@ -1,16 +1,12 @@
-// import node_modules
-import * as React from 'react';
+import React from 'react';
 import * as PropTypes from 'prop-types';
 import classNames from 'classnames';
 
-// import components
 import Heading from '../atoms/Heading';
 import Text from '../atoms/Text';
 
-// import styles
 import styles from './TimelineCard.module.css';
 
-// define component
 const TimelineCard: React.FunctionComponent<{ company: string; title: string; text: string }> = ({
   company,
   text,

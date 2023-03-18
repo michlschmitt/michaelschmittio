@@ -1,14 +1,10 @@
-// import node_modules
-import * as React from 'react';
+import React from 'react';
 
-// import types
 import type { GetStaticProps } from 'next';
 import { NextPageWithLayout } from '../types';
 
-// import modules
 import * as notion from '../modules/notion';
 
-// import components
 import Col from '../components/layouts/Col';
 import Container from '../components/layouts/Container';
 import MainLayout from '../components/layouts/MainLayout';
@@ -17,7 +13,6 @@ import Row from '../components/layouts/Row';
 import SEO from '../components/meta/SEO';
 import Spacer from '../components/layouts/Spacer';
 
-// define page
 const PrivacyPolicyPage: NextPageWithLayout = ({ pageContent }) => (
   <>
     {/* SEO */}
@@ -45,15 +40,12 @@ PrivacyPolicyPage.getLayout = (page) => (
 );
 
 export const getStaticProps: GetStaticProps = async () => {
-  // get notion data
   const pageId = 'Privacy-policy';
   const componentIds = ['MainNav', 'Footer'];
 
-  // get pageContent
   const pageContent = await notion.getPageContent(pageId);
   const componentsContent = await notion.getComponentsContent(componentIds);
 
-  // return props
   return { props: { componentsContent, pageContent }, revalidate: false };
 };
 

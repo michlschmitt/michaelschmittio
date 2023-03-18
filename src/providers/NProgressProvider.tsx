@@ -1,17 +1,13 @@
-// import node_modules
 import * as PropTypes from 'prop-types';
-import * as React from 'react';
+import React from 'react';
 import NProgress from 'nprogress';
 import { useRouter } from 'next/router';
 
-// NProgressProvider component
 const NProgressProvider: React.FunctionComponent<{ children: React.ReactNode }> = ({
   children,
 }) => {
-  // init hooks
   const router = useRouter();
 
-  // init func
   const onRouteChangeStart = React.useCallback(() => {
     NProgress.start();
   }, []);
@@ -20,7 +16,6 @@ const NProgressProvider: React.FunctionComponent<{ children: React.ReactNode }> 
     NProgress.done();
   }, []);
 
-  // handle data changes
   React.useEffect(() => {
     NProgress.configure({ showSpinner: false });
   }, []);
@@ -38,7 +33,6 @@ const NProgressProvider: React.FunctionComponent<{ children: React.ReactNode }> 
     };
   }, [onRouteChangeStart, onRouteChangeComplete, router]);
 
-  // init render
   return <>{children}</>;
 };
 

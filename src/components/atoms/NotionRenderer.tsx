@@ -1,18 +1,13 @@
-// import node_modules
 import * as PropTypes from 'prop-types';
-import * as React from 'react';
+import React from 'react';
 import Link from 'next/link';
 
-// import types
 import { FixMeLater, NotionBlockType, NotionBlockTextType } from '../../types';
 
-// import components
 import Image from './Image';
 
-// import styles
 import styles from './NotionRenderer.module.css';
 
-// define components
 const CodeRenderer: React.FunctionComponent<{
   value: { caption: FixMeLater; language: string; rich_text: NotionBlockTextType[] };
 }> = ({ value }) => {

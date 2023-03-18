@@ -1,12 +1,9 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
-// import types
 import { FixMeLater } from '../../types';
 
-// import modules
 import { notionClient } from './notion-client';
 
-// define helpers
 export const getPageProperty = async (pageId?: string, propertyId?: string) => {
   // check args
   if (!propertyId || !pageId) {

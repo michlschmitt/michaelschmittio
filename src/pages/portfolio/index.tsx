@@ -1,14 +1,10 @@
-// import node_modules
-import * as React from 'react';
+import React from 'react';
 
-// import types
 import type { GetStaticProps } from 'next';
 import { FixMeLater, NextPageWithLayout } from '../../types';
 
-// import modules
 import * as notion from '../../modules/notion';
 
-// import components
 import ButtonGroup from '../../components/atoms/ButtonGroup';
 import Col from '../../components/layouts/Col';
 import Container from '../../components/layouts/Container';
@@ -24,7 +20,6 @@ import Spacer from '../../components/layouts/Spacer';
 import Text from '../../components/atoms/Text';
 import TextWall from '../../components/elements/TextWall';
 
-// define page
 const PortfolioPage: NextPageWithLayout = ({ componentsContent, portfolioItems, pageContent }) => {
   return (
     <>
@@ -154,16 +149,13 @@ PortfolioPage.getLayout = (page) => (
 );
 
 export const getStaticProps: GetStaticProps = async () => {
-  // get notion data
   const pageId = 'Portfolio';
   const componentIds = ['MainNav', 'Footer', 'PortfolioItemCard'];
 
-  // get pageContent
   const pageContent = await notion.getPageContent(pageId);
   const componentsContent = await notion.getComponentsContent(componentIds);
   const portfolioItems = await notion.getPortfolioItems();
 
-  // return props
   return { props: { componentsContent, portfolioItems, pageContent }, revalidate: false };
 };
 

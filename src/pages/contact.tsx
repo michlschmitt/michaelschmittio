@@ -1,14 +1,10 @@
-// import node_modules
-import * as React from 'react';
+import React from 'react';
 
-// import types
 import type { GetStaticProps } from 'next';
 import { NextPageWithLayout } from '../types';
 
-// import modules
 import * as notion from '../modules/notion';
 
-// import components
 import CheckeredPaperCard from '../components/elements/CheckeredPaperCard';
 import Col from '../components/layouts/Col';
 import ContactForm from '../components/vendors/ContactForm';
@@ -23,7 +19,6 @@ import Spacer from '../components/layouts/Spacer';
 import Subtitle from '../components/atoms/Subtitle';
 import Text from '../components/atoms/Text';
 
-// define page
 const ContactPage: NextPageWithLayout = ({ componentsContent, pageContent }) => {
   return (
     <>
@@ -129,15 +124,12 @@ ContactPage.getLayout = (page) => (
 );
 
 export const getStaticProps: GetStaticProps = async () => {
-  // get notion data
   const pageId = 'Contact';
   const componentIds = ['MainNav', 'Footer', 'ContactForm'];
 
-  // get pageContent
   const pageContent = await notion.getPageContent(pageId);
   const componentsContent = await notion.getComponentsContent(componentIds);
 
-  // return props
   return { props: { componentsContent, pageContent }, revalidate: false };
 };
 

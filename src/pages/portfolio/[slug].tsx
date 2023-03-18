@@ -1,14 +1,10 @@
-// import node_modules
-import * as React from 'react';
+import React from 'react';
 
-// import types
 import type { GetStaticPaths, GetStaticProps } from 'next';
 import { FixMeLater, NextPageWithLayout } from '../../types';
 
-// import modules
 import * as notion from '../../modules/notion';
 
-// import components
 import ButtonGroup from '../../components/atoms/ButtonGroup';
 import Col from '../../components/layouts/Col';
 import Container from '../../components/layouts/Container';
@@ -26,7 +22,6 @@ import Subtitle from '../../components/atoms/Subtitle';
 import Text from '../../components/atoms/Text';
 import Link from 'next/link';
 
-// define page
 const PortfolioItemPage: NextPageWithLayout = ({
   componentsContent,
   pageContent,
@@ -169,10 +164,8 @@ PortfolioItemPage.getLayout = (page) => (
 );
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  // get portfolio items
   const portfolioItems = await notion.getPortfolioItems();
 
-  // create params
   const paths = portfolioItems.map((item) => ({
     params: { slug: item.slug },
   }));
@@ -181,19 +174,15 @@ export const getStaticPaths: GetStaticPaths = async () => {
 };
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  // get slug
   const { slug } = params || {};
 
-  // get notion data
   const componentIds = ['MainNav', 'Footer', 'PortfolioItemCard'];
 
-  // get portfolio items
   const pageContent = await notion.getPageContent('Portfolio');
   const portfolioItemContent = await notion.getPortfolioItemContent(slug as string);
   const componentsContent = await notion.getComponentsContent(componentIds);
   const portfolioItems = await notion.getPortfolioItems({ exclude: slug as string, limit: 2 });
 
-  // return props
   return {
     props: {
       componentsContent,

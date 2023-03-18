@@ -1,11 +1,8 @@
-// import node_modules
 import * as PropTypes from 'prop-types';
-import * as React from 'react';
+import React from 'react';
 
-// import styles
 import styles from './CheckeredPaperCard.module.css';
 
-// define component
 const CheckeredPaperCard: React.FunctionComponent<{ children: React.ReactNode }> = ({
   children,
 }) => (

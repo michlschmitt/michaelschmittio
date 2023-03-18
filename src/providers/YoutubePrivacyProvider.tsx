@@ -1,15 +1,11 @@
-// import node_modules
-import * as React from 'react';
+import React from 'react';
 import * as PropTypes from 'prop-types';
 
-// import modules
 import { iframeOptin } from '../modules/privacy';
 
-// YoutubePrivacyProvider component
 const YoutubePrivacyProvider: React.FunctionComponent<{ children: React.ReactNode }> = ({
   children,
 }) => {
-  // handle data changes
   React.useEffect(() => {
     if (typeof window !== 'undefined') {
       const frames = document.getElementsByTagName('iframe');
@@ -24,7 +20,6 @@ const YoutubePrivacyProvider: React.FunctionComponent<{ children: React.ReactNod
     iframeOptin({ autoplay: false });
   }, []);
 
-  // init render
   return <>{children}</>;
 };
 

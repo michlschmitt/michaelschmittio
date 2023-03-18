@@ -1,9 +1,7 @@
-// import node_modules
-import * as React from 'react';
+import React from 'react';
 import * as PropTypes from 'prop-types';
 import cn from 'classnames';
 
-// import types
 import {
   SectionColorEnum,
   SectionColorType,
@@ -11,16 +9,13 @@ import {
   SectionPaddingType,
 } from '../../types';
 
-// import styles
 import styles from './Section.module.css';
 
-// define component
 const Section: React.FunctionComponent<{
   color?: SectionColorType;
   children: React.ReactNode;
   padding?: SectionPaddingType;
 }> = ({ color, children, padding }) => {
-  // init styles
   const sectionStyles = React.useMemo(
     () =>
       cn(styles.section, {

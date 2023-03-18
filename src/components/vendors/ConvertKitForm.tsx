@@ -1,35 +1,27 @@
-// import node_modules
 import * as PropTypes from 'prop-types';
-import * as React from 'react';
+import React from 'react';
 
-// import types
 import { ConvertKitFormType, TextAlignment, TextAlignmentEnum } from '../../types';
 
-// import components
 import Button from '../atoms/Button';
 import Input from '../atoms/Input';
 import Text from '../atoms/Text';
 import Toast from '../atoms/Toast';
 
-// import modules
 import { convertKitPropTypes } from '../../modules/prop-types';
 
-// import styles
 import styles from './ConvertKitForm.module.css';
 import classNames from 'classnames';
 
-// define components
 const ConvertKitForm: React.FunctionComponent<{
   alignment?: TextAlignment;
   content: ConvertKitFormType;
 }> = ({ alignment, content }) => {
-  // init states
   const [email, setEmail] = React.useState<string>('');
   const [loading, setLoading] = React.useState<boolean>(false);
   const [toastState, setToastState] = React.useState<boolean>(false);
   const [errorState, setErrorState] = React.useState<boolean>(false);
 
-  // init methods
   const onChange = React.useCallback((event: React.ChangeEvent<HTMLInputElement>) => {
     setEmail(event.target.value);
   }, []);
@@ -67,7 +59,6 @@ const ConvertKitForm: React.FunctionComponent<{
     [email],
   );
 
-  // render form
   return (
     <div className={styles['form-container']}>
       <form

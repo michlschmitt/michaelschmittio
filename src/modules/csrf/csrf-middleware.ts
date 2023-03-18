@@ -1,14 +1,11 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
-// import node_modules
 import cookieParser from 'cookie-parser';
 import csrf from 'csurf';
 
-// impot types
 import { NextApiResponse, NextApiRequest } from 'next';
 import { FixMeLater } from '../../types';
 
-// init csrf
 const csrfProtection = csrf({ cookie: true });
 
 // Helper method to wait for a middleware to execute before continuing

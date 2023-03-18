@@ -1,15 +1,11 @@
-// import node_modules
 import * as PropTypes from 'prop-types';
-import * as React from 'react';
+import React from 'react';
 import cn from 'classnames';
 
-// import types
 import { HeadingAlignment, HeadingAlignmentEnum, HeadingTag, HeadingTagEnum } from '../../types';
 
-// import styles
 import styles from './Heading.module.css';
 
-// define components
 const Heading: React.FunctionComponent<{
   alignment?: HeadingAlignment;
   children: React.ReactNode;
@@ -17,7 +13,6 @@ const Heading: React.FunctionComponent<{
   isBlack?: boolean;
   tag: HeadingTag;
 }> = ({ alignment, customClasses, children, isBlack, tag }) => {
-  // define className
   const headingStyles = React.useMemo(
     () =>
       cn(

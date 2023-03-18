@@ -1,9 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
-// import types
 import { FixMeLater } from '../../types';
 
-// import modules
 import {
   getNestedNotionBlocks,
   getNotionBlocks,
@@ -11,10 +9,8 @@ import {
   getPageProperty,
 } from './utils';
 
-// import config
 import { notionPagesDatabaseId } from './config';
 
-// define modules
 export const getPageWithProperties = async (page: FixMeLater) => {
   const { properties: raw, id: pageId } = (page || {}) as {
     properties: FixMeLater;

@@ -1,14 +1,10 @@
-// import node_modules
-import * as React from 'react';
+import React from 'react';
 
-// import types
 import type { GetStaticProps } from 'next';
 import { ButtonColor, NextPageWithLayout } from '../types';
 
-// import modules
 import * as notion from '../modules/notion';
 
-// import components
 import ButtonGroup from '../components/atoms/ButtonGroup';
 import CheckeredPaperCard from '../components/elements/CheckeredPaperCard';
 import Col from '../components/layouts/Col';
@@ -25,7 +21,6 @@ import Spacer from '../components/layouts/Spacer';
 import Subtitle from '../components/atoms/Subtitle';
 import Text from '../components/atoms/Text';
 
-// define page
 const IndexPage: NextPageWithLayout = ({ pageContent }) => (
   <>
     {/* SEO */}
@@ -175,15 +170,12 @@ IndexPage.getLayout = (page) => (
 );
 
 export const getStaticProps: GetStaticProps = async () => {
-  // get notion data
   const pageId = 'Home';
   const componentIds = ['MainNav', 'Footer'];
 
-  // get pageContent
   const pageContent = await notion.getPageContent(pageId);
   const componentsContent = await notion.getComponentsContent(componentIds);
 
-  // return props
   return { props: { componentsContent, pageContent }, revalidate: false };
 };
 

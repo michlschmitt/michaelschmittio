@@ -1,26 +1,21 @@
 /* eslint-disable react/jsx-props-no-spreading */
 /* eslint-disable react/no-array-index-key */
 
-// import node_modules
 import * as PropTypes from 'prop-types';
-import * as React from 'react';
+import React from 'react';
 import Head from 'next/head';
 import Script from 'next/script';
 import { useRouter } from 'next/router';
 
-// import config
 import { rootDomain } from '../../../config';
 
-// SEO component
 const SEO: React.FunctionComponent<{
   description: string;
   image: string;
   title: string;
 }> = ({ title, description, image }) => {
-  // init hooks
   const { asPath } = useRouter();
 
-  // init vars
   const brandedTitle = title;
   const canonicalUrl = `${rootDomain}${asPath}`;
   const imageUrl = `${rootDomain}${image}`;

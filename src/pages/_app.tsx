@@ -1,23 +1,17 @@
-// import node_modules
 import * as PropTypes from 'prop-types';
-import * as React from 'react';
+import React from 'react';
 import Head from 'next/head';
 
-// import types
 import { AppPropsWithLayout } from '../types';
 
-// import components
 import AppProviders from '../providers/AppProviders';
 import GlobalHeadLinks from '../components/meta/GlobalHead';
 
-// import fonts
 import '@fontsource/poppins/400.css';
 import '@fontsource/poppins/700.css';
 
-// import styles
 import '../styles/index.css';
 
-// define app component
 const Website: React.FC<AppPropsWithLayout> = ({ Component, pageProps }) => {
   // Use the layout defined at the page level, if available
   const getLayout = Component.getLayout ?? ((page) => page);

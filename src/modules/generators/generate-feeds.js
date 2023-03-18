@@ -1,6 +1,5 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 
-// import node_modules
 // const path = require('path');
 const Feed = require('feed').Feed;
 const fs = require('fs');

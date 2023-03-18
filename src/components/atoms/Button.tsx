@@ -1,9 +1,7 @@
-// import node_modules
 import * as PropTypes from 'prop-types';
-import * as React from 'react';
-import cn from 'classnames';
+import React from 'react';
+import classNames from 'classnames';
 
-// import types
 import {
   ButtonColor,
   ButtonColorEnum,
@@ -13,10 +11,8 @@ import {
   ButtonTypeEnum,
 } from '../../types';
 
-// import styles
 import styles from './Button.module.css';
 
-// define components
 const Button: React.FunctionComponent<{
   color?: ButtonColor;
   customClasses?: string;
@@ -29,32 +25,10 @@ const Button: React.FunctionComponent<{
   text: string;
   type?: ButtonType;
 }> = ({ color, customClasses, form, id, name, isLoading, onClick, size, text, type }) => {
-  // init vars
   const spinner = ['▖', '▘', '▝', '▗'];
-
-  // init states
   const [spinnerIndex, setSpinnerIndex] = React.useState<number>(0);
 
-  // init refs
   const spinnerRef = React.useRef<ReturnType<typeof setInterval>>();
-
-  // init styles
-  const buttonClasses = React.useMemo(
-    () =>
-      cn(
-        styles.button,
-        {
-          [styles.buttonIsGradient]: color === 'gradient',
-          [styles.buttonIsNaked]: color === 'naked',
-          [styles.buttonIsBlack]: color === 'black',
-          [styles.buttonIsSmall]: size === 'small',
-          [styles.buttonIsMedium]: size === 'medium',
-          [styles.buttonIsLarge]: size === 'large',
-        },
-        customClasses,
-      ),
-    [customClasses, color, size],
-  );
 
   React.useEffect(() => {
     if (isLoading) {
@@ -74,7 +48,25 @@ const Button: React.FunctionComponent<{
   }, [isLoading, spinner.length, spinnerIndex]);
 
   return (
-    <button className={buttonClasses} onClick={onClick} form={form} id={id} name={name} type={type}>
+    <button
+      className={classNames(
+        styles.button,
+        {
+          [styles.buttonIsGradient]: color === 'gradient',
+          [styles.buttonIsNaked]: color === 'naked',
+          [styles.buttonIsBlack]: color === 'black',
+          [styles.buttonIsSmall]: size === 'small',
+          [styles.buttonIsMedium]: size === 'medium',
+          [styles.buttonIsLarge]: size === 'large',
+        },
+        customClasses,
+      )}
+      onClick={onClick}
+      form={form}
+      id={id}
+      name={name}
+      type={type}
+    >
       {isLoading && <span className={styles['spinner']}>{spinner[spinnerIndex]}</span>} {text}
     </button>
   );

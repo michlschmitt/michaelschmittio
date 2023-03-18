@@ -1,9 +1,7 @@
 // pages/api/contact.tsx
 
-// import types
 import type { NextApiRequest, NextApiResponse } from 'next';
 
-// import modules
 import * as notion from '../../modules/notion';
 import * as plausible from '../../modules/plausible';
 import * as csrf from '../../modules/csrf';

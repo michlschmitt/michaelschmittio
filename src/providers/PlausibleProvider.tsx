@@ -1,17 +1,13 @@
-// import node_modules
-import * as React from 'react';
+import React from 'react';
 import * as PropTypes from 'prop-types';
 import Script from 'next/script';
 
-// import config
 import { plausibleDomain } from '../modules/plausible';
 
-// PlausibleProvider component
 // https://plausible.io/docs/proxy/guides/nextjs
 const PlausibleProvider: React.FunctionComponent<{ children: React.ReactNode }> = ({
   children,
 }) => {
-  // define methods
   const onOptOut = React.useCallback(() => {
     // set opt out flag
     localStorage.plausible_ignore = true;
@@ -40,7 +36,6 @@ const PlausibleProvider: React.FunctionComponent<{ children: React.ReactNode }> 
     };
   }, [onOptOut]);
 
-  // init render
   return (
     <>
       <>{children}</>

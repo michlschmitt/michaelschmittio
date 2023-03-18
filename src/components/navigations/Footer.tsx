@@ -1,22 +1,16 @@
-// import node_modules
-import * as React from 'react';
+import React from 'react';
 import Link from 'next/link';
 
-// import types
 import { FooterType } from '../../types';
 
-// import modules
 import { footerPropTypes } from '../../modules/prop-types';
 
-// import components
 import GithubIcon from '../svgs/GithubIcon';
 import LinkedInIcon from '../svgs/LinkedInIcon';
 import TwitterIcon from '../svgs/TwitterIcon';
 
-// import styles
 import styles from './Footer.module.css';
 
-// define component
 const Footer: React.FunctionComponent<{ content: FooterType }> = ({ content }) => (
   <nav className={styles.footer}>
     <div className={styles.container}>

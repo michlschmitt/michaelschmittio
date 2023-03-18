@@ -1,6 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
-// import types
 import { FixMeLater } from './universal';
 
 // Notion API related types

@@ -1,6 +1,5 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 
-// import modules
 const generateSitemaps = require('./generate-sitemaps');
 const generateRobotsTxt = require('./generate-robots.txt');
 // const generateFeeds = require('./generate-feeds');

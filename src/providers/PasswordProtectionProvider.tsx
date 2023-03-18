@@ -1,21 +1,15 @@
 /* eslint-disable no-alert */
 
-// import node_modules
-import * as React from 'react';
+import React from 'react';
 import * as PropTypes from 'prop-types';
 import { useCookies } from 'react-cookie';
 
-// import config
 import { cookieBaseDomain, passwordProtection } from '../../config';
 
-// define component
 const PasswordProtection: React.FunctionComponent<{ children: React.ReactNode }> = ({
   children,
 }) => {
-  // init hooks
   const [, setCookie] = useCookies(['passwordProtection']);
-
-  // init states
   const [hasAccess, updateAccess] = React.useState<boolean>(true);
 
   // show alert on render
@@ -48,11 +42,9 @@ PasswordProtection.propTypes = {
   children: PropTypes.node.isRequired as React.Validator<React.ReactNode>,
 };
 
-// PasswordProtectionProvider component
 const PasswordProtectionProvider: React.FunctionComponent<{ children: React.ReactNode }> = ({
   children,
 }) => {
-  // init hooks
   const [cookies] = useCookies(['passwordProtection']);
 
   // pw already entered
@@ -65,7 +57,6 @@ const PasswordProtectionProvider: React.FunctionComponent<{ children: React.Reac
     return <PasswordProtection>{children}</PasswordProtection>;
   }
 
-  // render website
   return <>{children}</>;
 };
 

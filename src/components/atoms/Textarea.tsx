@@ -1,16 +1,12 @@
-// import node_modules
 import * as PropTypes from 'prop-types';
-import * as React from 'react';
+import React from 'react';
 import TextareaAutosize from 'react-textarea-autosize';
 import cn from 'classnames';
 
-// import types
 import { InputSizeEnum, InputSize } from '../../types';
 
-// import styles
 import styles from './Textarea.module.css';
 
-// define components
 const Textarea: React.FunctionComponent<{
   customInputClasses?: string;
   customLabelClasses?: string;
@@ -34,7 +30,6 @@ const Textarea: React.FunctionComponent<{
   size,
   value,
 }) => {
-  // init styles
   const textareaStyles = React.useMemo(
     () =>
       cn(

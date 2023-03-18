@@ -1,21 +1,15 @@
-// import node_modules
 import * as PropTypes from 'prop-types';
-import * as React from 'react';
+import React from 'react';
 
-// import types
 import { FooterType, MainNavType } from '../../types';
 
-// import modules
 import { footerPropTypes, mainNavPropTypes } from '../../modules/prop-types';
 
-// import components
 import MainNav from '../navigations/MainNav';
 import Footer from '../navigations/Footer';
 
-// import styles
 import styles from './MainLayout.module.css';
 
-// define component
 const MainLayout: React.FunctionComponent<{
   content: { MainNav: MainNavType; Footer: FooterType };
   children: React.ReactNode;

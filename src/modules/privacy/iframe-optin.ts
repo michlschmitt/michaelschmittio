@@ -1,13 +1,10 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 /* eslint-disable no-loop-func */
 
-// import node_modules
 import striptags from 'striptags';
 
-// import types
 import { FixMeLater } from '../../types';
 
-// define type
 interface IframeType extends Element {
   allow?: string;
   allowfullscreen?: boolean;
@@ -19,7 +16,6 @@ interface IframeType extends Element {
   width?: string;
 }
 
-// define modules
 export function getYoutubeId({ youtubeUrl }: { youtubeUrl: string }): string | boolean {
   const regExp = /^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#&?]*).*/;
   const match = youtubeUrl.match(regExp);

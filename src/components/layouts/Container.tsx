@@ -1,19 +1,15 @@
-// import node_modules
-import * as React from 'react';
+import React from 'react';
 import * as PropTypes from 'prop-types';
 import cn from 'classnames';
 
-// import styles
 import styles from './Container.module.css';
 
-// define component
 const Container: React.FunctionComponent<{
   children: React.ReactNode;
   lg?: boolean;
   md?: boolean;
   xl?: boolean;
 }> = ({ children, md, lg, xl }) => {
-  // init styles
   const containerStyles = React.useMemo(
     () =>
       cn(styles.container, {

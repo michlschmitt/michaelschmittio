@@ -1,7 +1,5 @@
-// import node_modules
 import * as PropTypes from 'prop-types';
 
-// define component propTypes
 export const mainNavPropTypes = PropTypes.exact({
   callToAction: PropTypes.exact({
     href: PropTypes.string.isRequired,

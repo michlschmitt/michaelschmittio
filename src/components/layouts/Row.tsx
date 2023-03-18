@@ -1,9 +1,7 @@
-// import node_modules
-import * as React from 'react';
+import React from 'react';
 import * as PropTypes from 'prop-types';
 import cn from 'classnames';
 
-// import types
 import {
   RowAlignItemsEnum,
   RowAlignItemsType,
@@ -13,17 +11,14 @@ import {
   RowWrapType,
 } from '../../types';
 
-// import styles
 import styles from './Row.module.css';
 
-// define component
 const Row: React.FunctionComponent<{
   alignItems?: RowAlignItemsType;
   children: React.ReactNode;
   wrap?: RowWrapType;
   justify?: RowJustifyType;
 }> = ({ alignItems, children, justify, wrap }) => {
-  // init styles
   const rowStyles = React.useMemo(
     () =>
       cn(styles.row, {

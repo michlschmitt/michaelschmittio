@@ -1,15 +1,11 @@
-// import node_modules
-import * as React from 'react';
+import React from 'react';
 import * as PropTypes from 'prop-types';
 import cn from 'classnames';
 
-// import types
 import { HeadingAlignment, HeadingAlignmentEnum } from '../../types';
 
-// import styles
 import styles from './Subtitle.module.css';
 
-// define component
 const Subtitle: React.FunctionComponent<{
   alignment?: HeadingAlignment;
   children: React.ReactNode;
@@ -17,7 +13,6 @@ const Subtitle: React.FunctionComponent<{
   isBlack?: boolean;
   isWhite?: boolean;
 }> = ({ alignment, children, customClasses, isBlack, isWhite }) => {
-  // init styles
   const subtitleStyles = React.useMemo(
     () =>
       cn(

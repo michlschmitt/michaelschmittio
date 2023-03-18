@@ -1,8 +1,6 @@
-// import node_modules
 import * as PropTypes from 'prop-types';
-import * as React from 'react';
+import React from 'react';
 
-// import types
 import {
   ButtonColor,
   PortfolioPreviewSectionImagePosition,
@@ -11,10 +9,8 @@ import {
   SectionColorType,
 } from '../../types';
 
-// import styles
 import styles from './PortfolioPreviewSection.module.css';
 
-// import components
 import Container from '../layouts/Container';
 import Heading from '../atoms/Heading';
 import Image from '../atoms/Image';
@@ -24,7 +20,6 @@ import Spacer from '../layouts/Spacer';
 import Subtitle from '../atoms/Subtitle';
 import Text from '../atoms/Text';
 
-// define component
 const PortfolioPreviewSection: React.FunctionComponent<{
   backgroundColor?: SectionColorType;
   buttons: { href: string; color: string; label: string }[];

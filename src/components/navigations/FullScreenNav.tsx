@@ -1,22 +1,16 @@
-// import node_modules
-import * as React from 'react';
+import React from 'react';
 import * as PropTypes from 'prop-types';
 import Link from 'next/link';
 
-// import types
 import { MainNavType } from '../../types';
 
-// import component
 import LinkButton from '../atoms/LinkButton';
 import CloseMenuIcon from '../svgs/CloseMenuIcon';
 
-// import modules
 import { mainNavPropTypes } from '../../modules/prop-types';
 
-// import styles
 import styles from './FullScreenNav.module.css';
 
-// define component
 const FullScreenNav: React.FunctionComponent<{ content: MainNavType; closeMenu: () => void }> = ({
   closeMenu,
   content,

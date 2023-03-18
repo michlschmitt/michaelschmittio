@@ -1,9 +1,7 @@
 // pages/api/newsletter.tsx
 
-// import types
 import type { NextApiRequest, NextApiResponse } from 'next';
 
-// import modules
 import * as plausible from '../../modules/plausible';
 import * as convertKit from '../../modules/convertkit';
 

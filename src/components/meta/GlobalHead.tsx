@@ -1,13 +1,10 @@
 /* eslint-disable react/jsx-props-no-spreading */
 /* eslint-disable react/no-array-index-key */
 
-// import node_modules
-import * as React from 'react';
+import React from 'react';
 
-// import config
 import { rootDomain } from '../../../config';
 
-// Global head component
 const GlobalHeadLinks: React.FunctionComponent = () => {
   // META TAGS
   const metaTags = [
